@@ -1,2 +1,0 @@
-# Kemetgiftcomingsoon
-Kemet gift-comingsoon
