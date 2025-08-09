@@ -9,122 +9,131 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
+    :root {
       --gold: #d4af37;
-      --gold-soft: rgba(212,175,55,0.12);
-      --bg-dark: #1e140c;
-      --bg-dark-2: #2c1f14;
+      --gold-soft: rgba(212, 175, 55, 0.12);
+      --bg-dark: #1b140b;
+      --bg-gradient-start: #3a2b17;
+      --bg-gradient-end: #0b0600;
       --muted: #cfc6bd;
-      --card-bg: rgba(255,255,255,0.04);
+      --card-bg: rgba(255, 255, 255, 0.04);
       --max-width: 900px;
     }
 
     /* Reset */
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
     html, body {
+      margin: 0;
+      padding: 0;
       height: 100%;
-      font-family: "Noto Sans Arabic", "Cinzel", serif, system-ui, Arial, sans-serif;
-      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-2) 100%);
+      font-family: 'Noto Sans Arabic', 'Cinzel', system-ui, Arial, sans-serif;
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
       color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px 20px;
+      direction: rtl;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      direction: rtl;
     }
 
     main {
-      background: var(--card-bg);
       max-width: var(--max-width);
       width: 100%;
-      border-radius: 20px;
-      padding: 40px 30px;
-      box-shadow: 0 0 40px rgba(212,175,55,0.3);
-      text-align: center;
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 40px 30px 50px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
       position: relative;
-      overflow: hidden;
     }
 
-    /* شعار لوجو */
-    .logo {
-      width: 180px;
-      margin: 0 auto 24px;
+    img.logo {
+      width: 140px;
+      margin: 0 auto 20px;
       display: block;
     }
 
-    /* العنوان */
     h1.brand-ar {
       font-weight: 700;
-      font-size: 38px;
-      margin-bottom: 6px;
-      color: var(--gold);
-      font-family: "Noto Sans Arabic", serif;
-      letter-spacing: 1.5px;
+      font-size: 28px;
+      margin: 0 0 10px;
+      letter-spacing: 1.4px;
     }
-    .tagline {
-      font-family: "Cinzel", serif;
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--muted);
-      margin-bottom: 30px;
+    h2.brand-en {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 22px;
+      margin: 0 0 24px;
+      color: var(--gold);
+      letter-spacing: 3px;
+      text-transform: capitalize;
+      direction: ltr;
     }
 
-    /* القسم النصي عن المشروع */
-    .about-project {
-      font-size: 17px;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
-      color: #e6d9a7;
-      font-weight: 400;
-    }
-    .about-project strong {
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    /* اقتني قطعتك */
-    .limited-editions {
-      font-size: 18px;
-      color: var(--gold);
-      font-weight: 700;
+    section.about {
+      text-align: right;
       margin-bottom: 40px;
+      direction: rtl;
+    }
+    section.about h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    section.about p {
+      margin: 0 0 10px;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--muted);
     }
 
-    /* العد التنازلي */
+    section.about p.highlight {
+      font-weight: 600;
+      font-style: italic;
+      margin-top: 10px;
+      color: var(--gold);
+    }
+
     .countdown {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       margin-bottom: 30px;
+      direction: ltr;
       flex-wrap: wrap;
     }
+
     .time-box {
-      background: var(--card-bg);
+      background: rgba(212, 175, 55, 0.15);
       border-radius: 12px;
-      padding: 18px 25px;
-      min-width: 100px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-    }
-    .time-box .num {
-      font-size: 32px;
-      font-weight: 700;
+      min-width: 72px;
+      padding: 18px 12px;
+      box-shadow: 0 4px 12px rgba(212,175,55,0.3);
       color: var(--gold);
-      letter-spacing: 1.2px;
-    }
-    .time-box .label {
-      font-size: 14px;
-      color: var(--muted);
-      margin-top: 6px;
+      font-weight: 700;
+      user-select: none;
     }
 
-    /* ملاحظة الإطلاق */
+    .time-box .num {
+      font-size: 24px;
+      line-height: 1;
+    }
+    .time-box .label {
+      font-size: 12px;
+      color: #fff8;
+      margin-top: 4px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      user-select: none;
+    }
+
     .launch-note {
       font-size: 15px;
       color: var(--muted);
@@ -132,195 +141,229 @@
       font-weight: 600;
     }
 
-    /* فورم الاشتراك */
     form.subscribe {
       display: flex;
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+      direction: ltr;
     }
+
     form.subscribe input[type="email"] {
-      padding: 14px 18px;
+      flex-grow: 1;
+      min-width: 220px;
+      padding: 14px 16px;
       border-radius: 10px;
-      border: none;
+      border: 1.5px solid var(--gold);
+      background: transparent;
+      color: #fff;
+      font-size: 15px;
       outline: none;
-      min-width: 280px;
-      font-size: 16px;
-      color: #222;
-      font-weight: 500;
-      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease;
     }
+    form.subscribe input[type="email"]::placeholder {
+      color: var(--gold-soft);
+    }
+    form.subscribe input[type="email"]:focus {
+      background-color: rgba(212,175,55,0.1);
+    }
+
     form.subscribe button {
-      padding: 14px 30px;
-      background: linear-gradient(90deg, #d4af37, #b48c28);
+      background: var(--gold);
       border: none;
       border-radius: 10px;
+      padding: 14px 26px;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15px;
+      color: #1b140b;
       cursor: pointer;
-      color: #111;
-      box-shadow: 0 8px 25px rgba(212,175,55,0.3);
-      transition: background 0.3s ease;
+      box-shadow: 0 5px 16px rgba(212,175,55,0.5);
+      transition: background-color 0.3s ease;
     }
     form.subscribe button:hover {
-      background: linear-gradient(90deg, #b48c28, #d4af37);
+      background-color: #c79f26;
+    }
+    form.subscribe button:active {
+      transform: translateY(1px);
     }
 
     #subMsg {
+      min-height: 24px;
       color: var(--gold);
       font-weight: 600;
-      margin-top: 12px;
-      min-height: 22px;
-      font-size: 15px;
-      font-family: Arial, sans-serif;
+      margin-top: 8px;
+      font-size: 14px;
+      text-align: center;
+      direction: ltr;
+      user-select: none;
+      transition: opacity 0.3s ease;
     }
 
-    /* الحقوق */
     footer {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
-      text-align: center;
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      border-top: 1px solid rgba(212,175,55,0.1);
+      padding-top: 18px;
+      direction: rtl;
       user-select: none;
+      margin-top: 15px;
+    }
+
+    footer span {
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1.2px;
     }
 
     /* Responsive */
-    @media (max-width: 700px) {
+    @media (max-width: 680px) {
+      main {
+        padding: 30px 20px 40px;
+      }
       h1.brand-ar {
-        font-size: 30px;
+        font-size: 24px;
       }
-      .tagline {
-        font-size: 16px;
-      }
-      .about-project {
-        font-size: 15px;
-        max-width: 90%;
+      h2.brand-en {
+        font-size: 18px;
+        letter-spacing: 2.5px;
       }
       .countdown {
-        gap: 12px;
+        gap: 10px;
       }
       .time-box {
-        min-width: 70px;
-        padding: 14px 16px;
+        min-width: 60px;
+        padding: 14px 10px;
+        font-size: 18px;
       }
       form.subscribe input[type="email"] {
-        min-width: 200px;
+        min-width: 160px;
+        font-size: 14px;
+      }
+      form.subscribe button {
+        padding: 12px 20px;
+        font-size: 14px;
       }
     }
+
   </style>
 </head>
+
 <body>
+  <main role="main" aria-labelledby="brandHeading">
 
-  <main role="main" aria-labelledby="main-title">
-
-    <!-- الشعار -->
     <img src="logo.png" alt="KEMET Logo" class="logo" />
 
-    <!-- العنوان -->
-    <h1 class="brand-ar" id="main-title">هدية من قلب التاريخ</h1>
-    <div class="tagline">A Gift From The Heart Of History — هدية من قلب التاريخ</div>
+    <h1 id="brandHeading" class="brand-ar">هدية من قلب التاريخ</h1>
+    <h2 class="brand-en">A Gift From The Heart Of History — هدية من قلب التاريخ</h2>
 
-    <!-- عن المشروع -->
-    <p class="about-project">
-      Kemet هو مشروع عملات تذكارية فاخرة مستوحاة من روح الحضارة المصرية — تصميم دقيق، خامات مميزة، وتجربة هدية لا تُنسى.
-    </p>
+    <section class="about" aria-label="عن المشروع">
+      <h3>عن المشروع</h3>
+      <p>Kemet هو مشروع عملات تذكارية فاخرة مستوحاة من روح الحضارة المصرية — تصميم دقيق، خامات مميزة، وتجربة هدية لا تُنسى.</p>
+      <p class="highlight">اقتني قطعتك من الإصدارات المحدودة والموسمية لتكون جزءًا من تاريخ خالد وفريد.</p>
+    </section>
 
-    <!-- اقتني قطعتك -->
-    <p class="limited-editions">
-      اقتني قطعتك من الإصدارات المحدودة والموسمية لتكون جزءًا من تاريخ خالد وفريد.
-    </p>
-
-    <!-- العد التنازلي -->
-    <div class="countdown" aria-label="العد التنازلي">
-      <div class="time-box" role="timer" aria-live="off" aria-atomic="true">
+    <div class="countdown" aria-live="polite" aria-label="العد التنازلي">
+      <div class="time-box">
         <div class="num" id="days">509</div>
         <div class="label">يوم / Days</div>
       </div>
-      <div class="time-box" role="timer" aria-live="off" aria-atomic="true">
+      <div class="time-box">
         <div class="num" id="hours">10</div>
         <div class="label">ساعة / Hours</div>
       </div>
-      <div class="time-box" role="timer" aria-live="off" aria-atomic="true">
+      <div class="time-box">
         <div class="num" id="minutes">11</div>
         <div class="label">دقيقة / Minutes</div>
       </div>
-      <div class="time-box" role="timer" aria-live="off" aria-atomic="true">
+      <div class="time-box">
         <div class="num" id="seconds">48</div>
         <div class="label">ثانية / Seconds</div>
       </div>
     </div>
 
-    <div class="launch-note">
-      Launching on 1 January 2027 — الانطلاق 1 يناير 2027
-    </div>
+    <div class="launch-note">Launching on 1 January 2027 — الانطلاق 1 يناير 2027</div>
 
-    <!-- فورم الاشتراك -->
-<form class="subscribe" id="subscribeForm" onsubmit="return handleSubscribe(event)" aria-label="اشتراك">
-  <input type="email" id="email" placeholder="بريدك الإلكتروني · Your email" aria-label="email" required />
-  <button type="submit">Stay Updated</button>
-</form>
+    <form class="subscribe" id="subscribeForm" onsubmit="return handleSubscribe(event)" aria-label="اشتراك">
+      <input
+        type="email"
+        id="email"
+        placeholder="بريدك الإلكتروني · Your email"
+        aria-label="email"
+        required
+      />
+      <button type="submit">Stay Updated</button>
+    </form>
 
-<div id="subMsg" role="alert" aria-live="polite" style="min-height:24px; margin-top:12px; color: var(--gold); font-weight:600;"></div>
+    <div id="subMsg" aria-live="polite" role="alert"></div>
 
-<script>
-  // Launch date (Cairo time) — 1 Jan 2027 00:00:00 +02:00
-  const launchDate = new Date('2027-01-01T00:00:00+02:00').getTime();
+    <footer>
+      © جميع الحقوق محفوظة لشركة <span>Kemet</span> © 2025
+    </footer>
+  </main>
 
-  function updateCountdown() {
-    const now = Date.now();
-    const diff = launchDate - now;
+  <script>
+    // Launch date (Cairo time) — 1 Jan 2027 00:00:00 +02:00
+    const launchDate = new Date('2027-01-01T00:00:00+02:00').getTime();
 
-    if (diff <= 0) {
-      document.querySelector('.countdown').innerHTML = '<div style="font-weight:700; color: var(--gold);">We Have Launched! — انطلقنا!</div>';
-      clearInterval(interval);
-      return;
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = launchDate - now;
+
+      if (diff <= 0) {
+        document.querySelector('.countdown').innerHTML =
+          '<div style="font-weight:700; color: var(--gold);">We have launched! — انطلقنا!</div>';
+        clearInterval(interval);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days.toLocaleString();
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
 
-    document.getElementById('days').textContent = days.toLocaleString();
-    document.getElementById('hours').textContent = String(hours).padStart(2,'0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');
-  }
+    // Simple subscribe handler (no backend) — stores in localStorage as demo
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      if (!email) return;
 
-  const interval = setInterval(updateCountdown, 1000);
-  updateCountdown();
+      // store demo list locally (you can replace this with a server endpoint later)
+      const listKey = 'kemet_subscribers_demo';
+      const existing = JSON.parse(localStorage.getItem(listKey) || '[]');
 
-  // Subscribe handler demo (no backend)
-  function handleSubscribe(e) {
-    e.preventDefault();
-    const emailInput = document.getElementById('email');
-    const email = emailInput.value.trim();
-    if (!email) return;
+      // Avoid duplicate subscription
+      if (existing.some(item => item.email === email)) {
+        showMessage('أنت مشترك بالفعل. · You are already subscribed.');
+        document.getElementById('subscribeForm').reset();
+        return false;
+      }
 
-    // For demo, store email locally
-    const listKey = 'kemet_subscribers_demo';
-    const existing = JSON.parse(localStorage.getItem(listKey) || '[]');
-    if (existing.some(sub => sub.email === email)) {
-      displayMessage('هذا البريد مسجل بالفعل · This email is already subscribed.');
-      emailInput.value = '';
+      existing.push({ email: email, at: new Date().toISOString() });
+      localStorage.setItem(listKey, JSON.stringify(existing));
+
+      showMessage('شكراً! تم التسجيل. · Thank you — you are subscribed.');
+      document.getElementById('subscribeForm').reset();
       return false;
     }
 
-    existing.push({email: email, at: new Date().toISOString()});
-    localStorage.setItem(listKey, JSON.stringify(existing));
-
-    displayMessage('شكراً! تم التسجيل. · Thank you — you are subscribed.');
-    emailInput.value = '';
-
-    return false;
-  }
-
-  function displayMessage(msg) {
-    const msgDiv = document.getElementById('subMsg');
-    msgDiv.textContent = msg;
-    msgDiv.style.opacity = '1';
-    msgDiv.animate([{opacity:0, transform:'translateY(-6px)'}, {opacity:1, transform:'translateY(0)'}], {duration:400, easing:'ease-out'});
-  }
-</script>
+    function showMessage(msg) {
+      const msgDiv = document.getElementById('subMsg');
+      msgDiv.textContent = msg;
+      msgDiv.style.opacity = '1';
+      setTimeout(() => {
+        msgDiv.style.opacity = '0';
+      }, 6000);
+    }
+  </script>
+</body>
+</html>
