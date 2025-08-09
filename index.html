@@ -1,320 +1,361 @@
-<p dir="ltr">&lt;!DOCTYPE html&gt;<br>
-&lt;html lang="ar" dir="rtl"&gt;<br>
-&lt;head&gt;<br>
-&nbsp; &lt;meta charset="utf-8" /&gt;<br>
-&nbsp; &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;<br>
-&nbsp; &lt;title&gt;KEMET &#8212; &#1602;&#1585;&#1610;&#1576;&#1575;&#1611; | Coming Soon&lt;/title&gt;</p>
-<p dir="ltr">&nbsp; &lt;!-- &#1582;&#1591;&#1608;&#1591;: Cinzel &#1604;&#1604;&#1573;&#1606;&#1580;&#1604;&#1610;&#1586;&#1610;&#1548; &#1608;Noto Sans Arabic &#1604;&#1604;&#1593;&#1585;&#1576;&#1610; --&gt;<br>
-&nbsp; &lt;link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Noto+Sans+Arabic:wght@400;700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p dir="ltr">&nbsp; &lt;style&gt;<br>
-&nbsp;&nbsp;&nbsp; :root{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --gold: #d4af37;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --gold-soft: rgba(212,175,55,0.12);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --bg-1: #0b0b0c;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --bg-2: #2b1f18;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --muted: #cfc6bd;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --glass: rgba(255,255,255,0.04);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --card: rgba(255,255,255,0.03);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --max-width: 1100px;<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; /* Reset */<br>
-&nbsp;&nbsp;&nbsp; *{box-sizing:border-box}<br>
-&nbsp;&nbsp;&nbsp; html,body{height:100%;margin:0;padding:0}</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; body{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-family: "Noto Sans Arabic", "Cinzel", system-ui, Arial, sans-serif;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: radial-gradient(1200px 600px at 10% 10%, rgba(212,175,55,0.035), transparent 8%),<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; linear-gradient(180deg, var(--bg-1), var(--bg-2));<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #fff;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -webkit-font-smoothing:antialiased;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -moz-osx-font-smoothing:grayscale;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display:flex;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-items:center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content:center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding:30px;<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; /* subtle gold shimmer */<br>
-&nbsp;&nbsp;&nbsp; .shimmer {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inset: 0;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pointer-events: none;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-image: linear-gradient(120deg, rgba(212,175,55,0.02) 0%, rgba(212,175,55,0.08) 50%, rgba(212,175,55,0.02) 100%);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; animation: shimmer 8s linear infinite;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mix-blend-mode: overlay;<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; @keyframes shimmer {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0%{transform: translateX(-25%)}<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100%{transform: translateX(25%)}<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; .stage{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width:100%;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width:var(--max-width);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position:relative;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align:center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; z-index:2;<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; .card{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius:16px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding:32px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-shadow: 0 10px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: 1px solid rgba(212,175,55,0.06);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; backdrop-filter: blur(6px);<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; .top{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display:flex;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap:24px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-items:center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content: center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-wrap:wrap;<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; /* logo */<br>
-&nbsp;&nbsp;&nbsp; .logo {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width:160px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height:auto;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transform-origin:center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; animation: logoPop 900ms cubic-bezier(.2,.9,.3,1);<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; @keyframes logoPop {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0%{transform: scale(.6);opacity:0}<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 60%{transform: scale(1.05);opacity:1}<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 100%{transform: scale(1)}<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; /* titles */<br>
-&nbsp;&nbsp;&nbsp; .titles{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width:640px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align:center;<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; .brand-en{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-family: "Cinzel", serif;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size:32px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; letter-spacing:4px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color:var(--gold);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin:0;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transform: translateY(6px);<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; .brand-ar{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight:700;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size:20px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color:#fff;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin:6px 0 0 0;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; opacity:0.95;<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; .tagline{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top:12px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color:var(--muted);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size:15px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line-height:1.4;<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; /* bilingual columns on wide screens */<br>
-&nbsp;&nbsp;&nbsp; .cols{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display:grid;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 1fr 360px 1fr;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap:20px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-items:center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top:26px;<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; /* center column holds the countdown */<br>
-&nbsp;&nbsp;&nbsp; .center {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display:flex;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-direction:column;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-items:center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap:18px;<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; .countdown {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display:flex;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap:12px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content:center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-items:center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-wrap:wrap;<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; .time-box{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; min-width:84px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding:12px 14px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: var(--card);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius:10px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border:1px solid rgba(255,255,255,0.04);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align:center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-shadow: 0 6px 18px rgba(0,0,0,0.45);<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; .time-box .num{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size:20px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight:700;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color:var(--gold);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; letter-spacing:1px;<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; .time-box .label{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display:block;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size:12px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color:var(--muted);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top:6px;<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; .launch-note{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size:13px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color:var(--muted);<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; /* left &amp; right content (en/ar short description) */<br>
-&nbsp;&nbsp;&nbsp; .side{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding:8px 12px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-align: start;<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; .side.en{ direction:ltr; text-align:left }<br>
-&nbsp;&nbsp;&nbsp; .side.ar{ direction:rtl; text-align:right }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; .side h3{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin:0 0 8px 0;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size:18px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color:#fff;<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; .side p{ margin:0; color:var(--muted); line-height:1.6 }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; /* subscribe */<br>
-&nbsp;&nbsp;&nbsp; .subscribe{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top:18px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display:flex;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap:10px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content:center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-items:center;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-wrap:wrap;<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; .subscribe input[type="email"]{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding:12px 14px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; min-width:220px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius:8px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border:1px solid rgba(255,255,255,0.06);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: rgba(255,255,255,0.02);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color:#fff;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; outline: none;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size:14px;<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; .subscribe button{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding:12px 16px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius:8px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border: none;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: linear-gradient(90deg, rgba(212,175,55,1), rgba(180,140,40,1));<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color:#111;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight:700;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cursor:pointer;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-shadow: 0 8px 22px rgba(212,175,55,0.12);<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; .subscribe button:active{ transform: translateY(1px) }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; /* footer small */<br>
-&nbsp;&nbsp;&nbsp; .foot{<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top:20px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size:13px;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color:var(--muted);<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; /* responsiveness */<br>
-&nbsp;&nbsp;&nbsp; @media (max-width: 980px){<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .cols{ grid-template-columns: 1fr; }<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .center{ order:1 }<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .side{ order:2 }<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .brand-en{ font-size:26px }<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .logo{ width:140px }<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp;&nbsp;&nbsp; @media (max-width: 420px){<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .logo{ width:120px }<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .brand-en{ font-size:20px; letter-spacing:2px }<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .time-box{ min-width:68px;padding:10px }<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .subscribe input[type="email"]{ min-width:160px }<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp; &lt;/style&gt;<br>
-&lt;/head&gt;<br>
-&lt;body&gt;</p>
-<p dir="ltr">&nbsp; &lt;div class="shimmer" aria-hidden="true"&gt;&lt;/div&gt;</p>
-<p dir="ltr">&nbsp; &lt;main class="stage"&gt;<br>
-&nbsp;&nbsp;&nbsp; &lt;section class="card" role="main" aria-labelledby="brandHeading"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="top"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- logo --&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;img src="logo.png" alt="KEMET Logo" class="logo" /&gt;</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- titles --&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="titles" id="brandHeading"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h1 class="brand-en"&gt;KEMET&lt;/h1&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="brand-ar"&gt;&#1607;&#1583;&#1610;&#1577; &#1605;&#1606; &#1602;&#1604;&#1576; &#1575;&#1604;&#1578;&#1575;&#1585;&#1610;&#1582;&lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="tagline"&gt;A gift from the heart of history &#8212; &#1607;&#1583;&#1610;&#1577; &#1605;&#1606; &#1602;&#1604;&#1576; &#1575;&#1604;&#1578;&#1575;&#1585;&#1610;&#1582;&lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- columns: Arabic summary | countdown | English summary --&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="cols" aria-live="polite"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- Arabic (right column on wide screens) --&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;aside class="side ar" aria-label="&#1593;&#1606; &#1575;&#1604;&#1605;&#1588;&#1585;&#1608;&#1593; (&#1576;&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;)"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;&#1593;&#1606; &#1575;&#1604;&#1605;&#1588;&#1585;&#1608;&#1593;&lt;/h3&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Kemet &#1607;&#1608; &#1605;&#1588;&#1585;&#1608;&#1593; &#1593;&#1605;&#1604;&#1575;&#1578; &#1578;&#1584;&#1603;&#1575;&#1585;&#1610;&#1577; &#1601;&#1575;&#1582;&#1585;&#1577; &#1605;&#1587;&#1578;&#1608;&#1581;&#1575;&#1577; &#1605;&#1606; &#1585;&#1608;&#1581; &#1575;&#1604;&#1581;&#1590;&#1575;&#1585;&#1577; &#1575;&#1604;&#1605;&#1589;&#1585;&#1610;&#1577; &#8212; &#1578;&#1589;&#1605;&#1610;&#1605; &#1583;&#1602;&#1610;&#1602;&#1548; &#1582;&#1575;&#1605;&#1575;&#1578; &#1605;&#1605;&#1610;&#1586;&#1577;&#1548; &#1608;&#1578;&#1580;&#1585;&#1576;&#1577; &#1607;&#1583;&#1610;&#1577; &#1604;&#1575; &#1578;&#1615;&#1606;&#1587;&#1609;.&lt;/p&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/aside&gt;</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- center: countdown + subscribe --&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="center" role="region" aria-label="&#1575;&#1604;&#1593;&#1583; &#1575;&#1604;&#1578;&#1606;&#1575;&#1586;&#1604;&#1610;"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="countdown" id="countdown"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="time-box"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="num" id="days"&gt;0&lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="label"&gt;&#1610;&#1608;&#1605; / Days&lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="time-box"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="num" id="hours"&gt;0&lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="label"&gt;&#1587;&#1575;&#1593;&#1577; / Hours&lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="time-box"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="num" id="minutes"&gt;0&lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="label"&gt;&#1583;&#1602;&#1610;&#1602;&#1577; / Minutes&lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="time-box"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="num" id="seconds"&gt;0&lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="label"&gt;&#1579;&#1575;&#1606;&#1610;&#1577; / Seconds&lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="launch-note"&gt;Launching on &lt;strong&gt;1 January 2027&lt;/strong&gt; &#8212; &#1575;&#1604;&#1575;&#1606;&#1591;&#1604;&#1575;&#1602; 1 &#1610;&#1606;&#1575;&#1610;&#1585; 2027&lt;/div&gt;</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;form class="subscribe" id="subscribeForm" onsubmit="return handleSubscribe(event)" aria-label="&#1575;&#1588;&#1578;&#1585;&#1575;&#1603;"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="email" id="email" placeholder="&#1576;&#1585;&#1610;&#1583;&#1603; &#1575;&#1604;&#1573;&#1604;&#1603;&#1578;&#1585;&#1608;&#1606;&#1610; &#183; Your email" aria-label="email" required&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;button type="submit"&gt;Stay Updated&lt;/button&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/form&gt;</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div id="subMsg" style="margin-top:12px; font-size:14px; color:var(--muted); display:none"&gt;&lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- English (left column on wide screens) --&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;aside class="side en" aria-label="About the project (English)"&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;h3&gt;About Kemet&lt;/h3&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;Kemet crafts collectible coins inspired by ancient Egyptian heritage &#8212; premium materials, precise design, and a gift that carries history.&lt;/p&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/aside&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class="foot"&gt;For partnerships &amp; corporate orders &#8212; &#1578;&#1593;&#1575;&#1608;&#1606; &#1605;&#1593; &#1575;&#1604;&#1601;&#1606;&#1575;&#1583;&#1602; &#1608;&#1575;&#1604;&#1588;&#1585;&#1603;&#1575;&#1578;: contact@kemet.example (demo)&lt;/div&gt;<br>
-&nbsp;&nbsp;&nbsp; &lt;/section&gt;<br>
-&nbsp; &lt;/main&gt;</p>
-<p dir="ltr">&nbsp; &lt;!-- Script: countdown + subscribe --&gt;<br>
-&nbsp; &lt;script&gt;<br>
-&nbsp;&nbsp;&nbsp; // Launch date (Cairo time) &#8212; 1 Jan 2027 00:00:00 +02:00<br>
-&nbsp;&nbsp;&nbsp; const launchDate = new Date('2027-01-01T00:00:00+02:00').getTime();</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; function updateCountdown() {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const now = Date.now();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const diff = launchDate - now;</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (diff &lt;= 0) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById('countdown').innerHTML = '&lt;div style="font-weight:700; color:var(--gold);"&gt;We have launched! &#8212; &#1575;&#1606;&#1591;&#1604;&#1602;&#1606;&#1575;!&lt;/div&gt;';<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; clearInterval(interval);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const days = Math.floor(diff / (1000 * 60 * 60 * 24));<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const seconds = Math.floor((diff % (1000 * 60)) / 1000);</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById('days').textContent = days.toLocaleString();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById('hours').textContent = String(hours).padStart(2,'0');<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');<br>
-&nbsp;&nbsp;&nbsp; }</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; const interval = setInterval(updateCountdown, 1000);<br>
-&nbsp;&nbsp;&nbsp; updateCountdown();</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp; // Simple subscribe handler (no backend) &#8212; stores in localStorage as demo<br>
-&nbsp;&nbsp;&nbsp; function handleSubscribe(e) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.preventDefault();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const email = document.getElementById('email').value.trim();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!email) return;</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // store demo list locally (you can replace this with a server endpoint later)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const listKey = 'kemet_subscribers_demo';<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const existing = JSON.parse(localStorage.getItem(listKey) || '[]');<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; existing.push({email: email, at: new Date().toISOString()});<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; localStorage.setItem(listKey, JSON.stringify(existing));</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const msg = document.getElementById('subMsg');<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msg.style.display = 'block';<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msg.textContent = '&#1588;&#1603;&#1585;&#1575;&#1611;! &#1578;&#1605; &#1575;&#1604;&#1578;&#1587;&#1580;&#1610;&#1604;. &#183; Thank you &#8212; you are subscribed.';<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; document.getElementById('subscribeForm').reset();</p>
-<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // gentle animation<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msg.animate([{opacity:0, transform:'translateY(-6px)'},{opacity:1, transform:'translateY(0)'}], {duration:400, easing:'ease-out'});<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return false;<br>
-&nbsp;&nbsp;&nbsp; }<br>
-&nbsp; &lt;/script&gt;<br>
-&lt;/body&gt;<br>
-&lt;/html&gt;</p>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KEMET — قريباً | Coming Soon</title>
+
+  <!-- خطوط: Cinzel للإنجليزي، وNoto Sans Arabic للعربي -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --gold: #d4af37;
+      --gold-soft: rgba(212,175,55,0.12);
+      --bg-1: #0b0b0c;
+      --bg-2: #2b1f18;
+      --muted: #cfc6bd;
+      --glass: rgba(255,255,255,0.04);
+      --card: rgba(255,255,255,0.03);
+      --max-width: 1100px;
+    }
+
+    /* Reset */
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;padding:0}
+
+    body{
+      font-family: "Noto Sans Arabic", "Cinzel", system-ui, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(212,175,55,0.035), transparent 8%),
+                  linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      color: #fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:30px;
+    }
+
+    /* subtle gold shimmer */
+    .shimmer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(120deg, rgba(212,175,55,0.02) 0%, rgba(212,175,55,0.08) 50%, rgba(212,175,55,0.02) 100%);
+      animation: shimmer 8s linear infinite;
+      mix-blend-mode: overlay;
+    }
+    @keyframes shimmer {
+      0%{transform: translateX(-25%)}
+      100%{transform: translateX(25%)}
+    }
+
+    .stage{
+      width:100%;
+      max-width:var(--max-width);
+      position:relative;
+      text-align:center;
+      z-index:2;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+      border-radius:16px;
+      padding:32px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      border: 1px solid rgba(212,175,55,0.06);
+      backdrop-filter: blur(6px);
+    }
+
+    .top{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      justify-content: center;
+      flex-wrap:wrap;
+    }
+
+    /* logo */
+    .logo {
+      width:160px;
+      height:auto;
+      transform-origin:center;
+      animation: logoPop 900ms cubic-bezier(.2,.9,.3,1);
+    }
+    @keyframes logoPop {
+      0%{transform: scale(.6);opacity:0}
+      60%{transform: scale(1.05);opacity:1}
+      100%{transform: scale(1)}
+    }
+
+    /* titles */
+    .titles{
+      max-width:640px;
+      text-align:center;
+    }
+
+    .brand-en{
+      font-family: "Cinzel", serif;
+      font-size:32px;
+      letter-spacing:4px;
+      color:var(--gold);
+      margin:0;
+      transform: translateY(6px);
+    }
+    .brand-ar{
+      font-weight:700;
+      font-size:20px;
+      color:#fff;
+      margin:6px 0 0 0;
+      opacity:0.95;
+    }
+    .tagline{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.4;
+    }
+
+    /* bilingual columns on wide screens */
+    .cols{
+      display:grid;
+      grid-template-columns: 1fr 360px 1fr;
+      gap:20px;
+      align-items:center;
+      margin-top:26px;
+    }
+
+    /* center column holds the countdown */
+    .center {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:18px;
+    }
+
+    .countdown {
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .time-box{
+      min-width:84px;
+      padding:12px 14px;
+      background: var(--card);
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.04);
+      text-align:center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    }
+    .time-box .num{
+      font-size:20px;
+      font-weight:700;
+      color:var(--gold);
+      letter-spacing:1px;
+    }
+    .time-box .label{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:6px;
+    }
+
+    .launch-note{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* left & right content (en/ar short description) */
+    .side{
+      padding:8px 12px;
+      text-align: start;
+    }
+    .side.en{ direction:ltr; text-align:left }
+    .side.ar{ direction:rtl; text-align:right }
+
+    .side h3{
+      margin:0 0 8px 0;
+      font-size:18px;
+      color:#fff;
+    }
+    .side p{ margin:0; color:var(--muted); line-height:1.6 }
+
+    /* subscribe */
+    .subscribe{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .subscribe input[type="email"]{
+      padding:12px 14px;
+      min-width:220px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+      color:#fff;
+      outline: none;
+      font-size:14px;
+    }
+    .subscribe button{
+      padding:12px 16px;
+      border-radius:8px;
+      border: none;
+      background: linear-gradient(90deg, rgba(212,175,55,1), rgba(180,140,40,1));
+      color:#111;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow: 0 8px 22px rgba(212,175,55,0.12);
+    }
+    .subscribe button:active{ transform: translateY(1px) }
+
+    /* footer small */
+    .foot{
+      margin-top:20px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* responsiveness */
+    @media (max-width: 980px){
+      .cols{ grid-template-columns: 1fr; }
+      .center{ order:1 }
+      .side{ order:2 }
+      .brand-en{ font-size:26px }
+      .logo{ width:140px }
+    }
+    @media (max-width: 420px){
+      .logo{ width:120px }
+      .brand-en{ font-size:20px; letter-spacing:2px }
+      .time-box{ min-width:68px;padding:10px }
+      .subscribe input[type="email"]{ min-width:160px }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="shimmer" aria-hidden="true"></div>
+
+  <main class="stage">
+    <section class="card" role="main" aria-labelledby="brandHeading">
+      <div class="top">
+        <!-- logo -->
+        <img src="logo.png" alt="KEMET Logo" class="logo" />
+
+        <!-- titles -->
+        <div class="titles" id="brandHeading">
+          <h1 class="brand-en">KEMET</h1>
+          <div class="brand-ar">هدية من قلب التاريخ</div>
+          <div class="tagline">A gift from the heart of history — هدية من قلب التاريخ</div>
+        </div>
+      </div>
+
+      <!-- columns: Arabic summary | countdown | English summary -->
+      <div class="cols" aria-live="polite">
+        <!-- Arabic (right column on wide screens) -->
+        <aside class="side ar" aria-label="عن المشروع (بالعربية)">
+          <h3>عن المشروع</h3>
+          <p>Kemet هو مشروع عملات تذكارية فاخرة مستوحاة من روح الحضارة المصرية — تصميم دقيق، خامات مميزة، وتجربة هدية لا تُنسى.</p>
+        </aside>
+
+        <!-- center: countdown + subscribe -->
+        <div class="center" role="region" aria-label="العد التنازلي">
+          <div class="countdown" id="countdown">
+            <div class="time-box">
+              <div class="num" id="days">0</div>
+              <div class="label">يوم / Days</div>
+            </div>
+            <div class="time-box">
+              <div class="num" id="hours">0</div>
+              <div class="label">ساعة / Hours</div>
+            </div>
+            <div class="time-box">
+              <div class="num" id="minutes">0</div>
+              <div class="label">دقيقة / Minutes</div>
+            </div>
+            <div class="time-box">
+              <div class="num" id="seconds">0</div>
+              <div class="label">ثانية / Seconds</div>
+            </div>
+          </div>
+
+          <div class="launch-note">Launching on <strong>1 January 2027</strong> — الانطلاق 1 يناير 2027</div>
+
+          <form class="subscribe" id="subscribeForm" onsubmit="return handleSubscribe(event)" aria-label="اشتراك">
+            <input type="email" id="email" placeholder="بريدك الإلكتروني · Your email" aria-label="email" required>
+            <button type="submit">Stay Updated</button>
+          </form>
+
+          <div id="subMsg" style="margin-top:12px; font-size:14px; color:var(--muted); display:none"></div>
+        </div>
+
+        <!-- English (left column on wide screens) -->
+        <aside class="side en" aria-label="About the project (English)">
+          <h3>About Kemet</h3>
+          <p>Kemet crafts collectible coins inspired by ancient Egyptian heritage — premium materials, precise design, and a gift that carries history.</p>
+        </aside>
+      </div>
+
+      <div class="foot">For partnerships & corporate orders — تعاون مع الفنادق والشركات: contact@kemet.example (demo)</div>
+    </section>
+  </main>
+
+  <!-- Script: countdown + subscribe -->
+  <script>
+    // Launch date (Cairo time) — 1 Jan 2027 00:00:00 +02:00
+    const launchDate = new Date('2027-01-01T00:00:00+02:00').getTime();
+
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = launchDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = '<div style="font-weight:700; color:var(--gold);">We have launched! — انطلقنا!</div>';
+        clearInterval(interval);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days.toLocaleString();
+      document.getElementById('hours').textContent = String(hours).padStart(2,'0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2,'0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2,'0');
+    }
+
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Simple subscribe handler (no backend) — stores in localStorage as demo
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      if (!email) return;
+
+      // store demo list locally (you can replace this with a server endpoint later)
+      const listKey = 'kemet_subscribers_demo';
+      const existing = JSON.parse(localStorage.getItem(listKey) || '[]');
+      existing.push({email: email, at: new Date().toISOString()});
+      localStorage.setItem(listKey, JSON.stringify(existing));
+
+      const msg = document.getElementById('subMsg');
+      msg.style.display = 'block';
+      msg.textContent = 'شكراً! تم التسجيل. · Thank you — you are subscribed.';
+      document.getElementById('subscribeForm').reset();
+
+      // gentle animation
+      msg.animate([{opacity:0, transform:'translateY(-6px)'},{opacity:1, transform:'translateY(0)'}], {duration:400, easing:'ease-out'});
+      return false;
+    }
+  </script>
+</body>
+</html>
