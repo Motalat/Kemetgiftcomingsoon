@@ -1,373 +1,272 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kemet — قريباً | Coming Soon</title>
+  <title>KEMET — قريباً | Coming Soon</title>
 
   <!-- خطوط: Cinzel للإنجليزي، وNoto Sans Arabic للعربي -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Noto+Sans+Arabic:wght@600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --color-bg: #1e1a16;
-      --color-gold: #d4af37;
-      --color-gold-soft: rgba(212, 175, 55, 0.15);
-      --color-white: #f9f6f0;
-      --color-muted: #cfc6bd;
-      --max-width: 900px;
+    :root{
+      --gold: #d4af37;
+      --gold-soft: rgba(212,175,55,0.12);
+      --bg-1: #1a0f05; /* بني داكن */
+      --bg-2: #0b0703; /* أسود بنغمة دافئة */
+      --muted: #cfc6bd;
+      --glass: rgba(255,255,255,0.04);
+      --card: rgba(255,255,255,0.03);
+      --max-width: 1100px;
     }
 
     /* Reset */
     * {
       box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
-    }
-
-    body, html {
-      height: 100%;
-      background-color: var(--color-bg);
-      color: var(--color-white);
-      font-family: 'Noto Sans Arabic', 'Cinzel', serif, sans-serif;
+      overflow-x: hidden; /* لمنع حركة يمين وشمال */
+      background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      background-attachment: fixed; /* خلفية ثابتة */
+      color: #fff;
+      font-family: "Noto Sans Arabic", "Cinzel", system-ui, Arial, sans-serif;
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 20px;
-      text-align: center;
-      flex-direction: column;
-      min-height: 100vh;
+      justify-content: center;
+      padding: 30px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      user-select: none;
     }
 
-    main.container {
-      max-width: var(--max-width);
+    body {
+      position: relative;
+    }
+
+    /* الذهب اللامع المتحرك بسيط */
+    .shimmer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(120deg, rgba(212,175,55,0.02) 0%, rgba(212,175,55,0.08) 50%, rgba(212,175,55,0.02) 100%);
+      animation: shimmer 8s linear infinite;
+      mix-blend-mode: overlay;
+      z-index: 0;
+    }
+    @keyframes shimmer {
+      0% { transform: translateX(-25%); }
+      100% { transform: translateX(25%); }
+    }
+
+    main.stage {
       width: 100%;
-      background: linear-gradient(145deg, #2f2a22, #1e1a16);
+      max-width: var(--max-width);
+      position: relative;
+      text-align: center;
+      z-index: 1;
+    }
+
+    section.card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
       border-radius: 16px;
       padding: 40px 30px 50px;
-      box-shadow:
-        0 0 20px var(--color-gold-soft),
-        inset 0 0 40px rgba(212, 175, 55, 0.1);
-      user-select: none;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8), inset 0 1px 0 rgba(255,255,255,0.02);
+      border: 1px solid rgba(212,175,55,0.08);
+      backdrop-filter: blur(8px);
+      user-select: text;
     }
 
-    /* الشعار */
-    img.logo {
-      width: 160px;
+    .logo {
+      width: 180px;
       height: auto;
-      margin-bottom: 25px;
-      filter: drop-shadow(0 0 6px var(--color-gold-soft));
+      margin: 0 auto 24px;
+      display: block;
+      filter: drop-shadow(0 0 8px rgba(212,175,55,0.8));
+      animation: fadeInUp 1.2s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
     }
 
-    /* العنوان والشعار النصي */
-    h1.brand-en {
-      font-family: 'Cinzel', serif;
-      font-size: 40px;
-      color: var(--color-gold);
+    /* شعارات */
+    .brand-en {
+      font-family: "Cinzel", serif;
+      font-size: 36px;
       letter-spacing: 5px;
-      margin-bottom: 12px;
-      text-transform: capitalize;
+      color: var(--gold);
+      margin: 0;
+      opacity: 0;
+      animation: fadeInUp 1.2s 0.3s ease forwards;
+      transform: translateY(20px);
     }
-
-    div.brand-ar {
-      font-size: 24px;
-      font-weight: 600;
-      color: var(--color-white);
-      margin-bottom: 8px;
-      font-family: 'Noto Sans Arabic', sans-serif;
-    }
-
-    div.tagline {
-      font-size: 18px;
-      font-weight: 500;
-      color: var(--color-muted);
-      margin-bottom: 40px;
-      font-family: 'Noto Sans Arabic', 'Cinzel', serif;
-      white-space: nowrap;
-    }
-
-    /* محتوى ثنائي اللغة */
-    .content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      max-width: 780px;
-      width: 100%;
-      margin-bottom: 40px;
-    }
-
-    .content .arabic,
-    .content .english {
-      flex: 1 1 350px;
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--color-muted);
-    }
-
-    .content .arabic {
-      text-align: right;
-      font-family: 'Noto Sans Arabic', sans-serif;
-    }
-
-    .content .english {
-      text-align: left;
-      font-family: 'Cinzel', serif;
-    }
-
-    .content h2 {
-      color: var(--color-white);
+    .brand-ar {
       font-weight: 700;
-      margin-bottom: 10px;
       font-size: 22px;
+      color: #fff;
+      margin: 10px 0 0 0;
+      opacity: 0;
+      animation: fadeInUp 1.2s 0.5s ease forwards;
+      transform: translateY(20px);
+    }
+    .tagline {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+      opacity: 0;
+      animation: fadeInUp 1.2s 0.7s ease forwards;
+      transform: translateY(20px);
     }
 
-    /* العداد */
+    /* الفقرات */
+    .about, .limited-editions {
+      max-width: 720px;
+      margin: 40px auto 0;
+      text-align: right;
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.65;
+      opacity: 0;
+      animation: fadeInUp 1.2s 1s ease forwards;
+      transform: translateY(20px);
+    }
+    .about h3, .limited-editions h3 {
+      color: var(--gold);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 6px;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+    .limited-editions p[dir="ltr"] {
+      direction: ltr;
+      text-align: left;
+      font-style: italic;
+      margin-top: 20px;
+    }
+
+    /* العد التنازلي */
+    .countdown-container {
+      max-width: 500px;
+      margin: 40px auto 0;
+      text-align: center;
+      opacity: 0;
+      animation: fadeInUp 1.2s 1.3s ease forwards;
+      transform: translateY(20px);
+    }
+
     .countdown {
       display: flex;
       justify-content: center;
-      gap: 24px;
+      gap: 15px;
       flex-wrap: wrap;
-      margin-bottom: 30px;
-      max-width: 780px;
-      width: 100%;
     }
 
-    .countdown .time-box {
-      background: #2f2a22;
-      border: 1.5px solid var(--color-gold-soft);
+    .time-box {
+      min-width: 80px;
+      padding: 15px 20px;
+      background: rgba(255,255,255,0.05);
       border-radius: 14px;
-      min-width: 90px;
-      padding: 22px 12px;
-      box-shadow: 0 0 10px var(--color-gold-soft);
-      user-select: none;
-      transition: transform 0.3s ease;
-    }
-
-    .countdown .time-box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 18px var(--color-gold);
-    }
-
-    .time-box .num {
-      font-family: 'Cinzel', serif;
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--color-gold);
-      letter-spacing: 1.5px;
-      margin-bottom: 6px;
-    }
-
-    .time-box .label {
-      font-size: 13px;
-      color: var(--color-muted);
-      white-space: nowrap;
-    }
-
-    /* تاريخ الانطلاق */
-    .launch-note {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--color-gold-soft);
-      margin-bottom: 30px;
-      user-select: none;
-      max-width: 780px;
-      width: 100%;
+      border: 1px solid rgba(212,175,55,0.1);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
       text-align: center;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 1.4rem;
+      user-select: text;
+      transition: background 0.3s ease;
+    }
+    .time-box:hover {
+      background: var(--gold-soft);
+      cursor: default;
+    }
+    .time-box .num {
+      font-size: 2.4rem;
+      line-height: 1;
+      letter-spacing: 1.5px;
+    }
+    .time-box .label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 6px;
+      font-weight: 500;
+      user-select: none;
     }
 
-    /* نموذج الاشتراك */
-    form.subscribe {
+    /* نص الانطلاق */
+    .launch-note {
+      margin-top: 18px;
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 500;
+      font-style: italic;
+      user-select: none;
+      animation: fadeInUp 1.2s 1.5s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    /* الاشتراك */
+    .subscribe {
+      margin-top: 28px;
       display: flex;
       justify-content: center;
-      gap: 16px;
+      gap: 15px;
       flex-wrap: wrap;
-      max-width: 780px;
-      width: 100%;
-      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeInUp 1.2s 1.7s ease forwards;
+      transform: translateY(20px);
     }
-
-    form.subscribe input[type="email"] {
+    .subscribe input[type="email"] {
       padding: 14px 18px;
+      min-width: 260px;
       border-radius: 10px;
-      border: 1.5px solid var(--color-gold-soft);
-      background: #2f2a22;
-      color: var(--color-white);
-      font-size: 16px;
-      min-width: 250px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.06);
+      color: #fff;
+      font-size: 1rem;
       outline: none;
-      transition: border-color 0.3s ease;
-      font-family: 'Noto Sans Arabic', sans-serif;
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
-
-    form.subscribe input[type="email"]:focus {
-      border-color: var(--color-gold);
-      background: #3c362e;
+    .subscribe input[type="email"]:focus {
+      background: rgba(255,255,255,0.15);
+      border-color: var(--gold);
     }
-
-    form.subscribe button {
+    .subscribe button {
       padding: 14px 28px;
       border-radius: 10px;
       border: none;
-      background: var(--color-gold);
-      color: #1e1a16;
+      background: linear-gradient(90deg, var(--gold), #b48c28);
+      color: #111;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 1rem;
       cursor: pointer;
-      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.7);
-      transition: background-color 0.3s ease;
-      font-family: 'Cinzel', serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      box-shadow: 0 8px 22px rgba(212,175,55,0.18);
+      transition: background 0.3s ease;
+    }
+    .subscribe button:hover {
+      background: linear-gradient(90deg, #b48c28, var(--gold));
+    }
+    .subscribe button:active {
+      transform: translateY(2px);
     }
 
-    form.subscribe button:hover {
-      background: #b18e28;
-    }
-
-    /* رسالة التسجيل */
     #subMsg {
       margin-top: 12px;
-      font-size: 15px;
-      color: var(--color-gold-soft);
+      font-size: 1rem;
+      color: var(--muted);
       min-height: 24px;
-      font-weight: 600;
       user-select: none;
-      max-width: 780px;
-      width: 100%;
-      text-align: center;
     }
 
     /* الفوتر */
-    footer {
-      font-size: 14px;
-      color: var(--color-muted);
-      user-select: none;
-      font-family: 'Noto Sans Arabic', sans-serif;
-      margin-top: auto;
-      padding: 15px 0 8px;
+    footer.foot {
+      margin-top: 50px;
+      font-size: 13px;
+      color: var(--muted);
       text-align: center;
-      width: 100%;
-      background: transparent;
-    }
-
-    /* تجاوب */
-    @media (max-width: 800px) {
-      .content {
-        flex-direction: column;
-        text-align: center;
-      }
-      .content .arabic,
-      .content .english {
-        text-align: center;
-      }
-      form.subscribe {
-        flex-direction: column;
-        gap: 12px;
-      }
-      form.subscribe input[type="email"] {
-        min-width: 100%;
-      }
-      .countdown {
-        gap: 14px;
-      }
-      .countdown .time-box {
-        min-width: 70px;
-        padding: 16px 8px;
-      }
-      .time-box .num {
-        font-size: 24px;
-      }
-      .time-box .label {
-        font-size: 11px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <main class="container" role="main" aria-labelledby="brandHeading">
-
-    <img src="logo.png" alt="Kemet Logo" class="logo" />
-
-    <h1 class="brand-en" id="brandHeading">Kemet</h1>
-    <div class="brand-ar">هدية من قلب التاريخ</div>
-    <div class="tagline">A Gift From The Heart Of History — هدية من قلب التاريخ</div>
-
-    <section class="content" aria-label="معلومات عن المشروع">
-      <div class="arabic">
-        <h2>عن المشروع</h2>
-        <p>Kemet هو مشروع عملات تذكارية فاخرة مستوحاة من روح الحضارة المصرية — تصميم دقيق، خامات مميزة، وتجربة هدية لا تُنسى.</p>
-      </div>
-      <div class="english">
-        <h2>About Kemet</h2>
-        <p>Kemet crafts collectible coins inspired by ancient Egyptian heritage — premium materials, precise design, and a gift that carries history.</p>
-      </div>
-    </section>
-
-    <section class="countdown" aria-label="العد التنازلي">
-      <div class="time-box">
-        <div class="num" id="days">509</div>
-        <div class="label">يوم / Days</div>
-      </div>
-      <div class="time-box">
-        <div class="num" id="hours">10</div>
-        <div class="label">ساعة / Hours</div>
-      </div>
-      <div class="time-box">
-        <div class="num" id="minutes">11</div>
-        <div class="label">دقيقة / Minutes</div>
-      </div>
-      <div class="time-box">
-        <div class="num" id="seconds">48</div>
-        <div class="label">ثانية / Seconds</div>
-      </div>
-    </section>
-
-    <div class="launch-note" aria-live="polite">
-      Launching on 1 January 2027 — الانطلاق 1 يناير 2027
-    </div>
-
-    <form class="subscribe" id="subscribeForm" aria-label="اشتراك بالبريد الإلكتروني" onsubmit="return handleSubscribe(event)">
-      <input
-        type="email"
-        id="email"
-        placeholder="بريدك الإلكتروني · Your Email"
-        aria-label="بريدك الإلكتروني"
-        required
-      />
-      <button type="submit">Stay Updated</button>
-    </form>
-    <div id="subMsg" role="alert" aria-live="assertive"></div>
-
-  </main>
-
-  <footer>
-    &copy; 2025 Kemet. جميع الحقوق محفوظة.
-  </footer>
-
-  <script>
-    function handleSubscribe(e) {
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      if (!email) return;
-
-      const listKey = 'kemet_subscribers_demo';
-      const existing = JSON.parse(localStorage.getItem(listKey) || '[]');
-      if (!existing.includes(email)) {
-        existing.push(email);
-        localStorage.setItem(listKey, JSON.stringify(existing));
-      }
-
-      const msg = document.getElementById('subMsg');
-      msg.textContent = 'شكراً! تم التسجيل. · Thank you — you are subscribed.';
-      e.target.reset();
-      return false;
-    }
-  </script>
-</body>
-</html>
+      border-top: 1px solid rgba(212,175,55,0.12);
+      padding-top: 14px;
+      user-select: none;
+      font-family: "Noto Sans Arabic",
