@@ -1,129 +1,65 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kemet Gift - قريباً</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Cairo', sans-serif;
-      background: linear-gradient(to bottom, #f9f5f1, #e9dccd);
-      color: #333;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .container {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      animation: fadeIn 1.5s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    .logo {
-      width: 120px;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 2.2rem;
-      color: #c89f65;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    .countdown div {
-      background: #c89f65;
-      color: white;
-      padding: 10px;
-      border-radius: 8px;
-      min-width: 60px;
-    }
-    .links a {
-      display: inline-block;
-      margin: 5px;
-      text-decoration: none;
-      color: #c89f65;
-      border: 1px solid #c89f65;
-      padding: 8px 12px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-    .links a:hover {
-      background: #c89f65;
-      color: white;
-    }
-    footer {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: #999;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <img src="https://i.ibb.co/HT4sxvJ/logo.png" alt="Kemet Gift Logo" class="logo" />
-    <h1>كيميت جيفت</h1>
-    <p>هدية من قلب التاريخ</p>
-    <h2>قريباً جداً</h2>
-
-    <div class="countdown" id="countdown">
-      <div><span id="days">0</span><br>أيام</div>
-      <div><span id="hours">0</span><br>ساعات</div>
-      <div><span id="minutes">0</span><br>دقائق</div>
-      <div><span id="seconds">0</span><br>ثواني</div>
-    </div>
-
-    <div class="links">
-      <a href="mailto:info@kemetgift.com">📧 البريد الإلكتروني</a>
-      <a href="https://wa.me/201234567890">💬 واتساب</a>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 Kemet Gift. جميع الحقوق محفوظة.
-  </footer>
-
-  <script>
-    const countdown = () => {
-      const launchDate = new Date("Jan 1, 2027 00:00:00").getTime();
-      const now = new Date().getTime();
-      const diff = launchDate - now;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      document.getElementById("days").textContent = days;
-      document.getElementById("hours").textContent = hours;
-      document.getElementById("minutes").textContent = minutes;
-      document.getElementById("seconds").textContent = seconds;
-
-      if (diff < 0) {
-        document.getElementById("countdown").innerHTML = "<h3>لقد انطلقنا!</h3>";
-      }
-    };
-
-    setInterval(countdown, 1000);
-  </script>
-</body>
-</html>
+<p dir="ltr">&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="ar"&gt;<br>
+&lt;head&gt;<br>
+&lt;meta charset="UTF-8"&gt;<br>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+&lt;title&gt;KEMET &#8211; &#1607;&#1583;&#1610;&#1577; &#1605;&#1606; &#1602;&#1604;&#1576; &#1575;&#1604;&#1578;&#1575;&#1585;&#1610;&#1582;&lt;/title&gt;<br>
+&lt;style&gt;<br>
+&nbsp; body {<br>
+&nbsp;&nbsp;&nbsp; font-family: Arial, sans-serif;<br>
+&nbsp;&nbsp;&nbsp; text-align: center;<br>
+&nbsp;&nbsp;&nbsp; background-color: #fff;<br>
+&nbsp;&nbsp;&nbsp; margin: 0;<br>
+&nbsp;&nbsp;&nbsp; padding: 0;<br>
+&nbsp; }<br>
+&nbsp; img.logo {<br>
+&nbsp;&nbsp;&nbsp; max-width: 300px;<br>
+&nbsp;&nbsp;&nbsp; margin-top: 30px;<br>
+&nbsp; }<br>
+&nbsp; h1 {<br>
+&nbsp;&nbsp;&nbsp; font-size: 2.5rem;<br>
+&nbsp;&nbsp;&nbsp; margin: 20px 0 10px;<br>
+&nbsp;&nbsp;&nbsp; color: #d4af37; /* &#1604;&#1608;&#1606; &#1584;&#1607;&#1576;&#1610; */<br>
+&nbsp; }<br>
+&nbsp; h2 {<br>
+&nbsp;&nbsp;&nbsp; font-size: 1.5rem;<br>
+&nbsp;&nbsp;&nbsp; margin-bottom: 30px;<br>
+&nbsp;&nbsp;&nbsp; color: #555;<br>
+&nbsp;&nbsp;&nbsp; line-height: 1.6;<br>
+&nbsp; }<br>
+&nbsp; #countdown {<br>
+&nbsp;&nbsp;&nbsp; font-size: 1.5rem;<br>
+&nbsp;&nbsp;&nbsp; margin-top: 20px;<br>
+&nbsp;&nbsp;&nbsp; color: #222;<br>
+&nbsp; }<br>
+&lt;/style&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;</p>
+<p dir="ltr">&lt;!-- &#1575;&#1604;&#1588;&#1593;&#1575;&#1585; --&gt;<br>
+&lt;img src="logo.png" alt="KEMET Logo" class="logo"&gt;</p>
+<p dir="ltr">&lt;!-- &#1575;&#1604;&#1606;&#1589;&#1608;&#1589; --&gt;<br>
+&lt;h1&gt;KEMET&lt;/h1&gt;<br>
+&lt;h2&gt;&#1607;&#1583;&#1610;&#1577; &#1605;&#1606; &#1602;&#1604;&#1576; &#1575;&#1604;&#1578;&#1575;&#1585;&#1610;&#1582;&lt;br&gt;A gift from the heart of history&lt;/h2&gt;</p>
+<p dir="ltr">&lt;!-- &#1593;&#1583; &#1578;&#1606;&#1575;&#1586;&#1604;&#1610; --&gt;<br>
+&lt;div id="countdown"&gt;&lt;/div&gt;</p>
+<p dir="ltr">&lt;script&gt;<br>
+// &#1578;&#1581;&#1583;&#1610;&#1583; &#1578;&#1575;&#1585;&#1610;&#1582; &#1575;&#1604;&#1573;&#1591;&#1604;&#1575;&#1602;<br>
+var launchDate = new Date("Aug 30, 2025 00:00:00").getTime();</p>
+<p dir="ltr">var x = setInterval(function() {<br>
+&nbsp; var now = new Date().getTime();<br>
+&nbsp; var distance = launchDate - now;</p>
+<p dir="ltr">&nbsp; var days = Math.floor(distance / (1000 * 60 * 60 * 24));<br>
+&nbsp; var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));<br>
+&nbsp; var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));<br>
+&nbsp; var seconds = Math.floor((distance % (1000 * 60)) / 1000);</p>
+<p dir="ltr">&nbsp; document.getElementById("countdown").innerHTML = <br>
+&nbsp;&nbsp;&nbsp; days + " &#1610;&#1608;&#1605; / Days " + hours + " &#1587;&#1575;&#1593;&#1577; / Hours " +<br>
+&nbsp;&nbsp;&nbsp; minutes + " &#1583;&#1602;&#1610;&#1602;&#1577; / Minutes " + seconds + " &#1579;&#1575;&#1606;&#1610;&#1577; / Seconds ";</p>
+<p dir="ltr">&nbsp; if (distance &lt; 0) {<br>
+&nbsp;&nbsp;&nbsp; clearInterval(x);<br>
+&nbsp;&nbsp;&nbsp; document.getElementById("countdown").innerHTML = "&#1575;&#1606;&#1591;&#1604;&#1602;&#1606;&#1575;! / We have launched!";<br>
+&nbsp; }<br>
+}, 1000);<br>
+&lt;/script&gt;</p>
+<p dir="ltr">&lt;/body&gt;<br>
+&lt;/html&gt;</p>
