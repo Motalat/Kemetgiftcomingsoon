@@ -260,4 +260,101 @@
       <p>اقتني قطعتك من الإصدارات المحدودة والموسمية لتكون جزءًا من تاريخ خالد وفريد.</p>
     </section>
 
-    <div class="countdown"
+    <div class="countdown" aria-label="العد التنازلي">
+      <div class="time-box">
+        <div class="num" id="days">0</div>
+        <div class="label">يوم / Days</div>
+      </div>
+      <div class="time-box">
+        <div class="num" id="hours">0</div>
+        <div class="label">ساعة / Hours</div>
+      </div>
+      <div class="time-box">
+        <div class="num" id="minutes">0</div>
+        <div class="label">دقيقة / Minutes</div>
+      </div>
+      <div class="time-box">
+        <div class="num" id="seconds">0</div>
+        <div class="label">ثانية / Seconds</div>
+      </div>
+    </div>
+
+    <div class="launch-note">Launching on 1 January 2027 — الانطلاق 1 يناير 2027</div>
+
+    <form class="subscribe" id="subscribeForm" onsubmit="return handleSubscribe(event)" aria-label="اشتراك">
+      <input type="email" id="email" placeholder="بريدك الإلكتروني · Your email" aria-label="email" required />
+      <button type="submit">Stay Updated</button>
+    </form>
+
+    <div id="subMsg"></div>
+
+    <footer>
+      &copy; جميع الحقوق محفوظة لشركة Kemet © 2025
+    </footer>
+  </main>
+
+  <script>
+    // Launch date (Cairo time) — 1 Jan 2027 00:00:00 +02:00
+    const launchDate = new Date('2027-01-01T00:00:00+02:00').getTime();
+
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = launchDate - now;
+
+      if (diff <= 0) {
+        document.querySelector('.countdown').innerHTML = '<div style="font-weight:700; color: var(--gold);">We Have Launched! — انطلقنا!</div>';
+        clearInterval(interval);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days.toLocaleString();
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Simple subscribe handler (no backend) — stores in localStorage as demo
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      if (!email) return false;
+
+      const listKey = 'kemet_subscribers_demo';
+      const existing = JSON.parse(localStorage.getItem(listKey) || '[]');
+
+      // Prevent duplicate subscriptions for demo purpose
+      if (existing.some(sub => sub.email.toLowerCase() === email.toLowerCase())) {
+        displayMessage('أنت مشترك بالفعل · You are already subscribed.');
+        document.getElementById('subscribeForm').reset();
+        return false;
+      }
+
+      existing.push({ email: email, at: new Date().toISOString() });
+      localStorage.setItem(listKey, JSON.stringify(existing));
+
+      displayMessage('شكراً! تم التسجيل. · Thank you — you are subscribed.');
+      document.getElementById('subscribeForm').reset();
+      return false;
+    }
+
+    function displayMessage(msg) {
+      const msgElem = document.getElementById('subMsg');
+      msgElem.textContent = msg;
+      msgElem.style.color = 'var(--gold)';
+      msgElem.style.opacity = '1';
+      msgElem.animate([{ opacity: 0, transform: 'translateY(-8px)' }, { opacity: 1, transform: 'translateY(0)' }], {
+        duration: 400,
+        easing: 'ease-out',
+      });
+    }
+  </script>
+</body>
+</html>
