@@ -2,52 +2,262 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KEMET — قريباً | Coming Soon</title>
+
+  <!-- خطوط: Cinzel للإنجليزي، وNoto Sans Arabic للعربي -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    body { background: #1a0a00; color: #fff; font-family: "Noto Sans Arabic", sans-serif; text-align: center; padding: 20px; }
-    .logo { width: 150px; margin-bottom: 20px; }
-    h1 { font-size: 36px; color: #d4af37; margin-bottom: 5px; }
-    .tagline { font-size: 20px; margin-bottom: 30px; }
-    .about { max-width: 600px; margin: 0 auto 40px; font-size: 18px; }
-    .countdown { display: flex; justify-content: center; gap: 15px; font-size: 18px; }
-    .time-box { background: rgba(212,175,55,0.2); padding: 15px 20px; border-radius: 10px; min-width: 80px; }
-    .num { font-weight: bold; font-size: 28px; color: #d4af37; }
-    .label { margin-top: 5px; }
-    footer { margin-top: 50px; font-size: 14px; color: #b5a25e; }
+    :root {
+      --gold: #d4af37;
+      --gold-dark: #a8821e;
+      --bg-dark: #1a0a00;
+      --bg-gradient: linear-gradient(135deg, #1a0a00 0%, #3d2200 100%);
+      --text-muted: #b5a25e;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --font-ar: "Noto Sans Arabic", sans-serif;
+      --font-en: "Cinzel", serif;
+      --max-width: 720px;
+    }
+
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+    html, body {
+      height: 100%;
+      background: var(--bg-gradient);
+      font-family: var(--font-ar);
+      color: #fff;
+      direction: rtl;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 15px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      user-select: none;
+    }
+
+    main.container {
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+      max-width: var(--max-width);
+      width: 100%;
+      padding: 40px 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Logo */
+    img.logo {
+      width: 140px;
+      height: auto;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 5px var(--gold));
+    }
+
+    /* Brand name */
+    h1.brand-en {
+      font-family: var(--font-en);
+      font-size: 48px;
+      color: var(--gold);
+      letter-spacing: 8px;
+      margin-bottom: 6px;
+      user-select: text;
+    }
+    div.brand-ar {
+      font-family: var(--font-ar);
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 10px;
+      user-select: text;
+    }
+
+    /* Tagline */
+    div.tagline {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      font-style: italic;
+      user-select: text;
+      direction: ltr;
+      unicode-bidi: embed;
+    }
+
+    /* About Section */
+    section.about {
+      text-align: right;
+      margin-bottom: 40px;
+      font-size: 17px;
+      line-height: 1.6;
+      user-select: text;
+    }
+    section.about h2 {
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--gold);
+    }
+    section.about p {
+      margin-bottom: 15px;
+      max-width: 650px;
+    }
+
+    /* Countdown */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 40px;
+      user-select: none;
+      direction: ltr;
+    }
+    .time-box {
+      background: rgba(212, 175, 55, 0.15);
+      padding: 20px 26px;
+      border-radius: 14px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+      min-width: 90px;
+      color: #fff;
+    }
+    .time-box .num {
+      font-weight: 900;
+      font-size: 32px;
+      color: var(--gold);
+      letter-spacing: 1px;
+      font-family: var(--font-en);
+    }
+    .time-box .label {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--text-muted);
+      user-select: text;
+    }
+
+    /* Launch Note */
+    .launch-note {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      user-select: text;
+      font-weight: 600;
+    }
+
+    /* Subscribe form */
+    form.subscribe {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    form.subscribe input[type="email"] {
+      padding: 14px 18px;
+      font-size: 16px;
+      border-radius: 12px;
+      border: none;
+      min-width: 250px;
+      font-family: var(--font-ar);
+      outline: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      box-shadow: 0 0 8px var(--gold);
+      transition: background-color 0.3s ease;
+      user-select: text;
+    }
+    form.subscribe input[type="email"]::placeholder {
+      color: var(--text-muted);
+    }
+    form.subscribe input[type="email"]:focus {
+      background: rgba(255, 255, 255, 0.18);
+    }
+    form.subscribe button {
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      border: none;
+      border-radius: 12px;
+      padding: 14px 30px;
+      font-weight: 700;
+      font-family: var(--font-en);
+      font-size: 16px;
+      cursor: pointer;
+      color: #111;
+      box-shadow: 0 6px 15px rgba(212,175,55,0.5);
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+    form.subscribe button:hover {
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+    }
+    form.subscribe button:active {
+      transform: translateY(2px);
+    }
+
+    /* Subscription message */
+    #subMsg {
+      font-size: 15px;
+      color: var(--gold);
+      margin-top: 12px;
+      min-height: 24px;
+      user-select: text;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-muted);
+      user-select: text;
+      border-top: 1px solid rgba(212,175,55,0.15);
+      padding-top: 20px;
+      letter-spacing: 1px;
+      font-weight: 600;
+      font-family: var(--font-en);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1.brand-en {
+        font-size: 36px;
+        letter-spacing: 5px;
+      }
+      div.brand-ar {
+        font-size: 18px;
+      }
+      div.tagline {
+        font-size: 16px;
+      }
+      .time-box {
+        min-width: 65px;
+        padding: 14px 18px;
+      }
+      form.subscribe {
+        flex-direction: column;
+        gap: 14px;
+      }
+      form.subscribe input[type="email"] {
+        min-width: 100%;
+      }
+    }
+
   </style>
 </head>
 <body>
 
-  <img src="logo.png" alt="KEMET Logo" class="logo" />
+  <main class="container" role="main" aria-label="Kemet Coming Soon Page">
 
-  <h1>KEMET</h1>
-  <div class="tagline">A Gift From The Heart Of History — هدية من قلب التاريخ</div>
+    <img src="logo.png" alt="KEMET Logo" class="logo" />
 
-  <div class="about">
-    <h2>عن المشروع</h2>
-    <p>Kemet هو مشروع عملات تذكارية فاخرة مستوحاة من روح الحضارة المصرية — تصميم دقيق، خامات مميزة، وتجربة هدية لا تُنسى.</p>
-  </div>
+    <h1 class="brand-en">Kemet</h1>
+    <div class="brand-ar">هدية من قلب التاريخ</div>
+    <div class="tagline">A Gift From The Heart Of History — هدية من قلب التاريخ</div>
 
-  <div class="countdown">
-    <div class="time-box">
-      <div class="num">509</div>
-      <div class="label">يوم / Days</div>
-    </div>
-    <div class="time-box">
-      <div class="num">10</div>
-      <div class="label">ساعة / Hours</div>
-    </div>
-    <div class="time-box">
-      <div class="num">11</div>
-      <div class="label">دقيقة / Minutes</div>
-    </div>
-    <div class="time-box">
-      <div class="num">48</div>
-      <div class="label">ثانية / Seconds</div>
-    </div>
-  </div>
+    <section class="about" aria-labelledby="aboutHeading">
+      <h2 id="aboutHeading">عن المشروع</h2>
+      <p>Kemet هو مشروع عملات تذكارية فاخرة مستوحاة من روح الحضارة المصرية — تصميم دقيق، خامات مميزة، وتجربة هدية لا تُنسى.</p>
+      <p>اقتني قطعتك من الإصدارات المحدودة والموسمية لتكون جزءًا من تاريخ خالد وفريد.</p>
+    </section>
 
-  <footer>© جميع الحقوق محفوظة لشركة Kemet</footer>
-
-</body>
-</html>
+    <div class="countdown"
