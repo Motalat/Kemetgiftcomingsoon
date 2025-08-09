@@ -4,28 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kemet Gift - قريباً</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
     body {
       margin: 0;
       padding: 0;
       font-family: 'Cairo', sans-serif;
-      background: #f9f5f1;
+      background: linear-gradient(to bottom, #f9f5f1, #e9dccd);
       color: #333;
+      text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      text-align: center;
     }
     .container {
-      max-width: 400px;
-      padding: 20px;
-      border: 2px solid #c89f65;
-      border-radius: 12px;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(200, 159, 101, 0.2);
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
     .logo {
       width: 120px;
@@ -39,15 +42,37 @@
     p {
       font-size: 1.1rem;
       margin-bottom: 20px;
-      line-height: 1.5;
     }
-    .email-contact {
-      font-weight: bold;
-      color: #555;
-      word-break: break-word;
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .countdown div {
+      background: #c89f65;
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      min-width: 60px;
+    }
+    .links a {
+      display: inline-block;
+      margin: 5px;
+      text-decoration: none;
+      color: #c89f65;
+      border: 1px solid #c89f65;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .links a:hover {
+      background: #c89f65;
+      color: white;
     }
     footer {
-      margin-top: 30px;
+      margin-top: 20px;
       font-size: 0.9rem;
       color: #999;
     }
@@ -55,17 +80,50 @@
 </head>
 <body>
   <div class="container">
-    <img src="https://i.postimg.cc/3xkWvHtF/logo.png" alt="Kemet Gift Logo" class="logo" />
+    <img src="https://i.ibb.co/HT4sxvJ/logo.png" alt="Kemet Gift Logo" class="logo" />
     <h1>كيميت جيفت</h1>
     <p>هدية من قلب التاريخ</p>
     <h2>قريباً جداً</h2>
-    <p>شكراً لاهتمامك! <br> تابعنا عبر البريد الإلكتروني للتواصل:</p>
-    <p class="email-contact">
-      <a href="mailto:info@kemetgift.com" style="color:#c89f65; text-decoration:none;">info@kemetgift.com</a>
-    </p>
+
+    <div class="countdown" id="countdown">
+      <div><span id="days">0</span><br>أيام</div>
+      <div><span id="hours">0</span><br>ساعات</div>
+      <div><span id="minutes">0</span><br>دقائق</div>
+      <div><span id="seconds">0</span><br>ثواني</div>
+    </div>
+
+    <div class="links">
+      <a href="mailto:info@kemetgift.com">📧 البريد الإلكتروني</a>
+      <a href="https://wa.me/201234567890">💬 واتساب</a>
+    </div>
   </div>
+
   <footer>
     &copy; 2025 Kemet Gift. جميع الحقوق محفوظة.
   </footer>
+
+  <script>
+    const countdown = () => {
+      const launchDate = new Date("Jan 1, 2027 00:00:00").getTime();
+      const now = new Date().getTime();
+      const diff = launchDate - now;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+
+      if (diff < 0) {
+        document.getElementById("countdown").innerHTML = "<h3>لقد انطلقنا!</h3>";
+      }
+    };
+
+    setInterval(countdown, 1000);
+  </script>
 </body>
 </html>
