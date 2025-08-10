@@ -4,135 +4,55 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Kemet Gift — هدية من قلب التاريخ</title>
-<meta name="description" content="Kemet Gift — هدايا تذكارية فاخرة مستوحاة من الحضارة المصرية." />
 <style>
-  :root{
-    --bg-dark:#1a120b;
-    --bg-mid:#2b1d11;
-    --accent:#d4af37;
-    --muted:#d9caa0;
-    --radius:14px;
-  }
-  *{box-sizing:border-box}
-  html,body{
-    height:100%;
-    margin:0;
-    font-family:"Cairo",sans-serif;
-    background: linear-gradient(180deg,var(--bg-mid) 0%, #0b0704 100%);
-    color:var(--muted);
+  body {
+    background: #2b1d11;
+    color: #d9caa0;
+    font-family: "Cairo", sans-serif;
+    margin: 20px;
     direction: rtl;
   }
-  .container{
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 20px 16px 60px;
+  .container {
+    max-width: 600px;
+    margin: auto;
   }
-  header{
-    text-align:center;
-    margin-bottom: 20px;
+  header, footer {
+    text-align: center;
   }
-  .logo{
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 12px;
-    background: linear-gradient(180deg, #fff9e6, #f2e5cc);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-  }
-  .logo img{
-    max-width: 85%;
-    max-height: 85%;
-    display: block;
-  }
-  .brand-title{
+  h1 {
+    color: #d4af37;
     font-weight: 700;
-    color: var(--accent);
-    font-size: 1.6rem;
-    font-family: "Arial Black", Arial, sans-serif;
+    margin-bottom: 5px;
   }
-  .brand-sub{
-    font-size: 1rem;
-    color: #ffde7a;
-    margin-top: 4px;
+  p {
+    line-height: 1.5;
   }
-  .hero-desc {
-    background: rgba(0,0,0,0.15);
-    padding: 14px 18px;
-    border-radius: 12px;
-    margin: 20px auto;
-    max-width: 800px;
+  .countdown {
     display: flex;
+    justify-content: center;
     gap: 20px;
+    font-size: 1.5rem;
+    margin: 20px 0;
   }
-  .hero-desc > div {
-    flex: 1;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  .hero-desc .arabic {
-    direction: rtl;
-  }
-  .hero-desc .english {
-    direction: ltr;
-    font-family: Arial, sans-serif;
-  }
-  .coming-soon {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--accent);
-    margin-top: 24px;
-    margin-bottom: 24px;
-  }
-  .countdown-wrap {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 30px;
-  }
-  .time-box {
-    background: rgba(212,175,55,0.2);
-    padding: 14px 18px;
-    border-radius: 12px;
-    min-width: 80px;
-    text-align: center;
-    color: #1a120b;
-    font-weight: 700;
-  }
-  .time-number {
-    font-size: 2rem;
-  }
-  .time-label {
-    font-size: 1rem;
-    margin-top: 6px;
-  }
-  .cta {
+  .countdown div {
     text-align: center;
   }
-  .input-email input {
-    padding: 10px 14px;
+  input[type=email] {
+    padding: 10px;
     font-size: 1rem;
-    border-radius: 10px;
+    border-radius: 8px;
     border: none;
-    width: 280px;
+    width: 70%;
   }
-  .btn {
-    background: var(--accent);
+  button {
+    background-color: #d4af37;
     border: none;
-    border-radius: 10px;
-    padding: 12px 24px;
-    margin-left: 12px;
+    padding: 12px 20px;
+    margin-right: 10px;
+    font-weight: 700;
     cursor: pointer;
-    font-weight: 700;
-    color: #111;
-    font-size: 1rem;
   }
   footer {
-    text-align: center;
-    color: var(--muted);
     margin-top: 40px;
     font-size: 0.9rem;
   }
@@ -141,52 +61,30 @@
 <body>
   <div class="container">
     <header>
-      <div class="logo" aria-hidden="true">
-        <img src="logo.png" alt="Kemet Gift logo" />
-      </div>
-      <div class="brand-title">هدية من قلب التاريخ</div>
-      <div class="brand-sub">A Gift From The Heart Of History — هدية من قلب التاريخ</div>
-      <div class="hero-desc">
-        <div class="arabic">
-          استعد لاكتشاف قطع تذكارية فاخرة بإصدارات محدودة — مصممة بإتقان ومصنوعة بخامات مميزة، لتصبح ذكرى خالدة من قلب الحضارة المصرية.
-        </div>
-        <div class="english">
-          Get ready to discover luxurious limited-edition collectibles — meticulously designed and crafted with premium materials, to become a timeless memory from the heart of Egyptian civilization.
-        </div>
-      </div>
+      <h1>هدية من قلب التاريخ — A Gift From The Heart Of History</h1>
+      <p>استعد لاكتشاف قطع تذكارية فاخرة بإصدارات محدودة — مصممة بإتقان ومصنوعة بخامات مميزة، لتصبح ذكرى خالدة من قلب الحضارة المصرية.</p>
+      <p style="direction:ltr; text-align:left;">
+        Get ready to discover luxurious limited-edition collectibles — meticulously designed and crafted with premium materials, to become a timeless memory from the heart of Egyptian civilization.
+      </p>
     </header>
 
-    <div class="coming-soon" role="alert" aria-live="polite" aria-atomic="true">
+    <div style="text-align:center; font-size:2rem; font-weight:bold; color:#d4af37;">
       Coming Soon
     </div>
 
-    <div class="countdown-wrap" aria-live="polite" aria-atomic="true">
-      <div class="time-box" title="أيام">
-        <div class="time-number" id="days">0</div>
-        <div class="time-label">أيام</div>
-      </div>
-      <div class="time-box" title="ساعات">
-        <div class="time-number" id="hours">0</div>
-        <div class="time-label">ساعات</div>
-      </div>
-      <div class="time-box" title="دقائق">
-        <div class="time-number" id="minutes">0</div>
-        <div class="time-label">دقائق</div>
-      </div>
-      <div class="time-box" title="ثواني">
-        <div class="time-number" id="seconds">0</div>
-        <div class="time-label">ثواني</div>
-      </div>
+    <div class="countdown" aria-live="polite">
+      <div><div id="days">0</div><div>أيام</div></div>
+      <div><div id="hours">0</div><div>ساعات</div></div>
+      <div><div id="minutes">0</div><div>دقائق</div></div>
+      <div><div id="seconds">0</div><div>ثواني</div></div>
     </div>
 
-    <div class="cta" role="region" aria-label="قسم الاشتراك">
-      <input id="emailInput" type="email" placeholder="أدخل بريدك الإلكتروني" aria-label="بريدك الإلكتروني" />
-      <button class="btn" id="subscribeBtn" aria-label="اشترك الآن">اشترك الآن</button>
+    <div style="text-align:center; margin-bottom:30px;">
+      <input type="email" id="emailInput" placeholder="أدخل بريدك الإلكتروني" aria-label="بريدك الإلكتروني" />
+      <button id="subscribeBtn">اشترك الآن</button>
     </div>
 
-    <footer>
-      © 2025 Kemet Gift — جميع الحقوق محفوظة
-    </footer>
+    <footer>© 2025 Kemet Gift — جميع الحقوق محفوظة</footer>
   </div>
 
 <script>
@@ -210,7 +108,7 @@
 
       if(diff === 0){
         clearInterval(timer);
-        document.querySelector('.coming-soon').textContent = "لقد انطلقنا — شكراً لاهتمامك!";
+        document.querySelector('div[aria-live]').textContent = "لقد انطلقنا — شكراً لاهتمامك!";
       }
     }
 
