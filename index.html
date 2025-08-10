@@ -1,119 +1,136 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kemet Gift</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f0e6;
-            color: #333;
-            text-align: center;
-            line-height: 1.6;
-        }
-        header {
-            padding: 20px;
-            background-color: #d4af37;
-            color: white;
-        }
-        header img {
-            width: 220px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-        h1, h2 {
-            margin: 10px 0;
-        }
-        p {
-            font-size: 1.2em;
-        }
-        main {
-            padding: 40px 20px;
-        }
-        section {
-            margin: 40px 0;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .cta {
-            margin-top: 20px;
-        }
-        .cta button {
-            background-color: #d4af37;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1.1em;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .cta button:hover {
-            background-color: #b8962e;
-        }
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 15px 10px;
-            font-size: 0.9em;
-            margin-top: 30px;
-        }
-        a {
-            color: #d4af37;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kemet Gift - قادم قريباً</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Tahoma', sans-serif;
+        background: linear-gradient(135deg, #a67c00, #bf9b30);
+        color: white;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    header img {
+        max-width: 220px;
+        height: auto;
+        animation: zoomIn 1.5s ease-in-out;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin-top: 10px;
+        animation: slideDown 1.5s ease-in-out;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-top: 5px;
+    }
+
+    .countdown {
+        font-size: 1.8em;
+        font-weight: bold;
+        margin: 30px 0;
+        animation: pulse 2s infinite;
+    }
+
+    .buttons {
+        margin: 20px 0;
+    }
+
+    .buttons a {
+        display: inline-block;
+        background: white;
+        color: #a67c00;
+        padding: 12px 25px;
+        margin: 10px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .buttons a:hover {
+        background: #f5e6c5;
+    }
+
+    footer {
+        background: rgba(0,0,0,0.2);
+        padding: 15px;
+        font-size: 0.9em;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+    @keyframes zoomIn {
+        from {transform: scale(0.8); opacity: 0;}
+        to {transform: scale(1); opacity: 1;}
+    }
+    @keyframes slideDown {
+        from {transform: translateY(-20px); opacity: 0;}
+        to {transform: translateY(0); opacity: 1;}
+    }
+    @keyframes pulse {
+        0%, 100% {transform: scale(1);}
+        50% {transform: scale(1.05);}
+    }
+</style>
 </head>
 <body>
-    <!-- الهيدر -->
-    <header>
-        <img src="logo.png" alt="Kemet Gift Logo">
-        <h1>أهلاً بك في Kemet Gift</h1>
-        <p>هدايا مميزة مستوحاة من الحضارة المصرية القديمة</p>
-    </header>
 
-    <!-- الصفحة الرئيسية -->
-    <main>
-        <!-- قسم قريبا -->
-        <section>
-            <h2>قريباً...</h2>
-            <p>ترقبوا إطلاق موقعنا قريباً مع أفضل المجموعات والهدايا الحصرية.</p>
-            <div class="cta">
-                <button>اعرف المزيد</button>
-            </div>
-        </section>
+<header>
+    <img src="logo.png" alt="Kemet Gift Logo">
+    <h1>أهلاً بك في Kemet Gift</h1>
+    <p>هدايا مستوحاة من الحضارة المصرية القديمة</p>
+    <p>Welcome to Kemet Gift - Ancient Egyptian Inspired Gifts</p>
+</header>
 
-        <!-- قسم عنّا -->
-        <section>
-            <h2>عنّا</h2>
-            <p>
-                في Kemet Gift، نحن نؤمن بسحر الحضارة المصرية القديمة ونستلهم منها لنقدم لكم هدايا فريدة تجمع بين الأصالة والفخامة.
-                منتجاتنا مصممة بعناية لتعكس روح التاريخ والجمال، لتكون هديتك مميزة بحق.
-            </p>
-        </section>
+<div class="countdown" id="countdown"></div>
 
-        <!-- قسم تواصل معنا -->
-        <section>
-            <h2>تواصل معنا</h2>
-            <p>نسعد دائماً بالتواصل معكم والإجابة على استفساراتكم.</p>
-            <p>📧 البريد الإلكتروني: <a href="mailto:info@kemetgift.com">info@kemetgift.com</a></p>
-            <p>📱 واتساب: <a href="https://wa.me/201234567890" target="_blank">اضغط هنا للتواصل عبر واتساب</a></p>
-        </section>
-    </main>
+<div class="buttons">
+    <a href="#about">عنّا</a>
+    <a href="#contact">تواصل معنا</a>
+</div>
 
-    <!-- الفوتر -->
-    <footer>
-        جميع الحقوق محفوظة © 2025 - Kemet Gift
-    </footer>
+<footer>
+    <p>© 2025 Kemet Gift. جميع الحقوق محفوظة. | All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Countdown timer (مثال لـ 1 يناير 2026)
+    const countdownDate = new Date("Jan 1, 2026 00:00:00").getTime();
+    const countdownElement = document.getElementById("countdown");
+
+    setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `${days} يوم | ${hours} ساعة | ${minutes} دقيقة | ${seconds} ثانية`;
+
+        if (distance < 0) {
+            countdownElement.innerHTML = "لقد انطلقنا!";
+        }
+    }, 1000);
+</script>
+
 </body>
 </html>
