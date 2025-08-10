@@ -1,146 +1,215 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kemet Gift - هدية من قلب التاريخ. عملات تذكارية فاخرة مستوحاة من الحضارة المصرية.">
-    <meta name="keywords" content="Kemet, هدايا, عملات تذكارية, الحضارة المصرية">
-    <title>Kemet Gift - هدية من قلب التاريخ</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Tahoma', sans-serif;
-            background: url('https://i.ibb.co/XZz2V8B/pharaoh-bg.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #f5d77a;
-            text-align: center;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kemet Gift - هدية من قلب التاريخ</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Cairo', sans-serif;
+        background: linear-gradient(to bottom, #2b1d0e, #000);
+        color: #f8f5e1;
+        text-align: center;
+        overflow-x: hidden;
+    }
+    header {
+        padding: 20px;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeDown 1s ease forwards;
+    }
+    header img {
+        max-width: 140px;
+        animation: pop 1.2s ease forwards;
+    }
+    h1 {
+        color: #d4af37;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    h2 {
+        color: #f0e68c;
+        font-size: 1.5em;
+        margin-top: 10px;
+    }
+    p {
+        max-width: 600px;
+        margin: auto;
+        line-height: 1.8;
+        color: #f8f5e1;
+        font-size: 1.1em;
+    }
+    .countdown {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 10px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 1s ease forwards 0.8s;
+    }
+    .time-box {
+        background: #1f1409;
+        padding: 15px;
+        border-radius: 10px;
+        min-width: 70px;
+        border: 1px solid #d4af37;
+    }
+    .time-box span {
+        display: block;
+        font-size: 1.5em;
+        color: #d4af37;
+    }
+    section {
+        padding: 40px 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+    section.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .about {
+        background: #3a2612;
+        border-top: 2px solid #d4af37;
+        border-bottom: 2px solid #d4af37;
+    }
+    .cta {
+        margin-top: 20px;
+    }
+    input[type="email"] {
+        padding: 10px;
+        width: 250px;
+        border-radius: 5px;
+        border: none;
+        margin-top: 15px;
+    }
+    button {
+        background: #d4af37;
+        border: none;
+        padding: 10px 20px;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+        transition: background 0.3s;
+    }
+    button:hover {
+        background: #b8962e;
+    }
+    footer {
+        background: #1f1409;
+        padding: 15px;
+        font-size: 0.9em;
+        border-top: 1px solid #d4af37;
+        margin-top: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+    footer.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    footer a {
+        color: #d4af37;
+        margin: 0 5px;
+        text-decoration: none;
+    }
+
+    /* أنيميشن */
+    @keyframes fadeDown {
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
-        header {
-            padding: 30px 15px;
-            background-color: rgba(0,0,0,0.5);
-            animation: fadeInDown 1.2s ease;
+    }
+    @keyframes fadeUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
-        header img {
-            width: 140px;
-            margin-bottom: 15px;
-        }
-        h1 {
-            font-size: 26px;
-            margin: 0;
-            color: #ffd700;
-        }
-        h2 {
-            font-size: 22px;
-            color: #ffcc66;
-            margin-top: 40px;
-        }
-        p {
-            max-width: 600px;
-            margin: 10px auto;
-            font-size: 18px;
-            line-height: 1.6;
-            background-color: rgba(0,0,0,0.5);
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        .countdown div {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 15px;
-            border-radius: 10px;
-            min-width: 90px;
-            font-size: 18px;
-            border: 1px solid #ffd700;
-        }
-        .countdown span {
-            display: block;
-            font-size: 28px;
-            font-weight: bold;
-            color: #ffd700;
-        }
-        form {
-            margin-top: 20px;
-            background-color: rgba(0,0,0,0.5);
-            padding: 15px;
-            border-radius: 10px;
-            display: inline-block;
-        }
-        input[type="email"] {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            width: 250px;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #d4af37;
-            color: #1b1008;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #ffcc00;
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    }
+    @keyframes pop {
+        0% { transform: scale(0.8); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+</style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Kemet Logo">
-        <h1>قريباً - Kemet Gift</h1>
-    </header>
 
-    <p>نستعد لإطلاق مجموعة حصرية من <span class="highlight">الهدايا الفاخرة</span> المستوحاة من الحضارة المصرية العريقة.</p>
+<header>
+    <img src="logo.png" alt="Kemet Gift Logo">
+    <h1>هدية من قلب التاريخ</h1>
+    <h2>A Gift From The Heart Of History</h2>
+    <p>استعد لاكتشاف قطع تذكارية فاخرة بإصدارات محدودة، مصممة بإتقان، مستوحاة من روح الحضارة المصرية العريقة.</p>
+</header>
 
-    <h2>العد التنازلي للإطلاق</h2>
-    <div class="countdown" id="countdown">
-        <div><span id="days">0</span>أيام</div>
-        <div><span id="hours">0</span>ساعات</div>
-        <div><span id="minutes">0</span>دقائق</div>
-        <div><span id="seconds">0</span>ثواني</div>
-    </div>
+<div class="countdown" id="countdown">
+    <div class="time-box"><span id="days">0</span>يوم</div>
+    <div class="time-box"><span id="hours">0</span>ساعة</div>
+    <div class="time-box"><span id="minutes">0</span>دقيقة</div>
+    <div class="time-box"><span id="seconds">0</span>ثانية</div>
+</div>
 
-    <form id="subscribeForm">
-        <input type="email" id="email" placeholder="أدخل بريدك الإلكتروني" required>
+<section class="about" id="about">
+    <h2>عن المشروع</h2>
+    <p>
+        Kemet Gift هو مشروع مصري يقدم لك هدايا تذكارية فاخرة بإصدارات محدودة، مستوحاة من مجد الحضارة المصرية. 
+        كل قطعة تحمل قصة وتصميماً فريداً وخامات مميزة، لتصبح ذكرى خالدة لا تُنسى.
+    </p>
+</section>
+
+<section>
+    <h2>انضم لقائمتنا البريدية</h2>
+    <p>سجّل بريدك الإلكتروني لتكون أول من يعرف عن الإصدارات الجديدة.</p>
+    <div class="cta">
+        <input type="email" placeholder="أدخل بريدك الإلكتروني">
         <br>
-        <button type="submit">اشترك الآن</button>
-    </form>
+        <button>اشترك الآن</button>
+    </div>
+</section>
 
-    <script>
-        // عداد تنازلي لليوم المحدد
-        const launchDate = new Date("Sep 1, 2025 00:00:00").getTime();
-        const countdown = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = launchDate - now;
-            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
-            if (distance < 0) {
-                clearInterval(countdown);
-                document.getElementById("countdown").innerHTML = "تم الإطلاق!";
+<footer>
+    © 2025 Kemet Gift — جميع الحقوق محفوظة |
+    <a href="#">عنّا</a> |
+    <a href="#">تواصل معنا</a> |
+    <a href="#">سياسة الخصوصية</a>
+</footer>
+
+<script>
+    // عداد تنازلي حتى 1 يناير 2027
+    const targetDate = new Date("Jan 1, 2027 00:00:00").getTime();
+
+    const timer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if (distance < 0) {
+            clearInterval(timer);
+            document.getElementById("countdown").innerHTML = "لقد انطلقنا!";
+        }
+    }, 1000);
+
+    // إظهار العناصر عند التمرير
+    const sections = document.querySelectorAll('section, footer');
+    window.addEventListener('scroll', () => {
+        sections.forEach(sec => {
+            const rect = sec.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                sec.classList.add('show');
             }
-        }, 1000);
-
-        // فورم الاشتراك
-        document.getElementById("subscribeForm").addEventListener("submit", function(e) {
-            e.preventDefault();
-            alert("شكراً لاشتراكك! سنخبرك فور الإطلاق.");
-            document.getElementById("email").value = "";
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
