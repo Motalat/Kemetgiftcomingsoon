@@ -1,77 +1,80 @@
-import { useEffect, useState } from "react"; import { motion } from "framer-motion"; import { Button } from "@/components/ui/button"; import { Card, CardContent } from "@/components/ui/card"; import { Facebook, Instagram, Twitter, Youtube, Phone } from "lucide-react";
+import { useState, useEffect } from "react"; import { Button } from "@/components/ui/button"; import { Card, CardContent } from "@/components/ui/card"; import { motion } from "framer-motion"; import { Facebook, Instagram, Youtube, Twitter, Phone, Mail } from "lucide-react";
 
-export default function LandingPage() { const targetDate = new Date("2027-01-01T00:00:00").getTime(); const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+export default function LandingPage() { const [lang, setLang] = useState("ar"); const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-useEffect(() => { const timer = setInterval(() => { const now = new Date().getTime(); const distance = targetDate - now;
+useEffect(() => { const targetDate = new Date("2027-01-01T00:00:00").getTime(); const interval = setInterval(() => { const now = new Date().getTime(); const diff = targetDate - now;
 
-const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  setTimeLeft({ days, hours, minutes, seconds });
+if (diff > 0) {
+    setTimeLeft({
+      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+      minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+      seconds: Math.floor((diff % (1000 * 60)) / 1000),
+    });
+  }
 }, 1000);
-
-return () => clearInterval(timer);
+return () => clearInterval(interval);
 
 }, []);
 
-return ( <div className="bg-black text-white font-sans"> {/* Hero Section */} <section className="relative h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black to-gray-900"> <motion.img src="/logo.png" alt="Kemet Gift Logo" className="w-40 mb-6" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }} />
+const content = { ar: { headline: "Kemet Gift – من قلب التاريخ إلى العالم", sub: "هدايا تذكارية فاخرة مستوحاة من الحضارة المصرية.", cta: "اشترك معنا", values: ["الأصالة", "الجودة", "الابتكار", "الندرة"], }, en: { headline: "Kemet Gift – From the Heart of History to the World", sub: "Luxury souvenirs inspired by Ancient Egypt.", cta: "Join Us", values: ["Authenticity", "Quality", "Innovation", "Exclusivity"], }, };
 
-<motion.h1
-      className="text-4xl md:text-6xl font-bold text-yellow-500"
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      Kemet Gift – من قلب التاريخ إلى العالم
-    </motion.h1>
+return ( <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white flex flex-col items-center justify-center p-6"> {/* Logo */} <motion.img src="/logo.png" alt="Kemet Gift Logo" className="w-32 mb-6" initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
 
-    <p className="mt-4 text-lg text-gray-300 max-w-2xl">
-      منتجات تذكارية فاخرة مستوحاة من الحضارة المصرية، تجمع بين الأصالة والجودة والابتكار.
-    </p>
-
-    {/* Countdown */}
-    <div className="mt-8 grid grid-cols-4 gap-4">
-      {Object.entries(timeLeft).map(([key, value]) => (
-        <Card key={key} className="bg-gray-800 border-yellow-500">
-          <CardContent className="p-4 text-center">
-            <p className="text-3xl font-bold text-yellow-500">{value}</p>
-            <p className="uppercase text-xs text-gray-400">{key}</p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-
-    <Button className="mt-10 bg-yellow-500 text-black font-bold px-8 py-4 rounded-2xl text-lg shadow-lg hover:bg-yellow-400">
-      اكتشف مجموعاتنا
+{/* Language Switcher */}
+  <div className="absolute top-6 right-6">
+    <Button variant="outline" onClick={() => setLang(lang === "ar" ? "en" : "ar")}>
+      {lang === "ar" ? "English" : "العربية"}
     </Button>
-  </section>
+  </div>
 
-  {/* About Section */}
-  <section className="py-20 px-6 max-w-5xl mx-auto text-center">
-    <h2 className="text-3xl md:text-4xl font-bold text-yellow-500 mb-6">من نحن</h2>
-    <p className="text-gray-300 leading-relaxed">
-      في Kemet، نعيد إحياء روح الحضارة المصرية من خلال منتجات تذكارية فاخرة تجمع بين الحرفية الحديثة وعراقة التاريخ.
-    </p>
-  </section>
+  {/* Headline */}
+  <motion.h1
+    className="text-4xl md:text-6xl font-bold text-center text-yellow-400"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1.5 }}
+  >
+    {content[lang].headline}
+  </motion.h1>
 
-  {/* Socials */}
-  <section className="py-16 bg-gray-900 text-center">
-    <h2 className="text-2xl font-bold text-yellow-500 mb-6">تابعنا</h2>
-    <div className="flex justify-center gap-6">
-      <a href="https://www.facebook.com/share/16uoDzeKri/" target="_blank" rel="noreferrer"><Facebook className="w-6 h-6 text-yellow-500" /></a>
-      <a href="https://www.instagram.com/kemetgift" target="_blank" rel="noreferrer"><Instagram className="w-6 h-6 text-yellow-500" /></a>
-      <a href="https://twitter.com" target="_blank" rel="noreferrer"><Twitter className="w-6 h-6 text-yellow-500" /></a>
-      <a href="https://youtube.com/@kemetgift" target="_blank" rel="noreferrer"><Youtube className="w-6 h-6 text-yellow-500" /></a>
-      <a href="tel:+201004221419"><Phone className="w-6 h-6 text-yellow-500" /></a>
-    </div>
-  </section>
+  <p className="mt-4 text-lg text-center text-gray-300">{content[lang].sub}</p>
+
+  {/* Countdown */}
+  <div className="mt-6 grid grid-cols-4 gap-4 text-center">
+    {Object.entries(timeLeft).map(([unit, value]) => (
+      <Card key={unit} className="bg-black/50 text-yellow-400">
+        <CardContent className="p-4">
+          <p className="text-2xl font-bold">{value}</p>
+          <p className="text-sm capitalize">{unit}</p>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+
+  {/* CTA Button */}
+  <Button className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black text-lg px-6 py-3 rounded-2xl shadow-lg">
+    {content[lang].cta}
+  </Button>
+
+  {/* Values */}
+  <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+    {content[lang].values.map((val, i) => (
+      <Card key={i} className="bg-black/40 border-yellow-400 text-yellow-400">
+        <CardContent className="p-4 text-center font-semibold">{val}</CardContent>
+      </Card>
+    ))}
+  </div>
 
   {/* Footer */}
-  <footer className="bg-black py-6 text-center text-gray-500 text-sm">
-    © 2025 Kemet Gift. All Rights Reserved.
-  </footer>
+  <div className="mt-10 flex gap-6 text-gray-400">
+    <a href="https://www.facebook.com/share/16uoDzeKri/" target="_blank"><Facebook /></a>
+    <a href="https://www.instagram.com/kemetgift" target="_blank"><Instagram /></a>
+    <a href="https://youtube.com/@kemetgift" target="_blank"><Youtube /></a>
+    <a href="https://twitter.com/KemetGift" target="_blank"><Twitter /></a>
+    <a href="mailto:info@kemetgift.com"><Mail /></a>
+    <a href="tel:+201004221419"><Phone /></a>
+  </div>
 </div>
 
 ); }
