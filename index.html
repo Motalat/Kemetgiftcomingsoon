@@ -1,81 +1,170 @@
-import { useState, useEffect } from "react"; import { Button } from "@/components/ui/button"; import { Card, CardContent } from "@/components/ui/card"; import { motion } from "framer-motion"; import { Facebook, Instagram, Youtube, Twitter, Phone, Mail } from "lucide-react";
+<!DOCTYPE html>  <html lang="ar" dir="rtl">  
+<head>  
+<meta charset="utf-8" />  
+<meta name="viewport" content="width=device-width,initial-scale=1" />  
+<title>Kemet Gift — هدية من قلب التاريخ</title>  
+<meta name="description" content="Kemet Gift — هدايا تذكارية فاخرة مستوحاة من الحضارة المصرية. Join our list to get updates on limited editions." />  
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">  
+<style>  
+  :root{  
+    --bg-dark:#1a120b;  
+    --bg-mid:#2b1d11;  
+    --accent:#d4af37;  
+    --accent-2:#ffd873;  
+    --card:#271b10;  
+    --muted:#d9caa0;  
+    --glass: rgba(255,255,255,0.04);  
+    --radius:14px;  
+  }  
+  *{box-sizing:border-box;}  
+  html,body{height:100%;margin:0;font-family:"Cairo",system-ui,-apple-system,"Segoe UI",Helvetica,Arial;background: linear-gradient(180deg,var(--bg-mid) 0%, #0b0704 100%);color:var(--muted);direction:rtl;}  
+  body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(rgba(255,255,255,0.015) 0.5px, transparent 0.6px),linear-gradient(90deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));background-size:6px 6px,100% 100%;mix-blend-mode:overlay;pointer-events:none;z-index:0;}  
+  .container{max-width:980px;margin:0 auto;padding:28px 18px 80px;position:relative;z-index:1;}  
+  header{text-align:center;padding-top:6px;margin-bottom:6px;}  
+  .logo{width:120px;height:120px;margin:0 auto 10px;background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,242,225,0.98));border-radius:10px;display:flex;align-items:center;justify-content:center;box-shadow: 0 6px 18px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(212,175,55,0.12);transform:translateY(-6px);transition: transform .6s cubic-bezier(.2,.9,.3,1);}  
+  .logo img{max-width:86%; max-height:86%; display:block}  
+  .brand-title{margin:6px 0 8px;font-weight:700;color:var(--accent);font-family:"Playfair Display", serif;font-size:1.55rem;letter-spacing:0.6px;text-shadow:0 2px 10px rgba(0,0,0,0.5);}  
+  .brand-sub{color:var(--accent-2); font-size:1rem;margin-bottom:10px;opacity:0.95;}  
+  .hero-desc{max-width:820px;margin:18px auto 6px;font-size:1.05rem;line-height:1.8;color:var(--muted);background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.06));padding:14px 18px;border-radius:12px;box-shadow: 0 6px 24px rgba(0,0,0,0.45);border:1px solid rgba(212,175,55,0.06);}  
+  .hero-desc b{color:var(--accent);}  
+  .countdown-wrap{margin-top:18px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;align-items:center;}  
+  .time-box{min-width:92px;background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.22));border:1px solid rgba(212,175,55,0.14);padding:12px 10px;border-radius:12px;box-shadow: 0 8px 20px rgba(0,0,0,0.5);text-align:center;transition: transform .25s ease;}  
+  .time-box:hover{ transform: translateY(-6px) }  
+  .time-number{font-size:1.5rem;font-weight:700;color:var(--accent);letter-spacing:1px;}  
+  .time-label{display:block;margin-top:6px;font-size:0.85rem;color:#e6d9b6;opacity:0.9;}  
+  .cta{margin-top:22px;display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;}  
+  .input-email{display:inline-flex;align-items:center;background:var(--glass);padding:6px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);}  
+  .input-email input{border:0;outline:0;background:transparent;color:var(--muted);padding:10px 12px;font-size:0.98rem;width:260px;}  
+  .btn{display:inline-block;background:linear-gradient(180deg,var(--accent) 0%, #b8922b 100%);color:#111;padding:12px 18px;border-radius:10px;font-weight:700;border:0;cursor:pointer;box-shadow: 0 6px 18px rgba(181,137,37,0.15), inset 0 -2px 0 rgba(255,255,255,0.12);transition: transform .15s ease, box-shadow .15s ease;}  
+  .btn:hover{ transform: translateY(-4px); box-shadow: 0 10px 26px rgba(181,137,37,0.18) }  
+  section{padding:36px 14px;margin-top:22px;border-radius:12px;}  
+  .about{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.16));border:1px solid rgba(212,175,55,0.06);box-shadow: 0 10px 30px rgba(0,0,0,0.5);}  
+  .features{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:18px;}  
+  .feature{min-width:200px;max-width:260px;padding:14px;background:linear-gradient(180deg, rgba(0,0,0,0.22), rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(212,175,55,0.06);box-shadow:0 8px 24px rgba(0,0,0,0.45);text-align:center;}  
+  .feature svg{ width:44px; height:44px; margin-bottom:8px; color:var(--accent) }  
+  footer{margin-top:32px;padding:22px 12px;background: linear-gradient(180deg,#120b08, rgba(0,0,0,0.6));border-radius:12px;text-align:center;color:#bfae78;font-size:0.95rem;}  
+  .footer-links{ margin-top:8px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap }  
+  .footer-links a{ color:var(--accent-2); text-decoration:none; padding:6px 8px; border-radius:8px; background: rgba(255,255,255,0.02) }  
+  .socials{ margin-top:8px; display:flex; gap:8px; justify-content:center }  
+  .socials a{ display:inline-flex; width:40px; height:40px; align-items:center; justify-content:center; border-radius:8px; background:rgba(255,255,255,0.02); color:var(--accent); text-decoration:none }  
+  @media (max-width:640px){.brand-title{ font-size:1.25rem }.hero-desc{ font-size:0.99rem; padding:12px }.time-number{ font-size:1.25rem }.input-email input{ width:180px }}  
+  .reveal{ opacity:0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease }  
+  .reveal.show{ opacity:1; transform: translateY(0) }  
+</style>  
+</head>  
+<body>  
+<div class="container">  
+  <header class="reveal" id="heroHeader">  
+    <div class="logo" aria-hidden="true"><img src="logo.png" alt="Kemet Gift logo"></div>  
+    <div class="brand-title">هدية من قلب التاريخ</div>  
+    <div class="brand-sub">A Gift From The Heart Of History — هدية من قلب التاريخ</div>  
+    <div class="hero-desc">  
+      استعد لاكتشاف قطع تذكارية فاخرة بإصدارات محدودة — مصممة بإتقان ومصنوعة بخامات مميزة، لتصبح ذكرى خالدة من قلب الحضارة المصرية.<br>  
+      Get ready to discover luxurious limited-edition collectibles — crafted with precision and premium materials, to become an everlasting memory from the heart of Egyptian civilization.</div>  
+  </header>    <!-- Countdown -->    <div class="countdown-wrap reveal" id="countdownWrap" aria-live="polite">  
+    <div class="time-box" title="أيام">  
+      <div class="time-number" id="days">0</div>  
+      <div class="time-label">أيام / Days</div>  
+    </div>  
+    <div class="time-box" title="ساعات">  
+      <div class="time-number" id="hours">0</div>  
+      <div class="time-label">ساعات / Hours</div>  
+    </div>  
+    <div class="time-box" title="دقائق">  
+      <div class="time-number" id="minutes">0</div>  
+      <div class="time-label">دقائق / Minutes</div>  
+    </div>  
+    <div class="time-box" title="ثواني">  
+      <div class="time-number" id="seconds">0</div>  
+      <div class="time-label">ثواني / Seconds</div>  
+    </div>  
+  </div>    <!-- CTA -->    <div class="cta reveal" id="mainCta">  
+    <div class="input-email" role="group" aria-label="اشتراك بالبريد">  
+      <input id="emailInput" type="email" placeholder="أدخل بريدك الإلكتروني / Enter your email" aria-label="بريدك الإلكتروني" />  
+    </div>  
+    <button class="btn" id="subscribeBtn" aria-label="اشترك الآن / Subscribe Now">اشترك الآن / Subscribe</button>  
+  </div>    <!-- About section -->    <section class="about reveal" id="aboutSection">  
+    <h2 style="color:var(--accent); margin:4px 0 8px; font-size:1.4rem">عن المشروع / About</h2>  
+    <p style="margin:0 auto; max-width:880px">  
+      Kemet Gift هو مشروع مصري يقدم إصدارات محدودة من الهدايا والعملات التذكارية الفاخرة، مستوحاة من مجد وتفاصيل الحضارة المصرية. كل قطعة تحمل قصة، تصميم دقيق، وخامات راقية — لتصبح هدية تُحفر في الذاكرة.<br>  
+      Kemet Gift is an Egyptian project offering limited editions of luxurious gifts and collectible coins, inspired by the glory and details of Egyptian civilization. Each piece tells a story, with precise design and premium materials — to become a memorable gift.  
+    </p>  <div class="features" style="margin-top:18px">  
+  <div class="feature">  
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 2l3 6 6 .5-4.5 3 1.5 6L12 15l-6 3 1.5-6L3 8.5 9 8 12 2z" fill="currentColor" /></svg>  
+    <h3 style="color:var(--accent); margin:8px 0 6px">إصدارات محدودة / Limited Editions</h3>  
+    <p style="font-size:.95rem; color:var(--muted)">كل إصدار بعدد محدود ليحافظ على الندرة والقيمة.<br>Each edition is produced in limited numbers to maintain rarity and value.</p>  
+  </div>  
 
-export default function LandingPage() { const [lang, setLang] = useState("ar"); const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  <div class="feature">  
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 2c2.7 0 5 2.3 5 5a5 5 0 0 1-10 0c0-2.7 2.3-5 5-5zM4 20c0-4.4 3.6-8 8-8s8 3.6 8 8v1H4v-1z" fill="currentColor"/></svg>  
+    <h3 style="color:var(--accent); margin:8px 0 6px">تصميم فني / Artistic Design</h3>  
+    <p style="font-size:.95rem; color:var(--muted)">تعاون مع مصممين حرفيين لضمان التفاصيل الدقيقة والجودة.<br>Collaboration with skilled designers ensures intricate details and quality.</p>  
+  </div>  
 
-useEffect(() => { const targetDate = new Date("2027-01-01T00:00:00").getTime(); const interval = setInterval(() => { const now = new Date().getTime(); const diff = targetDate - now;
-
-if (diff > 0) {
-    setTimeLeft({
-      days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-      minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
-      seconds: Math.floor((diff % (1000 * 60)) / 1000),
-    });
-  }
-}, 1000);
-return () => clearInterval(interval);
-
-}, []);
-
-const content = { ar: { headline: "Kemet Gift – من قلب التاريخ إلى العالم", sub: "هدايا تذكارية فاخرة مستوحاة من الحضارة المصرية.", cta: "اشترك معنا", values: ["الأصالة", "الجودة", "الابتكار", "الندرة"], }, en: { headline: "Kemet Gift – From the Heart of History to the World", sub: "Luxury souvenirs inspired by Ancient Egypt.", cta: "Join Us", values: ["Authenticity", "Quality", "Innovation", "Exclusivity"], }, };
-
-return ( <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white flex flex-col items-center justify-center p-6"> {/* Logo */} <motion.img src="/logo.png" alt="Kemet Gift Logo" className="w-32 mb-6" initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} />
-
-{/* Language Switcher */}
-  <div className="absolute top-6 right-6">
-    <Button variant="outline" onClick={() => setLang(lang === "ar" ? "en" : "ar")}>
-      {lang === "ar" ? "English" : "العربية"}
-    </Button>
-  </div>
-
-  {/* Headline */}
-  <motion.h1
-    className="text-4xl md:text-6xl font-bold text-center text-yellow-400"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 1.5 }}
-  >
-    {content[lang].headline}
-  </motion.h1>
-
-  <p className="mt-4 text-lg text-center text-gray-300">{content[lang].sub}</p>
-
-  {/* Countdown */}
-  <div className="mt-6 grid grid-cols-4 gap-4 text-center">
-    {Object.entries(timeLeft).map(([unit, value]) => (
-      <Card key={unit} className="bg-black/50 text-yellow-400">
-        <CardContent className="p-4">
-          <p className="text-2xl font-bold">{value}</p>
-          <p className="text-sm capitalize">{unit}</p>
-        </CardContent>
-      </Card>
-    ))}
-  </div>
-
-  {/* CTA Button */}
-  <Button className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black text-lg px-6 py-3 rounded-2xl shadow-lg">
-    {content[lang].cta}
-  </Button>
-
-  {/* Values */}
-  <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-    {content[lang].values.map((val, i) => (
-      <Card key={i} className="bg-black/40 border-yellow-400 text-yellow-400">
-        <CardContent className="p-4 text-center font-semibold">{val}</CardContent>
-      </Card>
-    ))}
-  </div>
-
-  {/* Footer */}
-  <div className="mt-10 flex gap-6 text-gray-400">
-    <a href="https://www.facebook.com/share/16uoDzeKri/" target="_blank"><Facebook /></a>
-    <a href="https://www.instagram.com/kemetgift" target="_blank"><Instagram /></a>
-    <a href="https://youtube.com/@kemetgift" target="_blank"><Youtube /></a>
-    <a href="https://twitter.com/KemetGift" target="_blank"><Twitter /></a>
-    <a href="mailto:info@kemetgift.com"><Mail /></a>
-    <a href="tel:+201004221419"><Phone /></a>
-  </div>
+  <div class="feature">  
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 2L2 7l10 5 10-5-10-5zm0 7.5L3 9v7c0 1.7 1.8 3 4 3h10c2.2 0 4-1.3 4-3V9l-9 1.5z" fill="currentColor"/></svg>  
+    <h3 style="color:var(--accent); margin:8px 0 6px">خامات مميزة / Premium Materials</h3>  
+    <p style="font-size:.95rem; color:var(--muted)">اختيار المواد بعناية (نحاس، ألومنيوم، تشطيب ليزري) لضمان متانة وفخامة.<br>Carefully selected materials (copper, aluminum, laser finish) ensure durability and elegance.</p>  
+  </div>  
 </div>
 
-); }
-
+  </section>    <!-- Footer -->    <footer class="reveal" id="pageFooter">  
+    <div style="font-weight:600; color:var(--muted)">© 2025 Kemet Gift — جميع الحقوق محفوظة / All rights reserved</div>  
+    <div class="footer-links" role="navigation" aria-label="روابط تذييل / Footer Links">  
+      <a href="#aboutSection">عنّا / About</a>  
+      <a href="mailto:kemetgift.info@gmail.com">اتصل بنا / Contact</a>  
+      <a href="#">سياسة الخصوصية / Privacy Policy</a>  
+      <a href="#">شروط الاستخدام / Terms of Use</a>  
+    </div>  
+    <div class="socials" aria-hidden>  
+      <a href="https://www.instagram.com/kemetgift" target="_blank" rel="noopener noreferrer" aria-label="Instagram">IG</a>  
+      <a href="https://www.facebook.com/profile.php?id=61579587569301" target="_blank" rel="noopener noreferrer" aria-label="Facebook">FB</a>  
+      <a href="https://tiktok.com/@kemetgift" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TT</a>  
+      <a href="https://youtube.com/@kemetgift" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>  
+    </div>  
+  </footer>  
+</div>  <script>  
+(function(){  
+  const target = new Date("Jan 1, 2027 00:00:00").getTime();  
+  const elDays=document.getElementById('days'), elHours=document.getElementById('hours'), elMins=document.getElementById('minutes'), elSecs=document.getElementById('seconds');  
+  function setNumber(el,value){ if(el.dataset.val!=value){ el.dataset.val=value; el.style.opacity=0; setTimeout(()=>{el.textContent=value; el.style.opacity=1},180); } }  
+  function update(){  
+    let now=Date.now(), diff=Math.max(0,target-now);  
+    let days=Math.floor(diff/86400000); diff-=days*86400000;  
+    let hours=Math.floor(diff/3600000); diff-=hours*3600000;  
+    let mins=Math.floor(diff/60000); diff-=mins*60000;  
+    let secs=Math.floor(diff/1000);  
+    setNumber(elDays,days); setNumber(elHours,hours); setNumber(elMins,mins); setNumber(elSecs,secs);  
+    if(target-Date.now()<=0){ clearInterval(timerId); document.getElementById('countdownWrap').innerHTML='<div style="color:var(--accent); font-weight:700; padding:18px; font-size:1.1rem">لقد انطلقنا — شكراً لاهتمامك! / We have launched — Thank you!</div>'; }  
+  }  
+  update();  
+  const timerId=setInterval(update,1000);  
+})();  
+  
+(function(){  
+  const reveals=document.querySelectorAll('.reveal');  
+  function showOnScroll(){ reveals.forEach(el=>{ if(el.getBoundingClientRect().top <= window.innerHeight-60){ el.classList.add('show'); } }); }  
+  setTimeout(()=>{ document.getElementById('heroHeader').classList.add('show'); },220);  
+  setTimeout(()=>{ document.getElementById('countdownWrap').classList.add('show'); },520);  
+  setTimeout(()=>{ document.getElementById('mainCta').classList.add('show'); },760);  
+  setTimeout(()=>{ document.getElementById('aboutSection').classList.add('show'); },980);  
+  setTimeout(()=>{ document.getElementById('pageFooter').classList.add('show'); },1200);  
+  window.addEventListener('scroll',showOnScroll,{passive:true}); showOnScroll();  
+})();  
+  
+(function(){  
+  const btn=document.getElementById('subscribeBtn'), inp=document.getElementById('emailInput');  
+  function validEmail(e){ return typeof e==='string' && /\S+@\S+\.\S+/.test(e); }  
+  btn.addEventListener('click', function(){const email = inp.value.trim();  
+    if(validEmail(email)){  
+      alert('تم الاشتراك بنجاح! / Subscription successful!');  
+      inp.value = '';  
+      // هنا يمكنك إضافة كود لإرسال البريد لقاعدة بيانات أو API  
+      // مثال وهمي:  
+      // fetch('https://example.com/subscribe', { method:'POST', body: JSON.stringify({email}) })  
+    } else {  
+      alert('الرجاء إدخال بريد إلكتروني صحيح / Please enter a valid email.');  
+      inp.focus();  
+    }  
+  });  
+})();  
