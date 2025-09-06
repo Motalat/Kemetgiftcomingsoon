@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Kemet Gift — Luxury Souvenirs from the Heart of Egyptian Civilization</title>
-    <meta name="description" content="Kemet Gift — Exquisite souvenirs inspired by ancient Egyptian civilization. Collectible medals that carry the spirit of pharaonic heritage." />
+    <title>Kemet Gift — هدايا فاخرة من قلب الحضارة المصرية</title>
+    <meta name="description" content="Kemet Gift — هدايا تذكارية فاخرة مستوحاة من الحضارة المصرية القديمة. ميداليات جمع تحمل روح التراث الفرعوني." />
     
     <!-- تحسين تحميل الخطوط -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,8 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Kemet Gift — Luxury Souvenirs from Ancient Egypt">
-    <meta property="og:description" content="Exquisite collectible medals inspired by pharaonic symbols and heritage">
+    <meta property="og:title" content="Kemet Gift — هدايا فاخرة من مصر القديمة">
+    <meta property="og:description" content="ميداليات تذكارية فاخرة مستوحاة من الرموز والتراث الفرعوني">
     <meta property="og:image" content="https://www.kemetgift.com/og-image.jpg">
     <meta property="og:url" content="https://www.kemetgift.com">
     <meta property="og:type" content="website">
@@ -24,7 +24,7 @@
       "@context": "https://schema.org",
       "@type": "Store",
       "name": "Kemet Gift",
-      "description": "Luxury souvenirs inspired by ancient Egyptian civilization",
+      "description": "هدايا فاخرة مستوحاة من الحضارة المصرية القديمة",
       "url": "https://www.kemetgift.com",
       "address": {
         "@type": "PostalAddress",
@@ -33,938 +33,12 @@
       "brand": {
         "@type": "Brand",
         "name": "Kemet Gift",
-        "description": "Gifts that carry the spirit of Egyptian civilization"
+        "description": "هدايا تحمل روح الحضارة المصرية"
       }
     }
     </script>
     
-    <style>
-        :root {
-            --bg-dark: #1a120b;
-            --bg-mid: #2b1d11;
-            --accent: #d4af37;
-            --accent-2: #ffd873;
-            --card: #271b10;
-            --muted: #d9caa0;
-            --glass: rgba(255,255,255,0.04);
-            --radius: 14px;
-            --error: #ff3860;
-            --success: #23d160;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        html, body {
-            height: 100%;
-            font-family: "Cairo", system-ui, -apple-system, "Segoe UI", Helvetica, Arial;
-            background: linear-gradient(180deg, var(--bg-mid) 0%, #0b0704 100%);
-            color: var(--muted);
-            direction: rtl;
-            scroll-behavior: smooth;
-        }
-        
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background-image: radial-gradient(rgba(255,255,255,0.015) 0.5px, transparent 0.6px), 
-                             linear-gradient(90deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
-            background-size: 6px 6px, 100% 100%;
-            mix-blend-mode: overlay;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: var(--accent);
-            color: #000;
-            padding: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            z-index: 1000;
-            border-radius: 0 0 4px 4px;
-        }
-        
-        .skip-link:focus {
-            top: 0;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 28px 18px 80px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* شريط التنقل */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 0;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            position: sticky;
-            top: 0;
-            background: rgba(26, 18, 11, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-        }
-        
-        .nav-logo {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,242,225,0.98));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(212,175,55,0.12);
-        }
-        
-        .nav-logo img {
-            max-width: 80%;
-            max-height: 80%;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: var(--muted);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-            position: relative;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            right: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .language-switcher {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--muted);
-            cursor: pointer;
-            padding: 8px 12px;
-            border-radius: 20px;
-            background: rgba(255,255,255,0.05);
-            transition: all 0.3s;
-        }
-        
-        .language-switcher:hover {
-            background: rgba(212, 175, 55, 0.1);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--accent);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        header {
-            text-align: center;
-            padding: 60px 0;
-            margin-bottom: 6px;
-        }
-        
-        .main-logo {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 20px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,242,225,0.98));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.45), inset 0 0 0 2px rgba(212,175,55,0.12);
-            transform: translateY(-6px);
-            transition: transform .6s cubic-bezier(.2,.9,.3,1);
-        }
-        
-        .main-logo:hover {
-            transform: translateY(-10px) scale(1.03);
-        }
-        
-        .main-logo img {
-            max-width: 86%;
-            max-height: 86%;
-            display: block;
-        }
-        
-        .brand-title {
-            margin: 6px 0 8px;
-            font-weight: 700;
-            color: var(--accent);
-            font-family: "Playfair Display", serif;
-            font-size: 2.8rem;
-            letter-spacing: 0.6px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-        
-        .brand-sub {
-            color: var(--accent-2);
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            opacity: 0.95;
-        }
-        
-        .hero-desc {
-            max-width: 820px;
-            margin: 28px auto 6px;
-            font-size: 1.1rem;
-            line-height: 1.9;
-            color: var(--muted);
-            background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.06));
-            padding: 20px 24px;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.45);
-            border: 1px solid rgba(212,175,55,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-desc::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
-        }
-        
-        .hero-desc b {
-            color: var(--accent);
-        }
-        
-        .countdown-section {
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        .countdown-title {
-            color: var(--accent);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-        
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .countdown-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 80px;
-        }
-        
-        .countdown-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            background: rgba(0,0,0,0.3);
-            padding: 15px;
-            border-radius: 10px;
-            min-width: 80px;
-            text-align: center;
-        }
-        
-        .countdown-label {
-            margin-top: 10px;
-            color: var(--accent-2);
-            font-size: 0.9rem;
-        }
-        
-        .cta {
-            margin-top: 32px;
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(180deg, var(--accent) 0%, #b8922b 100%);
-            color: #111;
-            padding: 16px 28px;
-            border-radius: 12px;
-            font-weight: 700;
-            border: 0;
-            cursor: pointer;
-            box-shadow: 0 6px 18px rgba(181,137,37,0.15), inset 0 -2px 0 rgba(255,255,255,0.12);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-        }
-        
-        .btn::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-        
-        .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 26px rgba(181,137,37,0.18);
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-        }
-        
-        section {
-            padding: 80px 20px;
-            margin-top: 32px;
-            border-radius: 16px;
-        }
-        
-        .section-title {
-            color: var(--accent);
-            margin: 4px 0 16px;
-            font-size: 2.2rem;
-            text-align: center;
-            font-family: "Playfair Display", serif;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
-            border-radius: 3px;
-        }
-        
-        .section-desc {
-            margin: 0 auto;
-            max-width: 880px;
-            line-height: 1.8;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-        
-        .about {
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.16));
-            border: 1px solid rgba(212,175,55,0.06);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .about::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
-        }
-        
-        .features {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 28px;
-        }
-        
-        .feature {
-            flex: 1;
-            min-width: 250px;
-            max-width: 320px;
-            padding: 24px 20px;
-            background: linear-gradient(180deg, rgba(0,0,0,0.22), rgba(255,255,255,0.01));
-            border-radius: 16px;
-            border: 1px solid rgba(212,175,55,0.06);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.45);
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), transparent);
-            opacity: 0.6;
-        }
-        
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.6);
-        }
-        
-        .feature svg {
-            width: 54px;
-            height: 54px;
-            margin-bottom: 16px;
-            color: var(--accent);
-            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
-        }
-        
-        .feature h3 {
-            color: var(--accent);
-            margin: 8px 0 12px;
-            font-size: 1.3rem;
-        }
-        
-        .feature p {
-            font-size: 1rem;
-            color: var(--muted);
-            line-height: 1.7;
-        }
-        
-        /* قسم المنتجات */
-        .products {
-            margin-top: 50px;
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .product-card {
-            background: linear-gradient(180deg, rgba(0,0,0,0.22), rgba(255,255,255,0.01));
-            border-radius: 16px;
-            border: 1px solid rgba(212,175,55,0.06);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.45);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .product-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.6);
-        }
-        
-        .product-image {
-            height: 220px;
-            background: linear-gradient(45deg, #2b1d11, #1a120b);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-size: 3rem;
-        }
-        
-        .product-content {
-            padding: 20px;
-        }
-        
-        .product-title {
-            color: var(--accent);
-            margin: 0 0 10px;
-            font-size: 1.4rem;
-        }
-        
-        .product-desc {
-            color: var(--muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .product-price {
-            color: var(--accent-2);
-            font-weight: 700;
-            font-size: 1.3rem;
-            display: block;
-            margin-top: 10px;
-        }
-        
-        .product-cta {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        /* قسم الباقات */
-        .bundles {
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.16));
-            border: 1px solid rgba(212,175,55,0.06);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        
-        .bundles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .bundle-card {
-            background: linear-gradient(180deg, rgba(0,0,0,0.22), rgba(255,255,255,0.01));
-            border-radius: 16px;
-            border: 1px solid rgba(212,175,55,0.06);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.45);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .bundle-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
-        }
-        
-        .bundle-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.6);
-        }
-        
-        .bundle-image {
-            height: 180px;
-            background: linear-gradient(45deg, #2b1d11, #1a120b);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-size: 2.5rem;
-        }
-        
-        .bundle-content {
-            padding: 20px;
-        }
-        
-        .bundle-title {
-            color: var(--accent);
-            margin: 0 0 10px;
-            font-size: 1.4rem;
-        }
-        
-        .bundle-desc {
-            color: var(--muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .bundle-price {
-            color: var(--accent-2);
-            font-weight: 700;
-            font-size: 1.3rem;
-            display: block;
-            margin-top: 10px;
-        }
-        
-        .bundle-savings {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--accent);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 10px;
-        }
-        
-        .comparison {
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.16));
-            border: 1px solid rgba(212,175,55,0.06);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            overflow-x: auto;
-        }
-        
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-            min-width: 800px;
-        }
-        
-        .comparison-table th, .comparison-table td {
-            padding: 15px;
-            text-align: center;
-            border: 1px solid rgba(212,175,55,0.1);
-        }
-        
-        .comparison-table th {
-            background: rgba(212,175,55,0.1);
-            color: var(--accent);
-            font-weight: 600;
-        }
-        
-        .comparison-table tr:nth-child(even) {
-            background: rgba(255,255,255,0.02);
-        }
-        
-        .testimonials {
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.16));
-            border: 1px solid rgba(212,175,55,0.06);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 30px;
-        }
-        
-        .testimonial {
-            background: linear-gradient(180deg, rgba(0,0,0,0.22), rgba(255,255,255,0.01));
-            border-radius: 16px;
-            border: 1px solid rgba(212,175,55,0.06);
-            padding: 20px;
-            position: relative;
-        }
-        
-        .testimonial::before {
-            content: """;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 3rem;
-            color: var(--accent);
-            opacity: 0.2;
-            font-family: serif;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-        
-        .testimonial-author {
-            color: var(--accent);
-            font-weight: 600;
-        }
-        
-        .testimonial-role {
-            font-size: 0.9rem;
-            color: #bfae78;
-        }
-        
-        .contact {
-            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.16));
-            border: 1px solid rgba(212,175,55,0.06);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(212,175,55,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-        
-        .contact-details h4 {
-            color: var(--accent);
-            margin-bottom: 5px;
-        }
-        
-        .contact-form {
-            background: linear-gradient(180deg, rgba(0,0,0,0.22), rgba(255,255,255,0.01));
-            border-radius: 16px;
-            border: 1px solid rgba(212,175,55,0.06);
-            padding: 25px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--accent);
-        }
-        
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(212,175,55,0.1);
-            border-radius: 8px;
-            color: var(--muted);
-            font-family: inherit;
-        }
-        
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 2px rgba(212,175,55,0.2);
-        }
-        
-        .notification {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 15px 20px;
-            border-radius: 8px;
-            background: var(--card);
-            color: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .notification.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .notification.success {
-            border-right: 4px solid var(--success);
-        }
-        
-        .notification.error {
-            border-right: 4px solid var(--error);
-        }
-        
-        footer {
-            margin-top: 60px;
-            padding: 30px 20px;
-            background: linear-gradient(180deg, #120b08, rgba(0,0,0,0.6));
-            border-radius: 16px;
-            text-align: center;
-            color: #bfae78;
-            font-size: 0.95rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        footer::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
-        }
-        
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .footer-links {
-            margin-top: 15px;
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: var(--accent-2);
-            text-decoration: none;
-            padding: 8px 12px;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.02);
-            transition: all 0.3s;
-        }
-        
-        .footer-links a:hover {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--accent);
-        }
-        
-        .socials {
-            margin-top: 20px;
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-        }
-        
-        .socials a {
-            display: inline-flex;
-            width: 44px;
-            height: 44px;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            background: rgba(255,255,255,0.02);
-            color: var(--accent);
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .socials a:hover {
-            background: rgba(212, 175, 55, 0.1);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            margin-top: 20px;
-            opacity: 0.8;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 15px 60px;
-            }
-            
-            .navbar {
-                padding: 12px 0;
-            }
-            
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                right: 0;
-                background: var(--bg-dark);
-                flex-direction: column;
-                padding: 20px;
-                gap: 15px;
-                border-radius: 0 0 16px 16px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero-desc {
-                font-size: 1rem;
-                padding: 15px;
-            }
-            
-            .products-grid, .testimonials-grid, .bundles-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .comparison-table {
-                font-size: 0.8rem;
-            }
-            
-            .countdown {
-                gap: 10px;
-            }
-            
-            .countdown-item {
-                min-width: 60px;
-            }
-            
-            .countdown-number {
-                font-size: 1.8rem;
-                min-width: 60px;
-                padding: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a href="#main-content" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
@@ -972,19 +46,21 @@
     <div class="container">
         <nav class="navbar">
             <div class="nav-logo">
-                <!-- سيكون هنا شعار Kemet Gift -->
-                <span>KG</span>
+                <a href="index.html">
+                    <!-- سيكون هنا شعار Kemet Gift -->
+                    <span>KG</span>
+                </a>
             </div>
             <div class="nav-links">
-                <a href="#home">الرئيسية</a>
-                <a href="#about">من نحن</a>
-                <a href="#products">الإصدارات</a>
-                <a href="#bundles">الباقات</a>
-                <a href="#comparison">المقارنة</a>
-                <a href="#testimonials">آراء العملاء</a>
+                <a href="index.html" class="active">الرئيسية</a>
+                <a href="editions.html">الإصدارات</a>
+                <a href="bundles.html">الباقات</a>
+                <a href="partners.html">شركاؤنا</a>
+                <a href="about.html">من نحن</a>
+                <a href="warranty.html">سياسة الضمان</a>
                 <a href="#contact">اتصل بنا</a>
                 <div class="language-switcher" id="languageSwitcher">
-                    <span>العربية</span>
+                    <span>EN</span>
                     <span>🌐</span>
                 </div>
             </div>
@@ -997,62 +73,58 @@
                 <span>Kemet Gift</span>
             </div>
             <h1 class="brand-title">Kemet Gift®</h1>
-            <p class="brand-sub">هدايا تحمل روح الحضارة | Gifts That Carry The Spirit of Civilization</p>
+            <p class="brand-sub">هدية من قلب التاريخ | A Gift From The Heart Of History</p>
             <div class="hero-desc">
                 <p>نُعيد تقديم رموز مصر الأبدية في هيئة <b>ميداليات تذكارية فاخرة</b> تحمل قصة ومعنى. رؤيتنا أن تكون الهدية <b>عملًا فنيًا</b> يصون ذكرىً وتاريخًا، ورسالتنا تقديم <b>مستويات متعددة</b> تناسب الجميع.</p>
-                <p>We revive eternal Egyptian symbols as <b>luxury commemorative medals</b> that carry stories and meanings. Our vision is for each gift to be a <b>work of art</b> that preserves memory and history.</p>
             </div>
 
             <div class="countdown-section">
-                <h2 class="countdown-title">الإطلاق الرسمي قريبًا | Launching Soon</h2>
+                <h2 class="countdown-title">الإطلاق الرسمي قريبًا</h2>
                 <div class="countdown">
                     <div class="countdown-item">
                         <div class="countdown-number" id="days">00</div>
-                        <div class="countdown-label">أيام | Days</div>
+                        <div class="countdown-label">أيام</div>
                     </div>
                     <div class="countdown-item">
                         <div class="countdown-number" id="hours">00</div>
-                        <div class="countdown-label">ساعات | Hours</div>
+                        <div class="countdown-label">ساعات</div>
                     </div>
                     <div class="countdown-item">
                         <div class="countdown-number" id="minutes">00</div>
-                        <div class="countdown-label">دقائق | Minutes</div>
+                        <div class="countdown-label">دقائق</div>
                     </div>
                     <div class="countdown-item">
                         <div class="countdown-number" id="seconds">00</div>
-                        <div class="countdown-label">ثواني | Seconds</div>
+                        <div class="countdown-label">ثواني</div>
                     </div>
                 </div>
             </div>
             
             <div class="cta">
-                <a href="#products" class="btn">اكتشف الإصدارات | Discover Editions</a>
-                <a href="#contact" class="btn btn-secondary">تواصل معنا | Contact Us</a>
+                <a href="editions.html" class="btn">اكتشف الإصدارات</a>
+                <a href="#contact" class="btn btn-secondary">تواصل معنا</a>
             </div>
         </header>
         
         <section id="about" class="about">
-            <h2 class="section-title">من نحن | About Us</h2>
+            <h2 class="section-title">من نحن</h2>
             <p class="section-desc">تنبع Kemet Gift® من شغف عميق بالحضارة المصرية القديمة ورموزها الخالدة: أبو الهول، عين حورس، زهرة اللوتس، الأهرامات.</p>
-            <p class="section-desc">Kemet Gift® stems from a deep passion for ancient Egyptian civilization and its eternal symbols: Sphinx, Eye of Horus, Lotus Flower, Pyramids.</p>
             
             <div class="features">
                 <div class="feature">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
                     </svg>
-                    <h3>أصالة التصميم | Authentic Design</h3>
+                    <h3>أصالة التصميم</h3>
                     <p>مستوحى من النقوش والرموز الفرعونية الأصيلة، مع ضبط معاصر للتفاصيل.</p>
-                    <p>Inspired by authentic Pharaonic inscriptions and symbols, with contemporary detailing.</p>
                 </div>
                 
                 <div class="feature">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
                     </svg>
-                    <h3>حِرَفية متقنة | Exquisite Craftsmanship</h3>
+                    <h3>حِرَفية متقنة</h3>
                     <p>مواد منتقاة وتشطيبات مدروسة ونقوش ليزر دقيقة بأعلى معايير الجودة.</p>
-                    <p>Selected materials, thoughtful finishes, and precise laser engravings with the highest quality standards.</p>
                 </div>
                 
                 <div class="feature">
@@ -1060,71 +132,26 @@
                         <path d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
                         <path d="M5.25 5.25a3 3 0 00-3 3v10.5a3 3 0 003 3h10.5a3 3 0 003-3V13.5a.75.75 0 00-1.5 0v5.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5V8.25a1.5 1.5 0 011.5-1.5h5.25a.75.75 0 000-1.5H5.25z" />
                     </svg>
-                    <h3>خيارات تخصيص | Customization Options</h3>
+                    <h3>خيارات تخصيص</h3>
                     <p>نقش بالليزر للاسم/الرسالة/الرموز على الحافة أو الظهر، وترقيم خاص للمؤسسات.</p>
-                    <p>Laser engraving for names/messages/symbols on the edge or back, special numbering for organizations.</p>
                 </div>
             </div>
         </section>
         
-        <section id="products" class="products">
-            <h2 class="section-title">إصداراتنا | Our Editions</h2>
-            <p class="section-desc">ستة إصدارات أساسية بتمييز واضح في التشطيب والتقديم تناسب جميع الأذواق والميزانيات</p>
-            <p class="section-desc">Six core editions with distinct finishing and presentation to suit all tastes and budgets</p>
+        <section id="featured-products">
+            <h2 class="section-title">أبرز الإصدارات</h2>
+            <p class="section-desc">إصداراتنا المميزة التي تجسد روعة الحضارة المصرية</p>
             
             <div class="products-grid">
-                <!-- الإصدار E1 -->
+                <!-- الإصدار L1 -->
                 <div class="product-card">
-                    <div class="product-image">E1</div>
+                    <div class="product-image">L1</div>
                     <div class="product-content">
-                        <h3 class="product-title">الإصدار الأساسي (E1) | Essential Edition</h3>
-                        <p class="product-desc">هدية عملية ورمزية مثالية للتوزيع الواسع دون التفريط في الذوق.</p>
-                        <p class="product-desc">Practical and symbolic gift ideal for wide distribution without compromising taste.</p>
-                        <span class="product-price">$7.90</span>
+                        <h3 class="product-title">الإصدار البلاتيني (L1)</h3>
+                        <p class="product-desc">قمة المجموعة بلمسة Platinum-Tone مع ترقيم فردي وشهادة أصالة.</p>
+                        <span class="product-price">$129.00</span>
                         <div class="product-cta">
-                            <a href="#contact" class="btn">اطلب الآن | Order Now</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- الإصدار C1 -->
-                <div class="product-card">
-                    <div class="product-image">C1</div>
-                    <div class="product-content">
-                        <h3 class="product-title">الإصدار الكلاسيكي (C1) | Classic Edition</h3>
-                        <p class="product-desc">توازن مدروس بين السعر والتشطيب لمن يبحث عن قيمة طويلة الأمد.</p>
-                        <p class="product-desc">Thoughtful balance between price and finish for those seeking long-term value.</p>
-                        <span class="product-price">$14.90</span>
-                        <div class="product-cta">
-                            <a href="#contact" class="btn">اطلب الآن | Order Now</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- الإصدار P1 -->
-                <div class="product-card">
-                    <div class="product-image">P1</div>
-                    <div class="product-content">
-                        <h3 class="product-title">الإصدار البريميوم (P1) | Premium Edition</h3>
-                        <p class="product-desc">ملمس أغنى وتفاصيل أدق وتشطيبات مرتفعة لمحبي التميز.</p>
-                        <p class="product-desc">Richer texture, finer details, and elevated finishes for those who appreciate distinction.</p>
-                        <span class="product-price">$19.90</span>
-                        <div class="product-cta">
-                            <a href="#contact" class="btn">اطلب الآن | Order Now</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- الإصدار S1 -->
-                <div class="product-card">
-                    <div class="product-image">S1</div>
-                    <div class="product-content">
-                        <h3 class="product-title">الإصدار الفضي (S1) | Silver Edition</h3>
-                        <p class="product-desc">مظهر فضّي راقٍ مع تقديم مُعزّز للمناسبات الرسمية والهدايا الفاخرة.</p>
-                        <p class="product-desc">Elegant silver appearance with enhanced presentation for formal occasions and luxury gifts.</p>
-                        <span class="product-price">$26.90</span>
-                        <div class="product-cta">
-                            <a href="#contact" class="btn">اطلب الآن | Order Now</a>
+                            <a href="editions.html#L1" class="btn">اطلب الآن</a>
                         </div>
                     </div>
                 </div>
@@ -1133,185 +160,60 @@
                 <div class="product-card">
                     <div class="product-image">G1</div>
                     <div class="product-content">
-                        <h3 class="product-title">الإصدار الذهبي (G1) | Gold Edition</h3>
+                        <h3 class="product-title">الإصدار الذهبي (G1)</h3>
                         <p class="product-desc">بريق ذهبي فاخر بطبقة PVD زخرفية تمنح حضورًا لامعًا في كل مناسبة.</p>
-                        <p class="product-desc">Luxurious golden shine with decorative PVD coating that adds a sparkling presence to any occasion.</p>
                         <span class="product-price">$39.90</span>
                         <div class="product-cta">
-                            <a href="#contact" class="btn">اطلب الآن | Order Now</a>
+                            <a href="editions.html#G1" class="btn">اطلب الآن</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- الإصدار L1 -->
+                <!-- الإصدار S1 -->
                 <div class="product-card">
-                    <div class="product-image">L1</div>
+                    <div class="product-image">S1</div>
                     <div class="product-content">
-                        <h3 class="product-title">الإصدار البلاتيني (L1) | Platinum Edition</h3>
-                        <p class="product-desc">قمة المجموعة بلمسة Platinum-Tone مع ترقيم فردي وشهادة أصالة.</p>
-                        <p class="product-desc">The pinnacle of the collection with Platinum-Tone finish, individual numbering, and certificate of authenticity.</p>
-                        <span class="product-price">$129.00</span>
+                        <h3 class="product-title">الإصدار الفضي (S1)</h3>
+                        <p class="product-desc">مظهر فضّي راقٍ مع تقديم مُعزّز للمناسبات الرسمية والهدايا الفاخرة.</p>
+                        <span class="product-price">$26.90</span>
                         <div class="product-cta">
-                            <a href="#contact" class="btn">اطلب الآن | Order Now</a>
+                            <a href="editions.html#S1" class="btn">اطلب الآن</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <section id="bundles" class="bundles">
-            <h2 class="section-title">باقات مجمعة | Bundle Packages</h2>
-            <p class="section-desc">مجموعات خاصة مصممة خصيصًا للهدايا المؤسسية والمناسبات الخاصة</p>
-            <p class="section-desc">Special sets designed for corporate gifting and special occasions</p>
             
-            <div class="bundles-grid">
-                <!-- باقة رجال الأعمال -->
-                <div class="bundle-card">
-                    <div class="bundle-image">Business</div>
-                    <div class="bundle-content">
-                        <h3 class="bundle-title">باقة رجال الأعمال | Business Package</h3>
-                        <p class="bundle-desc">مزيج متكامل من الإصدارات للهدايا المؤسسية والشركات.</p>
-                        <p class="bundle-desc">A comprehensive mix of editions for corporate gifts and businesses.</p>
-                        <span class="bundle-price">$890.91</span>
-                        <span class="bundle-savings">وفر 12% | Save 12%</span>
-                        <div class="product-cta">
-                            <a href="#contact" class="btn">اطلب الآن | Order Now</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- باقة العائلة -->
-                <div class="bundle-card">
-                    <div class="bundle-image">Family</div>
-                    <div class="bundle-content">
-                        <h3 class="bundle-title">باقة العائلة | Family Package</h3>
-                        <p class="bundle-desc">مجموعة متنوعة من الإصدارات للهدايا العائلية والمناسبات الخاصة.</p>
-                        <p class="bundle-desc">A variety of editions for family gifts and special occasions.</p>
-                        <span class="bundle-price">$214.20</span>
-                        <span class="bundle-savings">وفر 10% | Save 10%</span>
-                        <div class="product-cta">
-                            <a href="#contact" class="btn">اطلب الآن | Order Now</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- باقة المعارض -->
-                <div class="bundle-card">
-                    <div class="bundle-image">Exhibition</div>
-                    <div class="bundle-content">
-                        <h3 class="bundle-title">باقة المعارض | Exhibition Package</h3>
-                        <p class="bundle-desc">مجموعة شاملة للمعارض والفعاليات الثقافية والفنادق الفاخرة.</p>
-                        <p class="bundle-desc">A comprehensive set for exhibitions, cultural events, and luxury hotels.</p>
-                        <span class="bundle-price">$1,599.02</span>
-                        <span class="bundle-savings">وفر 15% | Save 15%</span>
-                        <div class="product-cta">
-                            <a href="#contact" class="btn">اطلب الآن | Order Now</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="cta" style="margin-top: 40px;">
+                <a href="editions.html" class="btn">عرض جميع الإصدارات</a>
             </div>
         </section>
         
-        <section id="comparison" class="comparison">
-            <h2 class="section-title">مقارنة بين الإصدارات | Editions Comparison</h2>
-            <p class="section-desc">جدول مقارنة يوضح الفروقات الأساسية بين الإصدارات الستة لمساعدتك في اختيار الأنسب</p>
-            <p class="section-desc">Comparison table showing the main differences between the six editions to help you choose the right one</p>
+        <section id="partners-preview">
+            <h2 class="section-title">شركاؤنا</h2>
+            <p class="section-desc">نفتخر بالتعاون مع مؤسسات وعلامات تجارية رائدة</p>
             
-            <div class="comparison-table-container">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>المواصفات | Specifications</th>
-                            <th>E1 الأساسي | Essential</th>
-                            <th>C1 الكلاسيكي | Classic</th>
-                            <th>P1 البريميوم | Premium</th>
-                            <th>S1 الفضي | Silver</th>
-                            <th>G1 الذهبي | Gold</th>
-                            <th>L1 البلاتيني | Platinum</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>السعر (دولار) | Price (USD)</td>
-                            <td>7.90</td>
-                            <td>14.90</td>
-                            <td>19.90</td>
-                            <td>26.90</td>
-                            <td>39.90</td>
-                            <td>129.00</td>
-                        </tr>
-                        <tr>
-                            <td>الفئة | Category</td>
-                            <td>اقتصادي | Economic</td>
-                            <td>كلاسيكي | Classic</td>
-                            <td>بريميوم | Premium</td>
-                            <td>فاخر | Luxury</td>
-                            <td>فاخر جداً | Elite</td>
-                            <td>محدود | Limited</td>
-                        </tr>
-                        <tr>
-                            <td>التغليف | Packaging</td>
-                            <td>علبة كرافت | Craft Box</td>
-                            <td>علبة Rigid</td>
-                            <td>علبة Soft-Touch</td>
-                            <td>علبة Velvet</td>
-                            <td>علبة فاخرة | Luxury Box</td>
-                            <td>علبة Piano Black</td>
-                        </tr>
-                        <tr>
-                            <td>التوافر | Availability</td>
-                            <td>مستمر | Ongoing</td>
-                            <td>مستمر | Ongoing</td>
-                            <td>إنتاج بدُفعات | Batch Production</td>
-                            <td>دُفعات موسمية | Seasonal Batches</td>
-                            <td>دُفعات محددة | Specific Batches</td>
-                            <td>محدود (1000 قطعة) | Limited (1000 pcs)</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="partners-grid">
+                <div class="partner-logo">شريك 1</div>
+                <div class="partner-logo">شريك 2</div>
+                <div class="partner-logo">شريك 3</div>
+                <div class="partner-logo">شريك 4</div>
             </div>
-        </section>
-        
-        <section id="testimonials" class="testimonials">
-            <h2 class="section-title">آراء عملائنا | Customer Testimonials</h2>
-            <p class="section-desc">انطباعات وتجارب من عملائنا الكرام الذين اقتنوا إصدارات Kemet Gift®</p>
-            <p class="section-desc">Impressions and experiences from our valued customers who have acquired Kemet Gift® editions</p>
             
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <p class="testimonial-text">"لقد أذهلتني جودة التصنيع والدقة في التفاصيل. الإصدار البلاتيني L1 يمثل تحفة فنية حقيقية تحكي قصة حضارة عريقة."</p>
-                    <p class="testimonial-text">"I was amazed by the manufacturing quality and attention to detail. The Platinum L1 edition represents a true masterpiece that tells the story of an ancient civilization."</p>
-                    <div class="testimonial-author">أ. أحمد السيد | Mr. Ahmed El-Sayed</div>
-                    <div class="testimonial-role">هواة جمع المقتنيات الأثرية | Antiquities Collector</div>
-                </div>
-                
-                <div class="testimonial">
-                    <p class="testimonial-text">"اخترنا هدايا Kemet Gift لضيوف مؤتمرنا الدولي وكانت ردود الأفعال رائعة. الجودة والتقديم الفاخر ينافسان أكبر العلامات العالمية."</p>
-                    <p class="testimonial-text">"We chose Kemet Gift as presents for our international conference guests, and the feedback was fantastic. The quality and luxurious presentation rival major global brands."</p>
-                    <div class="testimonial-author">م. سارة محمود | Eng. Sarah Mahmoud</div>
-                    <div class="testimonial-role">مديرة علاقات عامة بفندق خمس نجوم | PR Manager at a 5-Star Hotel</div>
-                </div>
-                
-                <div class="testimonial">
-                    <p class="testimonial-text">"الشحن كان سريعًا والتغليف أنيقًا جدًا. خدمة العملاء كانت ممتازة وساعدوني في التخصيص الذي أردته لهدية زواجي."</p>
-                    <p class="testimonial-text">"Shipping was fast and the packaging was very elegant. Customer service was excellent and helped me with the customization I wanted for my wedding gift."</p>
-                    <div class="testimonial-author">أ. محمد علي | Mr. Mohamed Ali</div>
-                    <div class="testimonial-role">عميل من الإمارات | Customer from UAE</div>
-                </div>
+            <div class="cta" style="margin-top: 40px;">
+                <a href="partners.html" class="btn btn-secondary">اعرف المزيد عن شركائنا</a>
             </div>
         </section>
         
         <section id="contact" class="contact">
-            <h2 class="section-title">تواصل معنا | Contact Us</h2>
+            <h2 class="section-title">تواصل معنا</h2>
             <p class="section-desc">نحن هنا للإجابة على جميع استفساراتك ومساعدتك في اختيار الهدية المثالية</p>
-            <p class="section-desc">We're here to answer all your inquiries and help you choose the perfect gift</p>
             
             <div class="contact-grid">
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">📞</div>
                         <div class="contact-details">
-                            <h4>هاتف | Phone</h4>
+                            <h4>هاتف</h4>
                             <p>+20 100 422 1419</p>
                         </div>
                     </div>
@@ -1319,7 +221,7 @@
                     <div class="contact-item">
                         <div class="contact-icon">📧</div>
                         <div class="contact-details">
-                            <h4>بريد إلكتروني | Email</h4>
+                            <h4>بريد إلكتروني</h4>
                             <p>info@kemetgift.com</p>
                         </div>
                     </div>
@@ -1327,7 +229,7 @@
                     <div class="contact-item">
                         <div class="contact-icon">🌐</div>
                         <div class="contact-details">
-                            <h4>موقع إلكتروني | Website</h4>
+                            <h4>موقع إلكتروني</h4>
                             <p>www.kemetgift.com</p>
                         </div>
                     </div>
@@ -1335,49 +237,57 @@
                     <div class="contact-item">
                         <div class="contact-icon">🕒</div>
                         <div class="contact-details">
-                            <h4>ساعات العمل | Working Hours</h4>
-                            <p>الأحد - الخميس: 9 صباحًا - 5 مساءً (بتوقيت مصر) | Sun - Thu: 9AM - 5PM (EET)</p>
+                            <h4>ساعات العمل</h4>
+                            <p>الأحد - الخميس: 9 صباحًا - 5 مساءً (بتوقيت مصر)</p>
                         </div>
+                    </div>
+                    
+                    <div class="socials" style="margin-top: 20px;">
+                        <a href="https://www.facebook.com/share/16uoDzeKri/" aria-label="Facebook" target="_blank">📱</a>
+                        <a href="https://www.instagram.com/kemetgift?igsh=MXNlYWY1NDRwcXkxNw==" aria-label="Instagram" target="_blank">📸</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="https://youtube.com/@kemetgift?si=cwDTpyEnBDLVlNdC" aria-label="YouTube" target="_blank">▶️</a>
+                        <a href="https://Tiktok.com/@kemetgift" aria-label="TikTok" target="_blank">🎵</a>
                     </div>
                 </div>
                 
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">الاسم بالكامل | Full Name</label>
+                            <label for="name">الاسم بالكامل</label>
                             <input type="text" id="name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">البريد الإلكتروني | Email</label>
+                            <label for="email">البريد الإلكتروني</label>
                             <input type="email" id="email" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="phone">رقم الهاتف | Phone Number</label>
+                            <label for="phone">رقم الهاتف</label>
                             <input type="tel" id="phone">
                         </div>
                         
                         <div class="form-group">
-                            <label for="edition">الإصدار المفضل | Preferred Edition</label>
+                            <label for="edition">الإصدار المفضل</label>
                             <select id="edition">
-                                <option value="">اختر الإصدار | Choose Edition</option>
-                                <option value="E1">E1 - الأساسي | Essential</option>
-                                <option value="C1">C1 - الكلاسيكي | Classic</option>
-                                <option value="P1">P1 - البريميوم | Premium</option>
-                                <option value="S1">S1 - الفضي | Silver</option>
-                                <option value="G1">G1 - الذهبي | Gold</option>
-                                <option value="L1">L1 - البلاتيني | Platinum</option>
-                                <option value="bundle">باقة مجمعة | Bundle Package</option>
+                                <option value="">اختر الإصدار</option>
+                                <option value="E1">E1 - الأساسي</option>
+                                <option value="C1">C1 - الكلاسيكي</option>
+                                <option value="P1">P1 - البريميوم</option>
+                                <option value="S1">S1 - الفضي</option>
+                                <option value="G1">G1 - الذهبي</option>
+                                <option value="L1">L1 - البلاتيني</option>
+                                <option value="bundle">باقة مجمعة</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">الرسالة | Message</label>
+                            <label for="message">الرسالة</label>
                             <textarea id="message" rows="5" required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn">إرسال الرسالة | Send Message</button>
+                        <button type="submit" class="btn">إرسال الرسالة</button>
                     </form>
                 </div>
             </div>
@@ -1386,132 +296,36 @@
     
     <footer>
         <div class="footer-content">
-            <p>Kemet Gift® — هدايا تحمل روح الحضارة | Gifts That Carry The Spirit of Civilization</p>
+            <p>Kemet Gift® — هدية من قلب التاريخ | A Gift From The Heart Of History</p>
             <p>صنع في مصر — Made in Egypt</p>
             
             <div class="footer-links">
-                <a href="#">سياسة الخصوصية | Privacy Policy</a>
-                <a href="#">شروط الاستخدام | Terms of Service</a>
-                <a href="#">سياسة الاستبدال والضمان | Warranty Policy</a>
-                <a href="#">الأسئلة الشائعة | FAQ</a>
+                <a href="index.html">الرئيسية</a>
+                <a href="editions.html">الإصدارات</a>
+                <a href="bundles.html">الباقات</a>
+                <a href="partners.html">شركاؤنا</a>
+                <a href="about.html">من نحن</a>
+                <a href="warranty.html">سياسة الضمان</a>
+                <a href="#contact">اتصل بنا</a>
             </div>
             
             <div class="socials">
-                <a href="#" aria-label="Facebook">📱</a>
-                <a href="#" aria-label="Instagram">📸</a>
+                <a href="https://www.facebook.com/share/16uoDzeKri/" aria-label="Facebook" target="_blank">📱</a>
+                <a href="https://www.instagram.com/kemetgift?igsh=MXNlYWY1NDRwcXkxNw==" aria-label="Instagram" target="_blank">📸</a>
                 <a href="#" aria-label="LinkedIn">💼</a>
-                <a href="#" aria-label="YouTube">▶️</a>
+                <a href="https://youtube.com/@kemetgift?si=cwDTpyEnBDLVlNdC" aria-label="YouTube" target="_blank">▶️</a>
+                <a href="https://Tiktok.com/@kemetgift" aria-label="TikTok" target="_blank">🎵</a>
             </div>
             
             <div class="copyright">
-                <p>© 2025 Kemet Gift®. جميع الحقوق محفوظة. | All Rights Reserved.</p>
+                <p>© 2025 Kemet Gift®. جميع الحقوق محفوظة.</p>
                 <p>المنتجات المعروضة ميداليات تذكارية زخرفية وليست مجوهرات - غير مخصصة للأطفال تحت 12 سنة</p>
-                <p>Products are decorative commemorative medals, not jewelry - Not intended for children under 12 years</p>
             </div>
         </div>
     </footer>
     
     <div class="notification" id="notification"></div>
 
-    <script>
-        // كود الجافاسكريبت للتفاعلية
-        document.addEventListener('DOMContentLoaded', function() {
-            // إظهار/إخفاء القائمة في الجوال
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (menuBtn && navLinks) {
-                menuBtn.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
-                });
-            }
-            
-            // التعامل مع إرسال نموذج الاتصال
-            const contactForm = document.getElementById('contactForm');
-            const notification = document.getElementById('notification');
-            
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // محاكاة إرسال النموذج
-                    showNotification('تم إرسال رسالتك بنجاح، سنتواصل معك قريبًا. | Your message has been sent successfully, we will contact you soon.', 'success');
-                    contactForm.reset();
-                });
-            }
-            
-            // وظيفة إظهار الإشعارات
-            function showNotification(message, type) {
-                notification.textContent = message;
-                notification.className = 'notification ' + type;
-                notification.classList.add('show');
-                
-                setTimeout(function() {
-                    notification.classList.remove('show');
-                }, 3000);
-            }
-            
-            // تأثير التمرير السلس للروابط
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                        
-                        // إغلاق القائمة في الجوال بعد النقر على رابط
-                        if (navLinks.classList.contains('active')) {
-                            navLinks.classList.remove('active');
-                        }
-                    }
-                });
-            });
-            
-            // Countdown Timer
-            const launchDate = new Date('January 1, 2027 00:00:00').getTime();
-            
-            function updateCountdown() {
-                const now = new Date().getTime();
-                const distance = launchDate - now;
-                
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                document.getElementById('days').innerText = days.toString().padStart(2, '0');
-                document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
-            }
-            
-            // تحديث العد التنازلي كل ثانية
-            setInterval(updateCountdown, 1000);
-            updateCountdown(); // التهيئة الأولية
-            
-            // تبديل اللغة
-            const languageSwitcher = document.getElementById('languageSwitcher');
-            let currentLanguage = 'ar';
-            
-            languageSwitcher.addEventListener('click', function() {
-                // هذه وظيفة أساسية لتبديل اللغة - يمكن توسيعها لتبديل المحتوى الفعلي
-                if (currentLanguage === 'ar') {
-                    currentLanguage = 'en';
-                    languageSwitcher.querySelector('span:first-child').innerText = 'English';
-                } else {
-                    currentLanguage = 'ar';
-                    languageSwitcher.querySelector('span:first-child').innerText = 'العربية';
-                }
-                
-                showNotification(`تم تغيير اللغة إلى ${currentLanguage === 'ar' ? 'العربية' : 'English'} | Language changed to ${currentLanguage === 'ar' ? 'Arabic' : 'English'}`, 'success');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
