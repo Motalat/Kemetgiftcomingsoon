@@ -1,607 +1,382 @@
 <!doctype html>
-<html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kemet Gift - Luxury Egyptian Souvenirs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Crimson+Text:wght@400;600&amp;display=swap" rel="stylesheet">
-  <script src="/_sdk/element_sdk.js"></script>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kemet Gift — A Gift From The Heart of History</title>
+  <meta name="description" content="Kemet Gift — هدايا تذكارية فاخرة من قلب التاريخ المصري. نسخ محدودة ومجموعات مميزة." />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-        body {
-            box-sizing: border-box;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    :root{
+      --gold:#D4AF37;
+      --beige:#FAF3E0;
+      --cream:#F6EFE4;
+      --dark:#0C0C0C;
+      --muted:#6B6359;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--dark);
+      background:linear-gradient(180deg, #fff 0%, var(--cream) 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      direction:rtl;
+      line-height:1.6;
+    }
+    a{color:var(--dark); text-decoration:none}
+    .container{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:32px;
+    }
 
-        html, body {
-            height: 100%;
-        }
+    /* Header */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:18px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .logo-wrap{
+      width:64px; height:64px;
+      display:flex; align-items:center; justify-content:center;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(212,175,55,0.12), rgba(212,175,55,0.06));
+      border:1px solid rgba(212,175,55,0.16);
+    }
+    .brand h1{
+      font-family:"Playfair Display", serif;
+      font-size:20px;
+      margin:0;
+      letter-spacing:0.4px;
+      color:var(--dark);
+    }
+    .tagline{font-size:12px;color:var(--muted);margin-top:2px}
 
-        body {
-            font-family: 'Crimson Text', serif;
-            background: linear-gradient(135deg, #FAF3E0 0%, #F5E6D3 100%);
-            color: #2C1810;
-            line-height: 1.6;
-            position: relative;
-            overflow-x: hidden;
-        }
+    nav .btn{
+      background:transparent;
+      border:1px solid rgba(12,12,12,0.08);
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .cta{
+      background:var(--gold);
+      color:#fff;
+      padding:10px 16px;
+      border-radius:12px;
+      border:none;
+      font-weight:700;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    }
 
-        /* Egyptian papyrus texture background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
-                linear-gradient(45deg, transparent 49%, rgba(212, 175, 55, 0.02) 50%, transparent 51%);
-            pointer-events: none;
-            z-index: -1;
-        }
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:40px;
+      align-items:center;
+      padding:56px 0;
+    }
+    .hero-left h2{
+      font-family:"Playfair Display", serif;
+      font-size:42px;
+      margin:0 0 12px 0;
+      color:var(--dark);
+      line-height:1.04;
+    }
+    .hero-left p{
+      color:var(--muted);
+      font-size:16px;
+      max-width:640px;
+      margin:0 0 22px 0;
+    }
+    .features{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .pill{
+      border-radius:999px;
+      background:rgba(12,12,12,0.04);
+      padding:8px 12px;
+      font-size:13px;
+      color:var(--dark);
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    .hero-right{
+      background:linear-gradient(180deg, rgba(246,239,228,0.9), rgba(255,255,255,0.8));
+      border-radius:14px;
+      padding:24px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.05);
+      text-align:center;
+    }
+    .product-preview{
+      width:100%;
+      height:260px;
+      border-radius:10px;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(212,175,55,0.06), transparent 10%),
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.01) 0 2px, transparent 2px 10px);
+      display:flex; align-items:center; justify-content:center;
+      gap:12px;
+      flex-direction:column;
+    }
+    .product-preview img{max-height:160px; object-fit:contain}
 
-        /* Header */
-        header {
-            background: rgba(250, 243, 224, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid #D4AF37;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    .buy-row{
+      display:flex; gap:10px; justify-content:center; margin-top:14px;
+    }
+    .btn-outline{border:1px solid rgba(12,12,12,0.08); padding:10px 14px; border-radius:10px; background:transparent}
+    .btn-gold{background:var(--gold); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700}
 
-        nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px 0;
-        }
+    /* Editions grid */
+    .editions{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:36px;
+    }
+    .card{
+      background:#fff;
+      border-radius:12px;
+      padding:16px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.04);
+      display:flex; gap:12px; align-items:center;
+    }
+    .icon{
+      width:64px; height:64px; border-radius:10px;
+      display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(246,239,228,0.6));
+      border:1px solid rgba(212,175,55,0.08);
+      font-size:22px;
+    }
+    .card h4{margin:0; font-family:"Playfair Display", serif; font-size:16px}
+    .card p{margin:2px 0 0 0; color:var(--muted); font-size:13px}
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #D4AF37;
-            text-decoration: none;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
+    /* Contact & Footer */
+    .contact{
+      display:flex;
+      gap:24px;
+      margin-top:48px;
+      align-items:flex-start;
+      justify-content:space-between;
+    }
+    .contact .left{max-width:520px}
+    .socials{display:flex; gap:12px; margin-top:12px}
+    .socials a{display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:rgba(0,0,0,0.04)}
+    footer{margin-top:48px; padding:20px 0; border-top:1px solid rgba(12,12,12,0.04); color:var(--muted); font-size:13px}
 
-        .logo:hover {
-            transform: scale(1.05);
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
-        }
+    /* Responsive */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr; padding:30px 0}
+      .editions{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .editions{grid-template-columns:1fr}
+      .brand h1{font-size:18px}
+      .hero-left h2{font-size:28px}
+    }
 
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 80px 0 100px;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(250, 243, 224, 0.8) 100%);
-            position: relative;
-        }
+    /* Decorative glyphs (subtle hieroglyph motif) */
+    .glyph{
+      opacity:0.08;
+      position:fixed;
+      left:10px;
+      bottom:10px;
+      width:160px;
+      transform:rotate(-6deg);
+      pointer-events:none;
+    }
 
-        .hero::before {
-            content: '𓂀 𓈖 𓎡 𓅓 𓏏 𓊖';
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.5rem;
-            color: rgba(212, 175, 55, 0.3);
-            letter-spacing: 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            font-weight: 700;
-            color: #D4AF37;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            letter-spacing: 3px;
-        }
-
-        .hero .tagline {
-            font-size: 1.5rem;
-            color: #8B4513;
-            font-style: italic;
-            margin-bottom: 40px;
-            font-weight: 600;
-        }
-
-        .hero .philosophy {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            color: #5D4037;
-            line-height: 1.8;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            backdrop-filter: blur(5px);
-        }
-
-        /* Collections Section */
-        .collections {
-            padding: 80px 0;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .collections h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            text-align: center;
-            color: #D4AF37;
-            margin-bottom: 60px;
-            font-weight: 600;
-            letter-spacing: 2px;
-        }
-
-        .collections-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .collection-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(250, 243, 224, 0.9) 100%);
-            padding: 40px 30px;
-            border-radius: 20px;
-            text-align: center;
-            border: 2px solid rgba(212, 175, 55, 0.3);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .collection-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s ease;
-            opacity: 0;
-        }
-
-        .collection-card:hover::before {
-            opacity: 1;
-            transform: rotate(45deg) translate(50%, 50%);
-        }
-
-        .collection-card:hover {
-            transform: translateY(-10px);
-            border-color: #D4AF37;
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
-        }
-
-        .collection-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .collection-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: #D4AF37;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .collection-card .edition {
-            font-size: 1rem;
-            color: #8B4513;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(250, 243, 224, 0.8) 100%);
-        }
-
-        .contact h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            text-align: center;
-            color: #D4AF37;
-            margin-bottom: 50px;
-            font-weight: 600;
-            letter-spacing: 2px;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-item {
-            text-align: center;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 15px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.6);
-            border-color: #D4AF37;
-        }
-
-        .contact-item a {
-            color: #8B4513;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: #D4AF37;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #2C1810 0%, #4A2C2A 100%);
-            color: #FAF3E0;
-            padding: 60px 0 30px;
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: inline-block;
-            padding: 15px;
-            background: rgba(212, 175, 55, 0.2);
-            border-radius: 50%;
-            color: #D4AF37;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .social-link:hover {
-            background: #D4AF37;
-            color: #2C1810;
-            transform: translateY(-5px);
-            border-color: #FAF3E0;
-        }
-
-        .website-link {
-            font-size: 1.2rem;
-            color: #D4AF37;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .website-link:hover {
-            color: #FAF3E0;
-        }
-
-        .copyright {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            color: rgba(250, 243, 224, 0.7);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .tagline {
-                font-size: 1.2rem;
-            }
-
-            .hero .philosophy {
-                font-size: 1rem;
-                padding: 20px;
-            }
-
-            .collections h2,
-            .contact h2 {
-                font-size: 2.2rem;
-            }
-
-            .collections-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .collection-card {
-                padding: 30px 20px;
-            }
-
-            .social-links {
-                gap: 20px;
-            }
-
-            .hero::before {
-                font-size: 1rem;
-                letter-spacing: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .hero {
-                padding: 60px 0 80px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .logo {
-                font-size: 1.5rem;
-            }
-
-            .collections,
-            .contact {
-                padding: 60px 0;
-            }
-        }
-    </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
- </head>
- <body>
-  <header>
-   <nav class="container"><a href="#" class="logo" id="brand-name">Kemet Gift</a>
-   </nav>
-  </header>
-  <main>
-   <section class="hero">
-    <div class="container">
-     <h1 id="brand-name-hero">Kemet Gift</h1>
-     <p class="tagline" id="tagline">A Gift From The Heart of History</p>
-     <p class="philosophy" id="philosophy-text">At Kemet Gift, we believe that every piece tells a story of ancient wisdom and timeless beauty. Our commitment to authenticity, exceptional craftsmanship, and cultural pride ensures that each souvenir carries the soul of Egypt's magnificent heritage, connecting you to thousands of years of history and tradition.</p>
-    </div>
-   </section>
-   <section class="collections">
-    <div class="container">
-     <h2 id="collections-title">Our Collections</h2>
-     <div class="collections-grid">
-      <div class="collection-card"><span class="collection-icon">🪲</span>
-       <h3>Essential</h3>
-       <p class="edition">E1 - Scarab</p>
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo-wrap" aria-hidden="true">
+          <!-- REPLACE WITH LOGO SVG/IMAGE -->
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" rx="5" fill="white"/>
+            <path d="M12 3c-1.657 0-3 1.343-3 3 0 1.657 3 6 3 6s3-4.343 3-6c0-1.657-1.343-3-3-3z" fill="#D4AF37"/>
+            <circle cx="12" cy="9.2" r="0.9" fill="#0C0C0C"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Kemet Gift</h1>
+          <div class="tagline">A Gift From The Heart of History</div>
+        </div>
       </div>
-      <div class="collection-card"><span class="collection-icon">👁️</span>
-       <h3>Classic</h3>
-       <p class="edition">C1 - Eye of Horus</p>
-      </div>
-      <div class="collection-card"><span class="collection-icon">⛰️</span>
-       <h3>Premium</h3>
-       <p class="edition">P1 - Great Pyramid</p>
-      </div>
-      <div class="collection-card"><span class="collection-icon">👑</span>
-       <h3>Silver</h3>
-       <p class="edition">S1 - Tutankhamun Mask</p>
-      </div>
-      <div class="collection-card"><span class="collection-icon">☀️</span>
-       <h3>Gold</h3>
-       <p class="edition">G1 - Sun Disc</p>
-      </div>
-      <div class="collection-card"><span class="collection-icon">🗿</span>
-       <h3>Limited</h3>
-       <p class="edition">L1 - Ramses II Face</p>
-      </div>
-     </div>
-    </div>
-   </section>
-   <section class="contact">
-    <div class="container">
-     <h2>Contact Us</h2>
-     <div class="contact-grid">
-      <div class="contact-item"><a href="mailto:info@kemetgift.com">info@kemetgift.com</a>
-      </div>
-      <div class="contact-item"><a href="mailto:sales@kemetgift.com">sales@kemetgift.com</a>
-      </div>
-      <div class="contact-item"><a href="mailto:support@kemetgift.com">support@kemetgift.com</a>
-      </div>
-      <div class="contact-item"><a href="mailto:partners@kemetgift.com">partners@kemetgift.com</a>
-      </div>
-     </div>
-    </div>
-   </section>
-  </main>
-  <footer>
-   <div class="container">
-    <div class="social-links"><a href="#" class="social-link" target="_blank" rel="noopener noreferrer">📘</a> <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">📷</a> <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">📺</a> <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">🎵</a> <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">🐦</a>
-    </div><a href="#" class="website-link" id="website-url" target="_blank" rel="noopener noreferrer">www.kemetgift.com</a>
-    <div class="copyright">
-     <p>© 2024 Kemet Gift. All rights reserved. Crafted with pride in Egypt.</p>
-    </div>
-   </div>
-  </footer>
-  <script>
-        const defaultConfig = {
-            brand_name: "Kemet Gift",
-            tagline: "A Gift From The Heart of History",
-            philosophy_text: "At Kemet Gift, we believe that every piece tells a story of ancient wisdom and timeless beauty. Our commitment to authenticity, exceptional craftsmanship, and cultural pride ensures that each souvenir carries the soul of Egypt's magnificent heritage, connecting you to thousands of years of history and tradition.",
-            collections_title: "Our Collections",
-            website_url: "www.kemetgift.com",
-            background_color: "#FAF3E0",
-            accent_color: "#D4AF37",
-            text_color: "#2C1810",
-            surface_color: "#FFFFFF",
-            secondary_color: "#8B4513",
-            font_family: "Playfair Display",
-            font_size: 16
-        };
 
-        async function render(config) {
-            // Update text content
-            const brandNameElements = document.querySelectorAll('#brand-name, #brand-name-hero');
-            brandNameElements.forEach(el => {
-                el.textContent = config.brand_name || defaultConfig.brand_name;
-            });
+      <nav>
+        <a href="#collections" class="btn">المجموعات</a>
+        <a href="#contact" class="btn">تواصل</a>
+        <a href="#buy" class="cta">اطلب الآن</a>
+      </nav>
+    </header>
 
-            document.getElementById('tagline').textContent = config.tagline || defaultConfig.tagline;
-            document.getElementById('philosophy-text').textContent = config.philosophy_text || defaultConfig.philosophy_text;
-            document.getElementById('collections-title').textContent = config.collections_title || defaultConfig.collections_title;
-            document.getElementById('website-url').textContent = config.website_url || defaultConfig.website_url;
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-left">
+          <h2 id="hero-title">هدايا تذكارية فاخرة من قلب التاريخ المصري</h2>
+          <p>ننسج للزائر رحلة عبر رموز مصر القديمة من خلال قطع فاخرة مصممة حرفياً، كل إصدار يحكي قصة، كل قطعة تحمل إرثًا.</p>
+          <div class="features" aria-hidden="true">
+            <div class="pill">أصالة مصرية</div>
+            <div class="pill">تجهيز محلي بجودة عالمية</div>
+            <div class="pill">نسخ محدودة</div>
+          </div>
 
-            // Update colors
-            const backgroundColor = config.background_color || defaultConfig.background_color;
-            const accentColor = config.accent_color || defaultConfig.accent_color;
-            const textColor = config.text_color || defaultConfig.text_color;
-            const surfaceColor = config.surface_color || defaultConfig.surface_color;
-            const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+          <div class="editions" id="collections" aria-label="Collections">
+            <div class="card">
+              <div class="icon">🪲</div>
+              <div>
+                <h4>E1 — Essential</h4>
+                <p>الجعران — البداية، الحماية. نحاس برونزي، قطر 40 مم.</p>
+              </div>
+            </div>
 
-            document.body.style.background = `linear-gradient(135deg, ${backgroundColor} 0%, #F5E6D3 100%)`;
-            document.body.style.color = textColor;
+            <div class="card">
+              <div class="icon">👁️</div>
+              <div>
+                <h4>C1 — Classic</h4>
+                <p>عين حورس — الشفاء والبصيرة. نحاس مطلي نيكل، 42 مم.</p>
+              </div>
+            </div>
 
-            // Update accent colors
-            const accentElements = document.querySelectorAll('.logo, .hero h1, .collections h2, .contact h2, .collection-card h3');
-            accentElements.forEach(el => {
-                el.style.color = accentColor;
-            });
+            <div class="card">
+              <div class="icon">⛰️</div>
+              <div>
+                <h4>P1 — Premium</h4>
+                <p>الهرم — الخلود والاستقرار. سبيكة زنك مطلية ذهبيًا، 45 مم.</p>
+              </div>
+            </div>
 
-            // Update fonts
-            const customFont = config.font_family || defaultConfig.font_family;
-            const baseSize = config.font_size || defaultConfig.font_size;
+            <div class="card">
+              <div class="icon">👑</div>
+              <div>
+                <h4>S1 — Silver</h4>
+                <p>قناع توت عنخ آمون — الأيقونة والشباب. مطلي فضي PVD، 45 مم.</p>
+              </div>
+            </div>
 
-            const headingElements = document.querySelectorAll('.logo, .hero h1, .collections h2, .contact h2, .collection-card h3');
-            headingElements.forEach(el => {
-                el.style.fontFamily = `${customFont}, serif`;
-            });
+            <div class="card">
+              <div class="icon">☀️</div>
+              <div>
+                <h4>G1 — Gold</h4>
+                <p>قرص الشمس — الألوهية والفخامة. ذهبي 24 قيراط، 50 مم.</p>
+              </div>
+            </div>
 
-            // Scale font sizes
-            document.querySelector('.hero h1').style.fontSize = `${baseSize * 2.5}px`;
-            document.querySelector('.hero .tagline').style.fontSize = `${baseSize * 1.5}px`;
-            document.querySelector('.hero .philosophy').style.fontSize = `${baseSize * 1.2}px`;
-            document.querySelectorAll('.collections h2, .contact h2').forEach(el => {
-                el.style.fontSize = `${baseSize * 3}px`;
-            });
-        }
+            <div class="card">
+              <div class="icon">🗿</div>
+              <div>
+                <h4>L1 — Limited</h4>
+                <p>وجه رمسيس الثاني — المجد والإرث. بلاتيني مطلي، 50 مم (محدودة ومرقمة).</p>
+              </div>
+            </div>
+          </div>
 
-        function mapToCapabilities(config) {
-            return {
-                recolorables: [
-                    {
-                        get: () => config.background_color || defaultConfig.background_color,
-                        set: (value) => {
-                            if (window.elementSdk) {
-                                window.elementSdk.setConfig({ background_color: value });
-                            }
-                        }
-                    },
-                    {
-                        get: () => config.accent_color || defaultConfig.accent_color,
-                        set: (value) => {
-                            if (window.elementSdk) {
-                                window.elementSdk.setConfig({ accent_color: value });
-                            }
-                        }
-                    },
-                    {
-                        get: () => config.text_color || defaultConfig.text_color,
-                        set: (value) => {
-                            if (window.elementSdk) {
-                                window.elementSdk.setConfig({ text_color: value });
-                            }
-                        }
-                    },
-                    {
-                        get: () => config.surface_color || defaultConfig.surface_color,
-                        set: (value) => {
-                            if (window.elementSdk) {
-                                window.elementSdk.setConfig({ surface_color: value });
-                            }
-                        }
-                    },
-                    {
-                        get: () => config.secondary_color || defaultConfig.secondary_color,
-                        set: (value) => {
-                            if (window.elementSdk) {
-                                window.elementSdk.setConfig({ secondary_color: value });
-                            }
-                        }
-                    }
-                ],
-                borderables: [],
-                fontEditable: {
-                    get: () => config.font_family || defaultConfig.font_family,
-                    set: (value) => {
-                        if (window.elementSdk) {
-                            window.elementSdk.setConfig({ font_family: value });
-                        }
-                    }
-                },
-                fontSizeable: {
-                    get: () => config.font_size || defaultConfig.font_size,
-                    set: (value) => {
-                        if (window.elementSdk) {
-                            window.elementSdk.setConfig({ font_size: value });
-                        }
-                    }
-                }
-            };
-        }
+        </div>
 
-        function mapToEditPanelValues(config) {
-            return new Map([
-                ["brand_name", config.brand_name || defaultConfig.brand_name],
-                ["tagline", config.tagline || defaultConfig.tagline],
-                ["philosophy_text", config.philosophy_text || defaultConfig.philosophy_text],
-                ["collections_title", config.collections_title || defaultConfig.collections_title],
-                ["website_url", config.website_url || defaultConfig.website_url]
-            ]);
-        }
+        <aside class="hero-right" id="buy" aria-labelledby="buy-title">
+          <div style="display:flex; justify-content:center; gap:10px; align-items:center;">
+            <!-- Product thumbnail placeholder -->
+            <div style="text-align:center">
+              <div style="font-size:12px; color:var(--muted); margin-bottom:6px">نماذج مبدئية</div>
+              <div class="product-preview" role="img" aria-label="Preview of the collectible coin">
+                <svg width="120" height="120" viewBox="0 0 100 100" aria-hidden="true">
+                  <circle cx="50" cy="50" r="44" fill="#fff" stroke="#D4AF37" stroke-width="4"/>
+                  <path d="M50 20 L60 50 L50 80 L40 50 Z" fill="#D4AF37" opacity="0.9"/>
+                </svg>
+                <div style="font-size:13px; color:var(--muted)">النسخة الأساسية E1</div>
+              </div>
+            </div>
+          </div>
 
-        // Initialize the SDK
-        if (window.elementSdk) {
-            window.elementSdk.init({
-                defaultConfig,
-                render,
-                mapToCapabilities,
-                mapToEditPanelValues
-            });
-        }
+          <div class="buy-row" role="group" aria-label="purchase actions">
+            <button class="btn-outline" onclick="location.href='#contact'">اطلب استشارة</button>
+            <button class="btn-gold" onclick="location.href='#contact'">احجز نموذجًا</button>
+          </div>
 
-        // Initial render
-        render(defaultConfig);
-    </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99308f43a45eee9d',t:'MTc2MTIxNTQzMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+          <div style="margin-top:18px; font-size:13px; color:var(--muted)">
+            <strong>تواصل معنا:</strong>
+            <div style="margin-top:8px">info@kemetgift.com</div>
+            <div style="margin-top:4px">sales@kemetgift.com</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="contact" class="contact" aria-label="Contact & Social">
+        <div class="left">
+          <h3 style="font-family:'Playfair Display', serif; margin:0 0 6px 0">تواصل مع Kemet Gift</h3>
+          <p style="margin:0; color:var(--muted)">للطلبات الرسمية أو الشراكات أو توزيع المنتجات تواصل معنا عبر البريد الإلكتروني أو من خلال قنوات التواصل الاجتماعي.</p>
+
+          <div style="margin-top:12px; display:flex; gap:14px; align-items:center;">
+            <div style="font-weight:700; color:var(--dark)">الموقع:</div>
+            <div><a href="https://www.kemetgift.com" target="_blank" rel="noopener">www.kemetgift.com</a></div>
+          </div>
+
+          <div style="margin-top:12px; display:flex; gap:10px; align-items:center; flex-wrap:wrap">
+            <div style="min-width:150px">
+              <div style="font-size:12px; color:var(--muted)">خدمة العملاء</div>
+              <div>support@kemetgift.com</div>
+            </div>
+            <div style="min-width:150px">
+              <div style="font-size:12px; color:var(--muted)">المبيعات</div>
+              <div>sales@kemetgift.com</div>
+            </div>
+            <div style="min-width:150px">
+              <div style="font-size:12px; color:var(--muted)">الشراكات</div>
+              <div>partners@kemetgift.com</div>
+            </div>
+          </div>
+
+          <div class="socials" aria-hidden="true">
+            <a href="https://www.facebook.com/share/16uoDzeKri/" target="_blank" title="Facebook">f</a>
+            <a href="https://www.instagram.com/kemetgift?igsh=MXNlYWY1NDRwcXkxNw==" target="_blank" title="Instagram">ig</a>
+            <a href="https://youtube.com/@kemetgift?si=cwDTpyEnBDLVlNdC" target="_blank" title="YouTube">yt</a>
+            <a href="https://www.tiktok.com/@kemetgift" target="_blank" title="TikTok">tt</a>
+            <a href="#" target="_blank" title="X">x</a>
+          </div>
+        </div>
+
+        <div class="right" style="max-width:420px;">
+          <h3 style="font-family:'Playfair Display', serif; margin:0 0 6px 0">اشترك في النشرة</h3>
+          <p style="margin:0 0 12px 0; color:var(--muted)">انضم لتصلك الإصدارات الجديدة والعروض الخاصة.</p>
+          <form onsubmit="event.preventDefault(); alert('شكراً! سنتواصل معك عبر البريد.');" aria-label="Subscribe form">
+            <input type="email" placeholder="البريد الإلكتروني" required style="width:100%; padding:12px; border-radius:9px; border:1px solid rgba(0,0,0,0.06); margin-bottom:10px">
+            <button class="btn-gold" style="width:100%;">اشترك</button>
+          </form>
+        </div>
+      </section>
+
+      <footer>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+          <div>&copy; <strong>Kemet Gift</strong> — A Gift From The Heart of History</div>
+          <div style="color:var(--muted)">Designed with cultural care • All rights reserved</div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Decorative motif -->
+  <svg class="glyph" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="#D4AF37"><path d="M100 10c14 0 26 12 26 26 0 14-26 52-26 52s-26-38-26-52c0-14 12-26 26-26z"/></g>
+  </svg>
+
+</body>
 </html>
