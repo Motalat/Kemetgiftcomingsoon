@@ -1,382 +1,220 @@
-<!doctype html>
-<html lang="ar">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kemet Gift — A Gift From The Heart of History</title>
-  <meta name="description" content="Kemet Gift — هدايا تذكارية فاخرة من قلب التاريخ المصري. نسخ محدودة ومجموعات مميزة." />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --gold:#D4AF37;
-      --beige:#FAF3E0;
-      --cream:#F6EFE4;
-      --dark:#0C0C0C;
-      --muted:#6B6359;
-      --max-width:1100px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      color:var(--dark);
-      background:linear-gradient(180deg, #fff 0%, var(--cream) 100%);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      direction:rtl;
-      line-height:1.6;
-    }
-    a{color:var(--dark); text-decoration:none}
-    .container{
-      max-width:var(--max-width);
-      margin:0 auto;
-      padding:32px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kemet Gift — Coming Soon 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#D4AF37;
+  --black:#000;
+  --gray:#ccc;
+  --bg1:rgba(0,0,0,0.85);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Inter",sans-serif;
+  background:var(--black);
+  background-image:
+    linear-gradient(var(--bg1), var(--bg1)),
+    url('https://upload.wikimedia.org/wikipedia/commons/3/37/Ancient_Egyptian_hieroglyphs_background.jpg');
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
+  position:relative;
+}
 
-    /* Header */
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:18px 0;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-    }
-    .logo-wrap{
-      width:64px; height:64px;
-      display:flex; align-items:center; justify-content:center;
-      border-radius:12px;
-      background:linear-gradient(180deg, rgba(212,175,55,0.12), rgba(212,175,55,0.06));
-      border:1px solid rgba(212,175,55,0.16);
-    }
-    .brand h1{
-      font-family:"Playfair Display", serif;
-      font-size:20px;
-      margin:0;
-      letter-spacing:0.4px;
-      color:var(--dark);
-    }
-    .tagline{font-size:12px;color:var(--muted);margin-top:2px}
+/* خلفية متحركة ذهبية */
+body::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;width:100%;height:100%;
+  background:radial-gradient(circle at 50% 120%, rgba(212,175,55,0.08), transparent 80%);
+  animation:glow 6s infinite alternate;
+  z-index:0;
+}
+@keyframes glow{
+  from{opacity:0.4; transform:scale(1)}
+  to{opacity:0.8; transform:scale(1.1)}
+}
 
-    nav .btn{
-      background:transparent;
-      border:1px solid rgba(12,12,12,0.08);
-      padding:10px 14px;
-      border-radius:10px;
-      font-weight:600;
-      cursor:pointer;
-    }
-    .cta{
-      background:var(--gold);
-      color:#fff;
-      padding:10px 16px;
-      border-radius:12px;
-      border:none;
-      font-weight:700;
-      box-shadow:0 6px 18px rgba(0,0,0,0.08);
-    }
+.logo{z-index:2;margin-bottom:20px}
+.logo svg{width:90px;height:90px;filter:drop-shadow(0 0 10px rgba(212,175,55,0.3))}
 
-    /* Hero */
-    .hero{
-      display:grid;
-      grid-template-columns:1fr 420px;
-      gap:40px;
-      align-items:center;
-      padding:56px 0;
-    }
-    .hero-left h2{
-      font-family:"Playfair Display", serif;
-      font-size:42px;
-      margin:0 0 12px 0;
-      color:var(--dark);
-      line-height:1.04;
-    }
-    .hero-left p{
-      color:var(--muted);
-      font-size:16px;
-      max-width:640px;
-      margin:0 0 22px 0;
-    }
-    .features{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .pill{
-      border-radius:999px;
-      background:rgba(12,12,12,0.04);
-      padding:8px 12px;
-      font-size:13px;
-      color:var(--dark);
-    }
+h1{
+  font-family:"Playfair Display",serif;
+  font-size:3rem;
+  color:var(--gold);
+  margin-bottom:10px;
+  letter-spacing:1px;
+  text-shadow:0 0 12px rgba(212,175,55,0.3);
+  z-index:2;
+}
+p{
+  color:var(--gray);
+  font-size:1.1rem;
+  margin-bottom:35px;
+  z-index:2;
+}
 
-    .hero-right{
-      background:linear-gradient(180deg, rgba(246,239,228,0.9), rgba(255,255,255,0.8));
-      border-radius:14px;
-      padding:24px;
-      box-shadow:0 8px 30px rgba(0,0,0,0.05);
-      text-align:center;
-    }
-    .product-preview{
-      width:100%;
-      height:260px;
-      border-radius:10px;
-      overflow:hidden;
-      background:
-        radial-gradient(circle at 10% 10%, rgba(212,175,55,0.06), transparent 10%),
-        repeating-linear-gradient(45deg, rgba(0,0,0,0.01) 0 2px, transparent 2px 10px);
-      display:flex; align-items:center; justify-content:center;
-      gap:12px;
-      flex-direction:column;
-    }
-    .product-preview img{max-height:160px; object-fit:contain}
+/* العداد */
+.countdown{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-bottom:40px;
+  z-index:2;
+}
+.time-box{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(212,175,55,0.3);
+  border-radius:14px;
+  padding:20px 18px;
+  min-width:90px;
+  backdrop-filter:blur(6px);
+}
+.time-box h2{color:var(--gold);font-size:2.1rem;margin:0}
+.time-box span{color:var(--gray);font-size:.85rem}
 
-    .buy-row{
-      display:flex; gap:10px; justify-content:center; margin-top:14px;
-    }
-    .btn-outline{border:1px solid rgba(12,12,12,0.08); padding:10px 14px; border-radius:10px; background:transparent}
-    .btn-gold{background:var(--gold); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700}
+/* زر الاشتراك */
+.subscribe{
+  position:relative;
+  z-index:3;
+  margin-top:10px;
+}
+.subscribe input{
+  padding:12px 16px;
+  border-radius:12px;
+  border:none;
+  outline:none;
+  width:220px;
+  background:rgba(255,255,255,0.1);
+  color:#fff;
+  font-size:1rem;
+  margin-left:10px;
+}
+.subscribe button{
+  background:var(--gold);
+  color:#000;
+  font-weight:700;
+  border:none;
+  border-radius:12px;
+  padding:12px 20px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.subscribe button:hover{
+  background:#f1c451;
+  transform:translateY(-2px);
+}
 
-    /* Editions grid */
-    .editions{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin-top:36px;
-    }
-    .card{
-      background:#fff;
-      border-radius:12px;
-      padding:16px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.04);
-      display:flex; gap:12px; align-items:center;
-    }
-    .icon{
-      width:64px; height:64px; border-radius:10px;
-      display:flex; align-items:center; justify-content:center;
-      background:linear-gradient(180deg, rgba(212,175,55,0.08), rgba(246,239,228,0.6));
-      border:1px solid rgba(212,175,55,0.08);
-      font-size:22px;
-    }
-    .card h4{margin:0; font-family:"Playfair Display", serif; font-size:16px}
-    .card p{margin:2px 0 0 0; color:var(--muted); font-size:13px}
+/* footer */
+footer{
+  position:absolute;
+  bottom:15px;
+  width:100%;
+  text-align:center;
+  font-size:.9rem;
+  color:var(--gray);
+  z-index:2;
+}
+footer a{
+  color:var(--gold);
+  text-decoration:none;
+  font-weight:600;
+}
 
-    /* Contact & Footer */
-    .contact{
-      display:flex;
-      gap:24px;
-      margin-top:48px;
-      align-items:flex-start;
-      justify-content:space-between;
-    }
-    .contact .left{max-width:520px}
-    .socials{display:flex; gap:12px; margin-top:12px}
-    .socials a{display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:rgba(0,0,0,0.04)}
-    footer{margin-top:48px; padding:20px 0; border-top:1px solid rgba(12,12,12,0.04); color:var(--muted); font-size:13px}
+/* رموز زخرفية ناعمة */
+.decoration{
+  position:absolute;
+  top:20px; left:20px;
+  opacity:0.05;
+  width:120px;
+  transform:rotate(-15deg);
+  z-index:1;
+}
+.decoration2{
+  position:absolute;
+  bottom:20px; right:20px;
+  opacity:0.05;
+  width:140px;
+  transform:rotate(12deg);
+  z-index:1;
+}
 
-    /* Responsive */
-    @media (max-width:920px){
-      .hero{grid-template-columns:1fr; padding:30px 0}
-      .editions{grid-template-columns:repeat(2,1fr)}
-    }
-    @media (max-width:560px){
-      .editions{grid-template-columns:1fr}
-      .brand h1{font-size:18px}
-      .hero-left h2{font-size:28px}
-    }
-
-    /* Decorative glyphs (subtle hieroglyph motif) */
-    .glyph{
-      opacity:0.08;
-      position:fixed;
-      left:10px;
-      bottom:10px;
-      width:160px;
-      transform:rotate(-6deg);
-      pointer-events:none;
-    }
-
-  </style>
+/* Responsive */
+@media(max-width:600px){
+  h1{font-size:2rem}
+  .time-box{min-width:70px;padding:12px}
+  .time-box h2{font-size:1.4rem}
+  .subscribe input{width:160px;margin-bottom:10px}
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo-wrap" aria-hidden="true">
-          <!-- REPLACE WITH LOGO SVG/IMAGE -->
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-            <rect width="24" height="24" rx="5" fill="white"/>
-            <path d="M12 3c-1.657 0-3 1.343-3 3 0 1.657 3 6 3 6s3-4.343 3-6c0-1.657-1.343-3-3-3z" fill="#D4AF37"/>
-            <circle cx="12" cy="9.2" r="0.9" fill="#0C0C0C"/>
-          </svg>
-        </div>
-        <div>
-          <h1>Kemet Gift</h1>
-          <div class="tagline">A Gift From The Heart of History</div>
-        </div>
-      </div>
 
-      <nav>
-        <a href="#collections" class="btn">المجموعات</a>
-        <a href="#contact" class="btn">تواصل</a>
-        <a href="#buy" class="cta">اطلب الآن</a>
-      </nav>
-    </header>
+<!-- رموز زخرفية -->
+<img class="decoration" src="https://upload.wikimedia.org/wikipedia/commons/8/80/Egyptian_Lotus_Flower_Symbol.svg" alt="">
+<img class="decoration2" src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Egyptian_Scarab_symbol.svg" alt="">
 
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-left">
-          <h2 id="hero-title">هدايا تذكارية فاخرة من قلب التاريخ المصري</h2>
-          <p>ننسج للزائر رحلة عبر رموز مصر القديمة من خلال قطع فاخرة مصممة حرفياً، كل إصدار يحكي قصة، كل قطعة تحمل إرثًا.</p>
-          <div class="features" aria-hidden="true">
-            <div class="pill">أصالة مصرية</div>
-            <div class="pill">تجهيز محلي بجودة عالمية</div>
-            <div class="pill">نسخ محدودة</div>
-          </div>
-
-          <div class="editions" id="collections" aria-label="Collections">
-            <div class="card">
-              <div class="icon">🪲</div>
-              <div>
-                <h4>E1 — Essential</h4>
-                <p>الجعران — البداية، الحماية. نحاس برونزي، قطر 40 مم.</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="icon">👁️</div>
-              <div>
-                <h4>C1 — Classic</h4>
-                <p>عين حورس — الشفاء والبصيرة. نحاس مطلي نيكل، 42 مم.</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="icon">⛰️</div>
-              <div>
-                <h4>P1 — Premium</h4>
-                <p>الهرم — الخلود والاستقرار. سبيكة زنك مطلية ذهبيًا، 45 مم.</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="icon">👑</div>
-              <div>
-                <h4>S1 — Silver</h4>
-                <p>قناع توت عنخ آمون — الأيقونة والشباب. مطلي فضي PVD، 45 مم.</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="icon">☀️</div>
-              <div>
-                <h4>G1 — Gold</h4>
-                <p>قرص الشمس — الألوهية والفخامة. ذهبي 24 قيراط، 50 مم.</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="icon">🗿</div>
-              <div>
-                <h4>L1 — Limited</h4>
-                <p>وجه رمسيس الثاني — المجد والإرث. بلاتيني مطلي، 50 مم (محدودة ومرقمة).</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <aside class="hero-right" id="buy" aria-labelledby="buy-title">
-          <div style="display:flex; justify-content:center; gap:10px; align-items:center;">
-            <!-- Product thumbnail placeholder -->
-            <div style="text-align:center">
-              <div style="font-size:12px; color:var(--muted); margin-bottom:6px">نماذج مبدئية</div>
-              <div class="product-preview" role="img" aria-label="Preview of the collectible coin">
-                <svg width="120" height="120" viewBox="0 0 100 100" aria-hidden="true">
-                  <circle cx="50" cy="50" r="44" fill="#fff" stroke="#D4AF37" stroke-width="4"/>
-                  <path d="M50 20 L60 50 L50 80 L40 50 Z" fill="#D4AF37" opacity="0.9"/>
-                </svg>
-                <div style="font-size:13px; color:var(--muted)">النسخة الأساسية E1</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="buy-row" role="group" aria-label="purchase actions">
-            <button class="btn-outline" onclick="location.href='#contact'">اطلب استشارة</button>
-            <button class="btn-gold" onclick="location.href='#contact'">احجز نموذجًا</button>
-          </div>
-
-          <div style="margin-top:18px; font-size:13px; color:var(--muted)">
-            <strong>تواصل معنا:</strong>
-            <div style="margin-top:8px">info@kemetgift.com</div>
-            <div style="margin-top:4px">sales@kemetgift.com</div>
-          </div>
-        </aside>
-      </section>
-
-      <section id="contact" class="contact" aria-label="Contact & Social">
-        <div class="left">
-          <h3 style="font-family:'Playfair Display', serif; margin:0 0 6px 0">تواصل مع Kemet Gift</h3>
-          <p style="margin:0; color:var(--muted)">للطلبات الرسمية أو الشراكات أو توزيع المنتجات تواصل معنا عبر البريد الإلكتروني أو من خلال قنوات التواصل الاجتماعي.</p>
-
-          <div style="margin-top:12px; display:flex; gap:14px; align-items:center;">
-            <div style="font-weight:700; color:var(--dark)">الموقع:</div>
-            <div><a href="https://www.kemetgift.com" target="_blank" rel="noopener">www.kemetgift.com</a></div>
-          </div>
-
-          <div style="margin-top:12px; display:flex; gap:10px; align-items:center; flex-wrap:wrap">
-            <div style="min-width:150px">
-              <div style="font-size:12px; color:var(--muted)">خدمة العملاء</div>
-              <div>support@kemetgift.com</div>
-            </div>
-            <div style="min-width:150px">
-              <div style="font-size:12px; color:var(--muted)">المبيعات</div>
-              <div>sales@kemetgift.com</div>
-            </div>
-            <div style="min-width:150px">
-              <div style="font-size:12px; color:var(--muted)">الشراكات</div>
-              <div>partners@kemetgift.com</div>
-            </div>
-          </div>
-
-          <div class="socials" aria-hidden="true">
-            <a href="https://www.facebook.com/share/16uoDzeKri/" target="_blank" title="Facebook">f</a>
-            <a href="https://www.instagram.com/kemetgift?igsh=MXNlYWY1NDRwcXkxNw==" target="_blank" title="Instagram">ig</a>
-            <a href="https://youtube.com/@kemetgift?si=cwDTpyEnBDLVlNdC" target="_blank" title="YouTube">yt</a>
-            <a href="https://www.tiktok.com/@kemetgift" target="_blank" title="TikTok">tt</a>
-            <a href="#" target="_blank" title="X">x</a>
-          </div>
-        </div>
-
-        <div class="right" style="max-width:420px;">
-          <h3 style="font-family:'Playfair Display', serif; margin:0 0 6px 0">اشترك في النشرة</h3>
-          <p style="margin:0 0 12px 0; color:var(--muted)">انضم لتصلك الإصدارات الجديدة والعروض الخاصة.</p>
-          <form onsubmit="event.preventDefault(); alert('شكراً! سنتواصل معك عبر البريد.');" aria-label="Subscribe form">
-            <input type="email" placeholder="البريد الإلكتروني" required style="width:100%; padding:12px; border-radius:9px; border:1px solid rgba(0,0,0,0.06); margin-bottom:10px">
-            <button class="btn-gold" style="width:100%;">اشترك</button>
-          </form>
-        </div>
-      </section>
-
-      <footer>
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
-          <div>&copy; <strong>Kemet Gift</strong> — A Gift From The Heart of History</div>
-          <div style="color:var(--muted)">Designed with cultural care • All rights reserved</div>
-        </div>
-      </footer>
-    </main>
-  </div>
-
-  <!-- Decorative motif -->
-  <svg class="glyph" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g fill="#D4AF37"><path d="M100 10c14 0 26 12 26 26 0 14-26 52-26 52s-26-38-26-52c0-14 12-26 26-26z"/></g>
+<div class="logo">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 3c-1.7 0-3 1.3-3 3 0 1.6 3 6 3 6s3-4.4 3-6c0-1.7-1.3-3-3-3z" fill="#D4AF37"/>
+    <circle cx="12" cy="9" r="1" fill="black"/>
   </svg>
+</div>
+
+<h1>Kemet Gift</h1>
+<p>هدية من قلب التاريخ — الإطلاق الرسمي في 1 يناير 2027</p>
+
+<div class="countdown" id="countdown">
+  <div class="time-box"><h2 id="days">0</h2><span>أيام</span></div>
+  <div class="time-box"><h2 id="hours">0</h2><span>ساعات</span></div>
+  <div class="time-box"><h2 id="minutes">0</h2><span>دقائق</span></div>
+  <div class="time-box"><h2 id="seconds">0</h2><span>ثوانٍ</span></div>
+</div>
+
+<div class="subscribe">
+  <form onsubmit="event.preventDefault(); alert('شكراً لاشتراكك! سيتم التواصل عند الإطلاق الرسمي.');">
+    <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
+    <button type="submit">اشترك الآن</button>
+  </form>
+</div>
+
+<footer>
+  © 2025 <a href="https://www.kemetgift.com" target="_blank">Kemet Gift</a> — A Gift From The Heart of History
+</footer>
+
+<script>
+// عداد زمني حتى 1 يناير 2027
+const launchDate = new Date("Jan 1, 2027 00:00:00").getTime();
+const timer = setInterval(()=>{
+  const now = new Date().getTime();
+  const diff = launchDate - now;
+  if(diff<=0){
+    clearInterval(timer);
+    document.getElementById("countdown").innerHTML="<h2 style='color:var(--gold)'>تم الإطلاق الرسمي!</h2>";
+    return;
+  }
+  const d = Math.floor(diff/(1000*60*60*24));
+  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((diff%(1000*60*60))/(1000*60));
+  const s = Math.floor((diff%(1000*60))/1000);
+  document.getElementById("days").textContent = d;
+  document.getElementById("hours").textContent = h;
+  document.getElementById("minutes").textContent = m;
+  document.getElementById("seconds").textContent = s;
+},1000);
+</script>
 
 </body>
 </html>
