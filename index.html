@@ -6,6 +6,24 @@
   <title>Kemet Gift – From the Heart of History</title>
   <meta name="description" content="Luxury collectible gift coins inspired by ancient Egypt – crafted for museums, hotels, and lovers of Egyptian heritage worldwide." />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:title" content="Kemet Gift – From the Heart of History" />
+  <meta property="og:description" content="Luxury collectible gift coins inspired by ancient Egypt – crafted for museums, hotels, and lovers of Egyptian heritage worldwide." />
+  <meta property="og:url" content="https://www.kemetgift.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.kemetgift.com/YOUR_BOX_IMAGE.jpg" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kemet Gift – From the Heart of History" />
+  <meta name="twitter:description" content="Luxury collectible gift coins inspired by ancient Egypt – crafted for museums, hotels, and lovers of Egyptian heritage worldwide." />
+  <meta name="twitter:image" content="https://www.kemetgift.com/YOUR_BOX_IMAGE.jpg" />
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -491,7 +509,7 @@
       line-height: 1.7;
     }
 
-    /* PARTNERS */
+    /* PARTNERS SECTION */
     .partners-layout {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
@@ -612,7 +630,6 @@
       direction: rtl;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 840px) {
       .hero {
         grid-template-columns: 1fr;
@@ -708,6 +725,7 @@
           Leave your details to receive the official launch announcement, early previews, and partner opportunities.
         </p>
 
+        <!-- مؤقتًا mailto لحد ما نربط Zoho/Email Service -->
         <form class="waitlist-form" method="post" action="mailto:info@kemetgift.com" enctype="text/plain">
           <div class="field-row">
             <div class="field">
@@ -884,7 +902,7 @@
 
           <div class="hero-actions" style="margin-top:14px;">
             <a href="partners.html" class="btn btn-outline" data-i18n="partners.btn_page">Explore partner details</a>
-            <a href="mailto:info@kemetgift.com?subject=Kemet%20Gift%20Partnership%20Inquiry" class="btn btn-primary" data-i18n="partners.btn_deck">
+            <a href="mailto:partners@kemetgift.com?subject=Kemet%20Gift%20Partnership%20Inquiry" class="btn btn-primary" data-i18n="partners.btn_deck">
               Request partnership deck
             </a>
           </div>
@@ -922,6 +940,8 @@
       </div>
     </div>
   </footer>
+
+  <!-- Translations + Logic + GA4 -->
 
   <script>
     // =========================
@@ -1152,7 +1172,6 @@
     function setLanguage(lang) {
       const root = document.documentElement;
       const body = document.body;
-
       root.setAttribute("lang", lang === "ar" ? "ar" : "en");
 
       if (lang === "ar") {
@@ -1163,11 +1182,9 @@
 
       const dict = translations[lang];
 
-      // النصوص العادية
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.getAttribute("data-i18n");
         if (!dict[key]) return;
-        // بعض النصوص فيها HTML (br / strong)
         if (dict[key].includes("<br") || dict[key].includes("<strong")) {
           el.innerHTML = dict[key];
         } else {
@@ -1175,20 +1192,18 @@
         }
       });
 
-      // Placeholder
       document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
         const key = el.getAttribute("data-i18n-placeholder");
         if (!dict[key]) return;
         el.setAttribute("placeholder", dict[key]);
       });
 
-      // تفعيل زر اللغة
       document.querySelectorAll(".lang-btn").forEach((btn) => {
         btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
       });
     }
 
-    // Smooth scroll for nav links and buttons with data-scroll-to
+    // Smooth scroll
     document.querySelectorAll("[data-scroll-to]").forEach(function (el) {
       el.addEventListener("click", function () {
         var targetId = el.getAttribute("data-scroll-to");
@@ -1202,7 +1217,7 @@
       });
     });
 
-    // Waitlist button scroll
+    // Waitlist scroll
     var joinBtn = document.getElementById("btn-join-waitlist");
     if (joinBtn) {
       joinBtn.addEventListener("click", function () {
@@ -1258,8 +1273,17 @@
       });
     });
 
-    // Default language on load
+    // Default language
     setLanguage("en");
+  </script>
+
+  <!-- Google Analytics 4 (بعد ما تنشئ الـ ID غيّر G-XXXXXXXXXX) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
   </script>
 </body>
 </html>
