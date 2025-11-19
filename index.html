@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kemet Gift – A Gift From The Heart of History</title>
+  <title>Kemet Gift – From the Heart of History</title>
   <meta name="description" content="Luxury collectible gift coins inspired by ancient Egypt – crafted for museums, hotels, and lovers of Egyptian heritage worldwide." />
 
-  <!-- Optional Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -104,6 +103,7 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 2px;
+      align-items: center;
     }
 
     .nav-link {
@@ -113,6 +113,30 @@
 
     .nav-link:hover {
       opacity: 1;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      overflow: hidden;
+      font-size: 11px;
+    }
+
+    .lang-btn {
+      padding: 4px 10px;
+      border: none;
+      background: transparent;
+      color: var(--gold-soft);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      min-width: 52px;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, #b88a2b, #e0c36f);
+      color: #111;
     }
 
     /* LAYOUT */
@@ -543,6 +567,51 @@
       margin-top: 4px;
     }
 
+    /* RTL MODE */
+    .rtl {
+      direction: rtl;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .rtl .section-header {
+      text-align: right;
+    }
+
+    .rtl .hero {
+      direction: rtl;
+    }
+
+    .rtl .nav-inner {
+      flex-direction: row-reverse;
+    }
+
+    .rtl .nav-left {
+      flex-direction: row-reverse;
+    }
+
+    .rtl .nav-brand {
+      align-items: flex-end;
+    }
+
+    .rtl .nav-links {
+      flex-direction: row-reverse;
+    }
+
+    .rtl .hero-meta,
+    .rtl .hero-tagline,
+    .rtl .hero-subtitle {
+      text-align: right;
+    }
+
+    .rtl .partners-layout {
+      direction: rtl;
+    }
+
+    .rtl .three-columns,
+    .rtl .coins-grid {
+      direction: rtl;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 840px) {
       .hero {
@@ -554,7 +623,7 @@
       }
 
       .nav-links {
-        display: none;
+        gap: 10px;
       }
     }
 
@@ -583,14 +652,19 @@
         <img src="YOUR_LOGO_IMAGE.png" alt="Kemet Gift Logo" class="nav-logo" />
         <div class="nav-brand">
           <span>KEMET GIFT</span>
-          <span>Luxury Heritage Gifts</span>
+          <span data-i18n="nav.subtitle">Luxury Heritage Gifts</span>
         </div>
       </div>
       <div class="nav-links">
-        <span class="nav-link" data-scroll-to="coins">Coins</span>
-        <span class="nav-link" data-scroll-to="about">About</span>
-        <span class="nav-link" data-scroll-to="partners">Partners</span>
-        <a class="nav-link" href="mailto:info@kemetgift.com">Contact</a>
+        <span class="nav-link" data-scroll-to="coins" data-i18n="nav.coins">Coins</span>
+        <span class="nav-link" data-scroll-to="about" data-i18n="nav.about">About</span>
+        <span class="nav-link" data-scroll-to="partners" data-i18n="nav.partners">Partners</span>
+        <a class="nav-link" href="mailto:info@kemetgift.com" data-i18n="nav.contact">Contact</a>
+
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ar">عربي</button>
+        </div>
       </div>
     </div>
   </div>
@@ -601,58 +675,61 @@
       <div class="hero-left">
         <div class="pill">
           <span class="pill-dot"></span>
-          <span>Launching Soon • Global Release</span>
+          <span data-i18n="hero.pill">Launching Soon • Global Release</span>
         </div>
 
-        <h1 class="hero-title">A Gift From The Heart of History</h1>
-        <p class="hero-subtitle">Luxury collectible coins inspired by ancient Egypt.</p>
+        <h1 class="hero-title" data-i18n="hero.title">From the Heart of History</h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">Luxury collectible coins inspired by ancient Egypt.</p>
 
-        <p class="hero-tagline">
+        <p class="hero-tagline" data-i18n="hero.tagline">
           Kemet Gift transforms timeless Egyptian symbols into premium gift coins – curated for museums, boutique hotels,
           and collectors who want to hold a piece of history in the palm of their hand.
         </p>
 
         <div class="hero-actions">
-          <button class="btn btn-primary" id="btn-join-waitlist">Join the launch waitlist</button>
-          <button class="btn btn-outline" data-scroll-to="partners">For museums &amp; hotels</button>
+          <button class="btn btn-primary" id="btn-join-waitlist" data-i18n="hero.btn_waitlist">
+            Join the launch waitlist
+          </button>
+          <button class="btn btn-outline" data-scroll-to="partners" data-i18n="hero.btn_partners">
+            For museums &amp; hotels
+          </button>
         </div>
 
-        <p class="hero-meta">
+        <p class="hero-meta" data-i18n="hero.meta">
           Be among the first to access our six-coin launch collection and early partner editions.<br />
-          <strong>No spam. Only meaningful launches and stories.</strong>
+          <strong> No spam. Only meaningful launches and stories. </strong>
         </p>
       </div>
 
       <aside class="hero-right" id="waitlist">
-        <div class="hero-right-title">Launch countdown</div>
+        <div class="hero-right-title" data-i18n="hero.right_title">Launch countdown</div>
         <div class="countdown" id="countdown"></div>
-        <p class="hero-right-sub">
+        <p class="hero-right-sub" data-i18n="hero.right_sub">
           Leave your details to receive the official launch announcement, early previews, and partner opportunities.
         </p>
 
-        <!-- Simple waitlist form (sends email using mailto – يمكنك تغيير الـ action بعدين لأي خدمة فورم) -->
         <form class="waitlist-form" method="post" action="mailto:info@kemetgift.com" enctype="text/plain">
           <div class="field-row">
             <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="Name" type="text" placeholder="Optional" />
+              <label for="name" data-i18n="form.name_label">Name</label>
+              <input id="name" name="Name" type="text" placeholder="Optional" data-i18n-placeholder="form.name_ph" />
             </div>
             <div class="field">
-              <label for="email">Email *</label>
-              <input id="email" name="Email" type="email" required placeholder="you@example.com" />
+              <label for="email" data-i18n="form.email_label">Email *</label>
+              <input id="email" name="Email" type="email" required placeholder="you@example.com" data-i18n-placeholder="form.email_ph" />
             </div>
           </div>
 
           <div class="field">
-            <label for="country">Country</label>
-            <input id="country" name="Country" type="text" placeholder="Where are you based?" />
+            <label for="country" data-i18n="form.country_label">Country</label>
+            <input id="country" name="Country" type="text" placeholder="Where are you based?" data-i18n-placeholder="form.country_ph" />
           </div>
 
-          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;" data-i18n="form.btn_submit">
             Join the waitlist
           </button>
 
-          <p class="waitlist-note">
+          <p class="waitlist-note" data-i18n="form.note">
             By joining, you agree to be contacted about Kemet Gift launches, partner programs, and special editions.
           </p>
         </form>
@@ -662,9 +739,9 @@
     <!-- COINS SECTION -->
     <section class="section" id="coins">
       <div class="section-header">
-        <div class="section-kicker">Launch collection</div>
-        <h2 class="section-title">The Six Timeless Coins</h2>
-        <p class="section-subtitle">
+        <div class="section-kicker" data-i18n="coins.kicker">Launch collection</div>
+        <h2 class="section-title" data-i18n="coins.title">The Six Timeless Coins</h2>
+        <p class="section-subtitle" data-i18n="coins.subtitle">
           Each coin is a curated symbol from ancient Egypt – designed as a complete gift unit, from the minted piece to
           the packaging and story it carries.
         </p>
@@ -674,67 +751,67 @@
         <article class="coin-card">
           <img src="E1.jpg" alt="E1 – Essential Scarab Coin" class="coin-image" />
           <div class="coin-tier">
-            <span>E1 • Essential</span>
-            <span class="coin-badge">Entry tier</span>
+            <span data-i18n="coins.e1.tier">E1 • Essential</span>
+            <span class="coin-badge" data-i18n="coins.e1.badge">Entry tier</span>
           </div>
-          <h3 class="coin-name">Scarab of Rebirth</h3>
-          <p class="coin-symbol">A daily token for luck, renewal, and new journeys.</p>
-          <p class="coin-price">9.9 USD</p>
+          <h3 class="coin-name" data-i18n="coins.e1.name">Scarab of Rebirth</h3>
+          <p class="coin-symbol" data-i18n="coins.e1.desc">A daily token for luck, renewal, and new journeys.</p>
+          <p class="coin-price" data-i18n="coins.e1.price">9.9 USD</p>
         </article>
 
         <article class="coin-card">
           <img src="C1.jpg" alt="C1 – Classic Eye of Horus Coin" class="coin-image" />
           <div class="coin-tier">
-            <span>C1 • Classic</span>
-            <span class="coin-badge">Gift standard</span>
+            <span data-i18n="coins.c1.tier">C1 • Classic</span>
+            <span class="coin-badge" data-i18n="coins.c1.badge">Gift standard</span>
           </div>
-          <h3 class="coin-name">Eye of Horus</h3>
-          <p class="coin-symbol">The ancient sign of protection and watchful guidance.</p>
-          <p class="coin-price">19.9 USD</p>
+          <h3 class="coin-name" data-i18n="coins.c1.name">Eye of Horus</h3>
+          <p class="coin-symbol" data-i18n="coins.c1.desc">The ancient sign of protection and watchful guidance.</p>
+          <p class="coin-price" data-i18n="coins.c1.price">19.9 USD</p>
         </article>
 
         <article class="coin-card">
           <img src="P1.jpg" alt="P1 – Premium Pyramid Coin" class="coin-image" />
           <div class="coin-tier">
-            <span>P1 • Premium</span>
-            <span class="coin-badge">Signature gift</span>
+            <span data-i18n="coins.p1.tier">P1 • Premium</span>
+            <span class="coin-badge" data-i18n="coins.p1.badge">Signature gift</span>
           </div>
-          <h3 class="coin-name">Great Pyramid</h3>
-          <p class="coin-symbol">A tribute to human ambition, precision, and timeless legacy.</p>
-          <p class="coin-price">39.9 USD</p>
+          <h3 class="coin-name" data-i18n="coins.p1.name">Great Pyramid</h3>
+          <p class="coin-symbol" data-i18n="coins.p1.desc">A tribute to human ambition, precision, and timeless legacy.</p>
+          <p class="coin-price" data-i18n="coins.p1.price">39.9 USD</p>
         </article>
 
         <article class="coin-card">
           <img src="S1.jpg" alt="S1 – Silver Tutankhamun Coin" class="coin-image" />
           <div class="coin-tier">
-            <span>S1 • Silver</span>
-            <span class="coin-badge">Collector tier</span>
+            <span data-i18n="coins.s1.tier">S1 • Silver</span>
+            <span class="coin-badge" data-i18n="coins.s1.badge">Collector tier</span>
           </div>
-          <h3 class="coin-name">Tutankhamun Mask</h3>
-          <p class="coin-symbol">A silver-framed icon of mystery, youth, and royal splendor.</p>
-          <p class="coin-price">59.9 USD</p>
+          <h3 class="coin-name" data-i18n="coins.s1.name">Tutankhamun Mask</h3>
+          <p class="coin-symbol" data-i18n="coins.s1.desc">A silver-framed icon of mystery, youth, and royal splendor.</p>
+          <p class="coin-price" data-i18n="coins.s1.price">59.9 USD</p>
         </article>
 
         <article class="coin-card">
           <img src="G1.jpg" alt="G1 – Gold Aten Coin" class="coin-image" />
           <div class="coin-tier">
-            <span>G1 • Gold</span>
-            <span class="coin-badge">Premium gold</span>
+            <span data-i18n="coins.g1.tier">G1 • Gold</span>
+            <span class="coin-badge" data-i18n="coins.g1.badge">Premium gold</span>
           </div>
-          <h3 class="coin-name">Aten Sun</h3>
-          <p class="coin-symbol">The radiant disk that illuminated the Amarna revolution.</p>
-          <p class="coin-price">89.9 USD</p>
+          <h3 class="coin-name" data-i18n="coins.g1.name">Aten Sun</h3>
+          <p class="coin-symbol" data-i18n="coins.g1.desc">The radiant disk that illuminated the Amarna revolution.</p>
+          <p class="coin-price" data-i18n="coins.g1.price">89.9 USD</p>
         </article>
 
         <article class="coin-card">
           <img src="L1.jpg" alt="L1 – Limited Ramses II Coin" class="coin-image" />
           <div class="coin-tier">
-            <span>L1 • Limited</span>
-            <span class="coin-badge">Numbered edition</span>
+            <span data-i18n="coins.l1.tier">L1 • Limited</span>
+            <span class="coin-badge" data-i18n="coins.l1.badge">Numbered edition</span>
           </div>
-          <h3 class="coin-name">Ramses II Legacy</h3>
-          <p class="coin-symbol">A limited-edition tribute to one of Egypt’s greatest pharaohs.</p>
-          <p class="coin-price">125 USD</p>
+          <h3 class="coin-name" data-i18n="coins.l1.name">Ramses II Legacy</h3>
+          <p class="coin-symbol" data-i18n="coins.l1.desc">A limited-edition tribute to one of Egypt’s greatest pharaohs.</p>
+          <p class="coin-price" data-i18n="coins.l1.price">125 USD</p>
         </article>
       </div>
     </section>
@@ -742,40 +819,40 @@
     <!-- WHAT IS KEMET GIFT -->
     <section class="section" id="about">
       <div class="section-header">
-        <div class="section-kicker">About the brand</div>
-        <h2 class="section-title">What is Kemet Gift?</h2>
-        <p class="section-subtitle">
+        <div class="section-kicker" data-i18n="about.kicker">About the brand</div>
+        <h2 class="section-title" data-i18n="about.title">What is Kemet Gift?</h2>
+        <p class="section-subtitle" data-i18n="about.subtitle">
           Kemet Gift is a curated system of luxury gift coins, built on deep research, governance, and manufacturing
           standards – not just a single souvenir line.
         </p>
       </div>
 
       <div class="pill-row">
-        <div class="pill-sm">Heritage-first</div>
-        <div class="pill-sm">Design-led</div>
-        <div class="pill-sm">Investor-ready IP</div>
+        <div class="pill-sm" data-i18n="about.pill1">Heritage-first</div>
+        <div class="pill-sm" data-i18n="about.pill2">Design-led</div>
+        <div class="pill-sm" data-i18n="about.pill3">Investor-ready IP</div>
       </div>
 
       <div class="three-columns">
         <div class="column-card">
-          <h3 class="column-title">Cultural depth</h3>
-          <p class="column-text">
+          <h3 class="column-title" data-i18n="about.col1.title">Cultural depth</h3>
+          <p class="column-text" data-i18n="about.col1.text">
             Each symbol is chosen from a specific dynasty and narrative, supported by a wider content system that turns
             every coin into an entry point to ancient Egyptian knowledge.
           </p>
         </div>
 
         <div class="column-card">
-          <h3 class="column-title">Luxury manufacturing</h3>
-          <p class="column-text">
+          <h3 class="column-title" data-i18n="about.col2.title">Luxury manufacturing</h3>
+          <p class="column-text" data-i18n="about.col2.text">
             Behind the scenes, Kemet Gift runs on detailed specifications for minting, finishing, packaging, and quality
             control – designed to meet collectors’ expectations, not casual souvenir standards.
           </p>
         </div>
 
         <div class="column-card">
-          <h3 class="column-title">Complete gifting experience</h3>
-          <p class="column-text">
+          <h3 class="column-title" data-i18n="about.col3.title">Complete gifting experience</h3>
+          <p class="column-text" data-i18n="about.col3.text">
             Every unit is conceived as a full experience: the coin, the box, the certificate, and the story – ready to
             sit on a museum shelf, a hotel reception, or a personal collection.
           </p>
@@ -786,9 +863,9 @@
     <!-- PARTNERS -->
     <section class="section" id="partners">
       <div class="section-header">
-        <div class="section-kicker">For institutions &amp; partners</div>
-        <h2 class="section-title">For museums, hotels &amp; destinations</h2>
-        <p class="section-subtitle">
+        <div class="section-kicker" data-i18n="partners.kicker">For institutions &amp; partners</div>
+        <h2 class="section-title" data-i18n="partners.title">For museums, hotels &amp; destinations</h2>
+        <p class="section-subtitle" data-i18n="partners.subtitle">
           Kemet Gift is designed from day one to integrate with cultural and hospitality ecosystems – with clear tiers,
           governance, and co-branded opportunities.
         </p>
@@ -796,32 +873,32 @@
 
       <div class="partners-layout">
         <div>
-          <p class="partners-text">
+          <p class="partners-text" data-i18n="partners.text1">
             Whether you are a museum gift shop, a boutique hotel, or a developer of cultural destinations, Kemet Gift
             offers a ready-made system of premium souvenirs that carry your location’s story in a refined, compact form.
           </p>
-          <p class="partners-highlight">
+          <p class="partners-highlight" data-i18n="partners.text2">
             From entry-level coins for high-volume visitors to limited, numbered editions for VIP guests, the collection
             can be configured to match your audience, pricing, and brand positioning.
           </p>
 
           <div class="hero-actions" style="margin-top:14px;">
-            <a href="partners.html" class="btn btn-outline">Explore partner details</a>
-            <a href="mailto:info@kemetgift.com?subject=Kemet%20Gift%20Partnership%20Inquiry" class="btn btn-primary">
+            <a href="partners.html" class="btn btn-outline" data-i18n="partners.btn_page">Explore partner details</a>
+            <a href="mailto:info@kemetgift.com?subject=Kemet%20Gift%20Partnership%20Inquiry" class="btn btn-primary" data-i18n="partners.btn_deck">
               Request partnership deck
             </a>
           </div>
         </div>
 
         <div class="partners-card">
-          <div class="partners-badge">Partner snapshot</div>
-          <p>
+          <div class="partners-badge" data-i18n="partners.card_badge">Partner snapshot</div>
+          <p data-i18n="partners.card_text1">
             • Ready-to-deploy coin tiers (E1–L1) with clear price bands.<br />
             • Governance and operational policies already documented.<br />
             • Alignment potential with national cultural &amp; tourism strategies.<br />
             • Space for co-branded sleeves, inserts, or special editions.
           </p>
-          <p style="margin-top:8px;">
+          <p style="margin-top:8px;" data-i18n="partners.card_text2">
             Partner with Kemet Gift to turn heritage into a consistent, premium revenue stream – not an afterthought at
             the exit of your venue.
           </p>
@@ -834,19 +911,283 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-links">
-        Follow us:
+        <span data-i18n="footer.follow">Follow us:</span>
         <a href="https://www.instagram.com/kemetgift" target="_blank" rel="noopener noreferrer">Instagram</a> |
         <a href="https://www.youtube.com/@kemetgift" target="_blank" rel="noopener noreferrer">YouTube</a> |
         <a href="mailto:info@kemetgift.com">info@kemetgift.com</a>
       </div>
-      <div class="footer-meta">© 2025 Kemet Gift. All rights reserved.</div>
-      <div class="footer-small">
+      <div class="footer-meta" data-i18n="footer.copy">© 2025 Kemet Gift. All rights reserved.</div>
+      <div class="footer-small" data-i18n="footer.tagline">
         From Egypt to the world – crafted as a bridge between ancient dynasties and today’s global guests.
       </div>
     </div>
   </footer>
 
   <script>
+    // =========================
+    // Translations
+    // =========================
+    const translations = {
+      en: {
+        "nav.subtitle": "Luxury Heritage Gifts",
+        "nav.coins": "Coins",
+        "nav.about": "About",
+        "nav.partners": "Partners",
+        "nav.contact": "Contact",
+
+        "hero.pill": "Launching Soon • Global Release",
+        "hero.title": "From the Heart of History",
+        "hero.subtitle": "Luxury collectible coins inspired by ancient Egypt.",
+        "hero.tagline":
+          "Kemet Gift transforms timeless Egyptian symbols into premium gift coins – curated for museums, boutique hotels, and collectors who want to hold a piece of history in the palm of their hand.",
+        "hero.btn_waitlist": "Join the launch waitlist",
+        "hero.btn_partners": "For museums & hotels",
+        "hero.meta":
+          "Be among the first to access our six-coin launch collection and early partner editions.<br /><strong>No spam. Only meaningful launches and stories.</strong>",
+        "hero.right_title": "Launch countdown",
+        "hero.right_sub":
+          "Leave your details to receive the official launch announcement, early previews, and partner opportunities.",
+
+        "form.name_label": "Name",
+        "form.name_ph": "Optional",
+        "form.email_label": "Email *",
+        "form.email_ph": "you@example.com",
+        "form.country_label": "Country",
+        "form.country_ph": "Where are you based?",
+        "form.btn_submit": "Join the waitlist",
+        "form.note":
+          "By joining, you agree to be contacted about Kemet Gift launches, partner programs, and special editions.",
+
+        "coins.kicker": "Launch collection",
+        "coins.title": "The Six Timeless Coins",
+        "coins.subtitle":
+          "Each coin is a curated symbol from ancient Egypt – designed as a complete gift unit, from the minted piece to the packaging and story it carries.",
+
+        "coins.e1.tier": "E1 • Essential",
+        "coins.e1.badge": "Entry tier",
+        "coins.e1.name": "Scarab of Rebirth",
+        "coins.e1.desc": "A daily token for luck, renewal, and new journeys.",
+        "coins.e1.price": "9.9 USD",
+
+        "coins.c1.tier": "C1 • Classic",
+        "coins.c1.badge": "Gift standard",
+        "coins.c1.name": "Eye of Horus",
+        "coins.c1.desc": "The ancient sign of protection and watchful guidance.",
+        "coins.c1.price": "19.9 USD",
+
+        "coins.p1.tier": "P1 • Premium",
+        "coins.p1.badge": "Signature gift",
+        "coins.p1.name": "Great Pyramid",
+        "coins.p1.desc": "A tribute to human ambition, precision, and timeless legacy.",
+        "coins.p1.price": "39.9 USD",
+
+        "coins.s1.tier": "S1 • Silver",
+        "coins.s1.badge": "Collector tier",
+        "coins.s1.name": "Tutankhamun Mask",
+        "coins.s1.desc": "A silver-framed icon of mystery, youth, and royal splendor.",
+        "coins.s1.price": "59.9 USD",
+
+        "coins.g1.tier": "G1 • Gold",
+        "coins.g1.badge": "Premium gold",
+        "coins.g1.name": "Aten Sun",
+        "coins.g1.desc": "The radiant disk that illuminated the Amarna revolution.",
+        "coins.g1.price": "89.9 USD",
+
+        "coins.l1.tier": "L1 • Limited",
+        "coins.l1.badge": "Numbered edition",
+        "coins.l1.name": "Ramses II Legacy",
+        "coins.l1.desc": "A limited-edition tribute to one of Egypt’s greatest pharaohs.",
+        "coins.l1.price": "125 USD",
+
+        "about.kicker": "About the brand",
+        "about.title": "What is Kemet Gift?",
+        "about.subtitle":
+          "Kemet Gift is a curated system of luxury gift coins, built on deep research, governance, and manufacturing standards – not just a single souvenir line.",
+        "about.pill1": "Heritage-first",
+        "about.pill2": "Design-led",
+        "about.pill3": "Investor-ready IP",
+        "about.col1.title": "Cultural depth",
+        "about.col1.text":
+          "Each symbol is chosen from a specific dynasty and narrative, supported by a wider content system that turns every coin into an entry point to ancient Egyptian knowledge.",
+        "about.col2.title": "Luxury manufacturing",
+        "about.col2.text":
+          "Behind the scenes, Kemet Gift runs on detailed specifications for minting, finishing, packaging, and quality control – designed to meet collectors’ expectations, not casual souvenir standards.",
+        "about.col3.title": "Complete gifting experience",
+        "about.col3.text":
+          "Every unit is conceived as a full experience: the coin, the box, the certificate, and the story – ready to sit on a museum shelf, a hotel reception, or a personal collection.",
+
+        "partners.kicker": "For institutions & partners",
+        "partners.title": "For museums, hotels & destinations",
+        "partners.subtitle":
+          "Kemet Gift is designed from day one to integrate with cultural and hospitality ecosystems – with clear tiers, governance, and co-branded opportunities.",
+        "partners.text1":
+          "Whether you are a museum gift shop, a boutique hotel, or a developer of cultural destinations, Kemet Gift offers a ready-made system of premium souvenirs that carry your location’s story in a refined, compact form.",
+        "partners.text2":
+          "From entry-level coins for high-volume visitors to limited, numbered editions for VIP guests, the collection can be configured to match your audience, pricing, and brand positioning.",
+        "partners.btn_page": "Explore partner details",
+        "partners.btn_deck": "Request partnership deck",
+        "partners.card_badge": "Partner snapshot",
+        "partners.card_text1":
+          "• Ready-to-deploy coin tiers (E1–L1) with clear price bands.<br />• Governance and operational policies already documented.<br />• Alignment potential with national cultural & tourism strategies.<br />• Space for co-branded sleeves, inserts, or special editions.",
+        "partners.card_text2":
+          "Partner with Kemet Gift to turn heritage into a consistent, premium revenue stream – not an afterthought at the exit of your venue.",
+
+        "footer.follow": "Follow us:",
+        "footer.copy": "© 2025 Kemet Gift. All rights reserved.",
+        "footer.tagline":
+          "From Egypt to the world – crafted as a bridge between ancient dynasties and today’s global guests."
+      },
+
+      ar: {
+        "nav.subtitle": "هدايا فاخرة مستوحاة من التراث المصري",
+        "nav.coins": "العملات",
+        "nav.about": "عن كيميت جفت",
+        "nav.partners": "للشركاء",
+        "nav.contact": "تواصل معنا",
+
+        "hero.pill": "الإطلاق قريبًا • طرح عالمي",
+        "hero.title": "من قلب التاريخ",
+        "hero.subtitle": "عملات تذكارية فاخرة مستوحاة من الحضارة المصرية القديمة.",
+        "hero.tagline":
+          "كيميت جفت يحوّل رموز مصر القديمة الخالدة إلى عملات هدايا فاخرة – مصممة للمتاحف والفنادق البوتيكية والمهتمين حول العالم باقتناء قطعة من التاريخ بين أيديهم.",
+        "hero.btn_waitlist": "انضم إلى قائمة الإطلاق",
+        "hero.btn_partners": "للمتاحف والفنادق",
+        "hero.meta":
+          "كن من أوائل من يحصلون على مجموعة الإطلاق المكوّنة من ست عملات وإصدارات الشركاء الأولى.<br /><strong>بدون إزعاج بريدي، فقط إطلاقات وقصص ذات قيمة.</strong>",
+        "hero.right_title": "العد التنازلي للإطلاق",
+        "hero.right_sub":
+          "اترك بياناتك لتصلك رسالة الإطلاق الرسمية، والعروض الأولى، وفرص الشراكة.",
+
+        "form.name_label": "الاسم",
+        "form.name_ph": "اختياري",
+        "form.email_label": "البريد الإلكتروني *",
+        "form.email_ph": "you@example.com",
+        "form.country_label": "الدولة",
+        "form.country_ph": "أين تقيم؟",
+        "form.btn_submit": "انضم إلى قائمة الانتظار",
+        "form.note":
+          "بانضمامك، فإنك توافق على استقبال رسائل بخصوص إطلاقات كيميت جفت، وبرامج الشركاء، والإصدارات الخاصة.",
+
+        "coins.kicker": "مجموعة الإطلاق",
+        "coins.title": "العملات الست الخالدة",
+        "coins.subtitle":
+          "كل عملة تم اختيار رمزها بعناية من تاريخ مصر القديمة، ومصمَّمة كوحدة هدية متكاملة من العملة إلى العبوة والقصة التي تحملها.",
+
+        "coins.e1.tier": "E1 • الفئة الأساسية",
+        "coins.e1.badge": "فئة دخول",
+        "coins.e1.name": "جعران البعث",
+        "coins.e1.desc": "رمز يومي للحظ والتجدد وبدايات جديدة.",
+        "coins.e1.price": "9.9 دولار أمريكي",
+
+        "coins.c1.tier": "C1 • الفئة الكلاسيكية",
+        "coins.c1.badge": "معيار الهدية",
+        "coins.c1.name": "عين حورس",
+        "coins.c1.desc": "الرمز القديم للحماية والنظرة الساهرة.",
+        "coins.c1.price": "19.9 دولار أمريكي",
+
+        "coins.p1.tier": "P1 • الفئة المميزة",
+        "coins.p1.badge": "هدية توقيعية",
+        "coins.p1.name": "الهرم الأكبر",
+        "coins.p1.desc": "تحية لطموح الإنسان ودقته وإرثه الخالد.",
+        "coins.p1.price": "39.9 دولار أمريكي",
+
+        "coins.s1.tier": "S1 • الفئة الفضية",
+        "coins.s1.badge": "فئة المقتنين",
+        "coins.s1.name": "قناع توت عنخ آمون",
+        "coins.s1.desc": "أيقونة فضية للأسرار والشباب والفخامة الملكية.",
+        "coins.s1.price": "59.9 دولار أمريكي",
+
+        "coins.g1.tier": "G1 • الفئة الذهبية",
+        "coins.g1.badge": "ذهب مميز",
+        "coins.g1.name": "قرص آتون",
+        "coins.g1.desc": "القرص المضيء الذي أنار ثورة العمارنة.",
+        "coins.g1.price": "89.9 دولار أمريكي",
+
+        "coins.l1.tier": "L1 • إصدار محدود",
+        "coins.l1.badge": "إصدار مُرقّم",
+        "coins.l1.name": "إرث رمسيس الثاني",
+        "coins.l1.desc": "إصدار محدود تكريمًا لأحد أعظم ملوك مصر.",
+        "coins.l1.price": "125 دولار أمريكي",
+
+        "about.kicker": "عن العلامة",
+        "about.title": "ما هي كيميت جفت؟",
+        "about.subtitle":
+          "كيميت جفت منظومة من عملات الهدايا الفاخرة، مبنية على بحث عميق وسياسات حوكمة ومعايير تصنيع واضحة – وليست مجرد خط تذكارات واحد.",
+        "about.pill1": "التراث أولًا",
+        "about.pill2": "مدفوعة بالتصميم",
+        "about.pill3": "ملف ملكية فكرية جاهز للاستثمار",
+        "about.col1.title": "عمق ثقافي",
+        "about.col1.text":
+          "يتم اختيار كل رمز من حقبة وقصة محددة، مدعومًا بمنظومة محتوى أوسع تحول كل عملة إلى بوابة معرفة عن مصر القديمة.",
+        "about.col2.title": "تصنيع فاخر",
+        "about.col2.text":
+          "خلف الكواليس، تعمل كيميت جفت على مواصفات تفصيلية للسك والتشطيب والتعبئة وضبط الجودة – مصمَّمة بما يواكب توقعات المقتنين وليس مستوى التذكارات العابر.",
+        "about.col3.title": "تجربة هدية متكاملة",
+        "about.col3.text":
+          "كل وحدة هدية تُصمَّم كتجربة كاملة: عملة، وعلبة، وشهادة، وقصة – جاهزة للعرض في متجر متحف، أو استقبال فندق، أو مجموعة خاصة.",
+
+        "partners.kicker": "للمؤسسات والشركاء",
+        "partners.title": "للـمتاحف والفنادق والوجهات",
+        "partners.subtitle":
+          "تم تصميم كيميت جفت منذ اليوم الأول لتندمج مع منظومات الثقافة والضيافة – من خلال فئات واضحة، وحوكمة، وفرص لإصدارات مشتركة.",
+        "partners.text1":
+          "سواء كنت متجر هدايا لمتحف، أو فندقًا بوتيكيًا، أو مطوّرًا لوجهة ثقافية، تقدّم كيميت جفت منظومة جاهزة من الهدايا التذكارية الفاخرة التي تحمل قصة موقعك في شكل أنيق ومضغوط.",
+        "partners.text2":
+          "من عملات الفئة الأولى ذات الحركة العالية إلى الإصدارات المرقّمة المحدودة لضيوف الـ VIP، يمكن تهيئة المجموعة بما يناسب جمهورك وتسعيرك وتمركز علامتك.",
+        "partners.btn_page": "تعرّف على تفاصيل الشراكة",
+        "partners.btn_deck": "اطلب عرض الشراكة",
+        "partners.card_badge": "ملخص الشريك",
+        "partners.card_text1":
+          "• فئات عملات جاهزة للتطبيق (E1–L1) مع شرائح سعرية واضحة.<br />• سياسات تشغيل وحوكمة موثقة مسبقًا.<br />• قابلية مواءمة مع استراتيجيات الثقافة والسياحة الوطنية.<br />• مساحة لإضافات مشتركة مثل أكمام أو إدخالات أو إصدارات خاصة.",
+        "partners.card_text2":
+          "ادخل في شراكة مع كيميت جفت لتحويل التراث إلى مصدر دخل فاخر ومستدام – وليس مجرد منتج جانبي في نهاية مسار الزيارة.",
+
+        "footer.follow": "تابعنا على:",
+        "footer.copy": "© 2025 كيميت جفت. جميع الحقوق محفوظة.",
+        "footer.tagline":
+          "من مصر إلى العالم – جسر بين أسر الماضي وضيوف اليوم حول العالم."
+      }
+    };
+
+    function setLanguage(lang) {
+      const root = document.documentElement;
+      const body = document.body;
+
+      root.setAttribute("lang", lang === "ar" ? "ar" : "en");
+
+      if (lang === "ar") {
+        body.classList.add("rtl");
+      } else {
+        body.classList.remove("rtl");
+      }
+
+      const dict = translations[lang];
+
+      // النصوص العادية
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (!dict[key]) return;
+        // بعض النصوص فيها HTML (br / strong)
+        if (dict[key].includes("<br") || dict[key].includes("<strong")) {
+          el.innerHTML = dict[key];
+        } else {
+          el.textContent = dict[key];
+        }
+      });
+
+      // Placeholder
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (!dict[key]) return;
+        el.setAttribute("placeholder", dict[key]);
+      });
+
+      // تفعيل زر اللغة
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+      });
+    }
+
     // Smooth scroll for nav links and buttons with data-scroll-to
     document.querySelectorAll("[data-scroll-to]").forEach(function (el) {
       el.addEventListener("click", function () {
@@ -872,7 +1213,7 @@
       });
     }
 
-    // Countdown Timer (same date, يمكن تغييره وقت ما تحب)
+    // Countdown Timer
     var countDownDate = new Date("Jan 1, 2027 00:00:00").getTime();
     var countdownEl = document.getElementById("countdown");
 
@@ -908,6 +1249,17 @@
 
     var timer = setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    // Language toggle buttons
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        setLanguage(lang);
+      });
+    });
+
+    // Default language on load
+    setLanguage("en");
   </script>
 </body>
 </html>
