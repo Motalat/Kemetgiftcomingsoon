@@ -6,6 +6,24 @@
   <title>Kemet Gift Partners – Museums, Hotels & Destinations</title>
   <meta name="description" content="Partner with Kemet Gift to offer luxury Egyptian heritage gift coins in museums, hotels, and cultural destinations." />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:title" content="Kemet Gift Partners – Museums, Hotels & Destinations" />
+  <meta property="og:description" content="Partner with Kemet Gift to offer luxury Egyptian heritage gift coins in museums, hotels, and cultural destinations." />
+  <meta property="og:url" content="https://www.kemetgift.com/partners.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.kemetgift.com/YOUR_BOX_IMAGE.jpg" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kemet Gift Partners – Museums, Hotels & Destinations" />
+  <meta name="twitter:description" content="Partner with Kemet Gift to offer luxury Egyptian heritage gift coins in museums, hotels, and cultural destinations." />
+  <meta name="twitter:image" content="https://www.kemetgift.com/YOUR_BOX_IMAGE.jpg" />
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -637,7 +655,7 @@
         </p>
 
         <div class="hero-actions">
-          <a href="mailto:info@kemetgift.com?subject=Kemet%20Gift%20Partnership%20Deck" class="btn btn-primary" data-i18n="hero.btn_deck">
+          <a href="mailto:partners@kemetgift.com?subject=Kemet%20Gift%20Partnership%20Deck" class="btn btn-primary" data-i18n="hero.btn_deck">
             Request the partnership deck
           </a>
           <a href="#contact" class="btn btn-outline" data-i18n="hero.btn_contact">
@@ -775,7 +793,8 @@
           </p>
         </div>
 
-        <form class="contact-form" method="post" action="mailto:info@kemetgift.com" enctype="text/plain">
+        <!-- مؤقتًا mailto لحد ما نربط Zoho/Email Service -->
+        <form class="contact-form" method="post" action="mailto:partners@kemetgift.com" enctype="text/plain">
           <div class="field-row">
             <div class="field">
               <label for="org" data-i18n="form.org_label">Institution / project name</label>
@@ -842,10 +861,8 @@
     </div>
   </footer>
 
+  <!-- Translations + Language Logic -->
   <script>
-    // =========================
-    // Translations
-    // =========================
     const translations = {
       en: {
         "nav.subtitle": "Luxury Heritage Gifts",
@@ -1065,7 +1082,6 @@
         el.setAttribute("placeholder", dict[key]);
       });
 
-      // options في الـ select
       document.querySelectorAll("select option[data-i18n]").forEach((opt) => {
         const key = opt.getAttribute("data-i18n");
         if (!dict[key]) return;
@@ -1077,7 +1093,6 @@
       });
     }
 
-    // Language buttons
     document.querySelectorAll(".lang-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         const lang = btn.getAttribute("data-lang");
@@ -1087,6 +1102,15 @@
 
     // Default language
     setLanguage("en");
+  </script>
+
+  <!-- Google Analytics 4 (استبدل G-XXXXXXXXXX بالـ ID الحقيقي بعد ما تنشئه) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
   </script>
 </body>
 </html>
