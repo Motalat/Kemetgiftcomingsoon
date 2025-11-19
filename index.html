@@ -1,159 +1,913 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kemet Gift – A Gift From The Heart of History</title>
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Cinzel', serif;
-  background: radial-gradient(circle at center, #000000 60%, #1a1a1a 100%);
-  color: #d4af37;
-  text-align: center;
-  overflow-x: hidden;
-}
-header {
-  padding: 80px 20px 30px;
-}
-header img {
-  width: 200px;
-  margin-bottom: 20px;
-  animation: fadeIn 2s ease-in-out;
-}
-h1 {
-  font-size: 40px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #d4af37;
-}
-p.subtitle {
-  font-size: 18px;
-  font-style: italic;
-  color: #c0a36e;
-  margin-bottom: 50px;
-}
-section {
-  margin: 40px auto;
-  max-width: 900px;
-}
-.countdown {
-  font-size: 26px;
-  letter-spacing: 3px;
-  margin: 20px 0;
-  color: #f1dca7;
-}
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-.product {
-  width: 250px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid #d4af37;
-  border-radius: 10px;
-  padding: 15px;
-}
-.product img {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid #d4af37;
-}
-footer {
-  background: url('YOUR_BOX_IMAGE.jpg') center/cover no-repeat;
-  padding: 100px 20px 20px;
-  margin-top: 50px;
-  color: #d4af37;
-  background-blend-mode: multiply;
-  background-color: rgba(0,0,0,0.8);
-}
-footer p {
-  font-size: 14px;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kemet Gift – A Gift From The Heart of History</title>
+  <meta name="description" content="Luxury collectible gift coins inspired by ancient Egypt – crafted for museums, hotels, and lovers of Egyptian heritage worldwide." />
+
+  <!-- Optional Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #050505;
+      --bg-alt: #111111;
+      --gold: #d4af37;
+      --gold-soft: #f1dca7;
+      --gold-muted: #c0a36e;
+      --text-light: #f5f5f5;
+      --border-soft: rgba(212, 175, 55, 0.4);
+      --radius-lg: 16px;
+      --transition-fast: 0.25s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cinzel', serif;
+      background: radial-gradient(circle at top, #222 0%, #000 55%, #050505 100%);
+      color: var(--text-light);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    a:hover {
+      color: var(--gold-soft);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      object-fit: cover;
+      background: #000;
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.1;
+    }
+
+    .nav-brand span:first-child {
+      font-size: 18px;
+      letter-spacing: 4px;
+      color: var(--gold);
+    }
+
+    .nav-brand span:last-child {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--gold-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .nav-link {
+      cursor: pointer;
+      opacity: 0.85;
+    }
+
+    .nav-link:hover {
+      opacity: 1;
+    }
+
+    /* LAYOUT */
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 40px;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+
+    .hero-title {
+      font-size: 38px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      font-style: italic;
+      color: var(--gold-muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-tagline {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #ddd;
+      max-width: 480px;
+      margin-bottom: 22px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      background: rgba(0, 0, 0, 0.6);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-soft);
+      margin-bottom: 10px;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #35c759;
+      box-shadow: 0 0 8px #35c759;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 15px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 10px 20px;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #b88a2b, #e0c36f);
+      color: #111;
+      border-color: transparent;
+      box-shadow: 0 0 16px rgba(212, 175, 55, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 24px rgba(212, 175, 55, 0.7);
+    }
+
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.12);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      font-size: 11px;
+      margin-top: 10px;
+      color: #aaa;
+    }
+
+    .hero-meta strong {
+      color: var(--gold-soft);
+    }
+
+    .hero-right {
+      background: radial-gradient(circle at top, #333 0%, #000 65%);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px 18px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+    }
+
+    .hero-right-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-soft);
+      margin-bottom: 6px;
+    }
+
+    .countdown {
+      font-size: 20px;
+      letter-spacing: 3px;
+      margin: 4px 0 12px;
+      color: var(--gold-soft);
+    }
+
+    .hero-right-sub {
+      font-size: 12px;
+      color: #ccc;
+      margin-bottom: 16px;
+    }
+
+    .waitlist-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .field-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .field {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      color: var(--gold-muted);
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      background: rgba(0, 0, 0, 0.85);
+      color: #f5f5f5;
+      font-size: 12px;
+      outline: none;
+    }
+
+    .field input::placeholder {
+      color: #777;
+    }
+
+    .waitlist-note {
+      font-size: 10px;
+      color: #999;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(212, 175, 55, 0.12);
+    }
+
+    .section-header {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-muted);
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      margin: 0;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: #ccc;
+      margin-top: 6px;
+      max-width: 520px;
+    }
+
+    /* COINS GRID */
+    .coins-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+
+    .coin-card {
+      background: radial-gradient(circle at top, #2a2a2a 0%, #080808 70%);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      padding: 12px 12px 14px;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+    }
+
+    .coin-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(212, 175, 55, 0.16), transparent 60%);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+      pointer-events: none;
+    }
+
+    .coin-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+      border-color: rgba(212, 175, 55, 0.75);
+    }
+
+    .coin-card:hover::before {
+      opacity: 1;
+    }
+
+    .coin-image {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(212, 175, 55, 0.65);
+      margin-bottom: 10px;
+      object-fit: cover;
+    }
+
+    .coin-tier {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-muted);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .coin-badge {
+      font-size: 9px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gold-soft);
+    }
+
+    .coin-name {
+      font-size: 15px;
+      color: var(--gold-soft);
+      margin: 0 0 4px;
+    }
+
+    .coin-symbol {
+      font-size: 13px;
+      color: #ddd;
+      margin-bottom: 4px;
+    }
+
+    .coin-price {
+      font-size: 13px;
+      color: var(--gold);
+    }
+
+    /* WHAT IS KEMET GIFT */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .pill-sm {
+      font-size: 10px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      background: rgba(0, 0, 0, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gold-soft);
+    }
+
+    .three-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .column-card {
+      background: radial-gradient(circle at top, #1f1f1f 0%, #050505 70%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 14px 14px 16px;
+    }
+
+    .column-title {
+      font-size: 14px;
+      color: var(--gold-soft);
+      margin: 0 0 6px;
+    }
+
+    .column-text {
+      font-size: 12px;
+      color: #ccc;
+      line-height: 1.7;
+    }
+
+    /* PARTNERS */
+    .partners-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .partners-text {
+      font-size: 13px;
+      color: #d0d0d0;
+      line-height: 1.8;
+    }
+
+    .partners-highlight {
+      font-size: 12px;
+      color: var(--gold-soft);
+      margin-top: 8px;
+    }
+
+    .partners-card {
+      background: radial-gradient(circle at top, #252525 0%, #020202 70%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 14px 14px 16px;
+      font-size: 12px;
+      color: #ccc;
+      line-height: 1.7;
+    }
+
+    .partners-badge {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-muted);
+      margin-bottom: 4px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: url('YOUR_BOX_IMAGE.jpg') center/cover no-repeat;
+      padding: 80px 20px 24px;
+      color: var(--gold);
+      background-blend-mode: multiply;
+      background-color: rgba(0, 0, 0, 0.9);
+      margin-top: 40px;
+      text-align: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .footer-links a {
+      margin: 0 6px;
+    }
+
+    .footer-meta {
+      font-size: 11px;
+      color: #e0d3ac;
+    }
+
+    .footer-small {
+      font-size: 10px;
+      color: #b3a36e;
+      margin-top: 4px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.9s ease forwards;
+    }
+  </style>
 </head>
+
 <body>
-
-<header>
-  <img src="YOUR_LOGO_IMAGE.png" alt="Kemet Gift Logo">
-  <h1>KEMET GIFT</h1>
-  <p class="subtitle">A Gift From The Heart of History</p>
-</header>
-
-<section>
-  <h2>Launching Soon</h2>
-  <div class="countdown" id="countdown"></div>
-
-  <p>From the land of eternal heritage, Kemet Gift brings you six timeless coins inspired by the spirit of ancient Egypt — each crafted as a story, each gifted from the heart of history.</p>
-</section>
-
-<section class="products">
-  <div class="product">
-    <img src="E1.jpg" alt="E1 Essential">
-    <h3>E1 – Essential</h3>
-    <p>🪲 Scarab of rebirth – 9.9 USD</p>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <img src="YOUR_LOGO_IMAGE.png" alt="Kemet Gift Logo" class="nav-logo" />
+        <div class="nav-brand">
+          <span>KEMET GIFT</span>
+          <span>Luxury Heritage Gifts</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <span class="nav-link" data-scroll-to="coins">Coins</span>
+        <span class="nav-link" data-scroll-to="about">About</span>
+        <span class="nav-link" data-scroll-to="partners">Partners</span>
+        <a class="nav-link" href="mailto:info@kemetgift.com">Contact</a>
+      </div>
+    </div>
   </div>
-  <div class="product">
-    <img src="C1.jpg" alt="C1 Classic">
-    <h3>C1 – Classic</h3>
-    <p>👁 Eye of Horus – 19.9 USD</p>
-  </div>
-  <div class="product">
-    <img src="P1.jpg" alt="P1 Premium">
-    <h3>P1 – Premium</h3>
-    <p>⛰ Great Pyramid – 39.9 USD</p>
-  </div>
-  <div class="product">
-    <img src="S1.jpg" alt="S1 Silver">
-    <h3>S1 – Silver</h3>
-    <p>👑 Tutankhamun Mask – 59.9 USD</p>
-  </div>
-  <div class="product">
-    <img src="G1.jpg" alt="G1 Gold">
-    <h3>G1 – Gold</h3>
-    <p>☀️ Aten Sun – 89.9 USD</p>
-  </div>
-  <div class="product">
-    <img src="L1.jpg" alt="L1 Limited">
-    <h3>L1 – Limited</h3>
-    <p>🗿 Ramses II Legacy – 125 USD</p>
-  </div>
-</section>
 
-<footer>
-  <p>Follow us on: 
-    <a href="https://www.instagram.com/kemetgift" style="color:#d4af37;">Instagram</a> | 
-    <a href="https://www.youtube.com/@kemetgift" style="color:#d4af37;">YouTube</a> | 
-    <a href="mailto:info@kemetgift.com" style="color:#d4af37;">info@kemetgift.com</a>
-  </p>
-  <p>© 2025 Kemet Gift. All Rights Reserved.</p>
-</footer>
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero fade-in">
+      <div class="hero-left">
+        <div class="pill">
+          <span class="pill-dot"></span>
+          <span>Launching Soon • Global Release</span>
+        </div>
 
-<script>
-// Countdown Timer
-var countDownDate = new Date("Jan 1, 2027 00:00:00").getTime();
-var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  document.getElementById("countdown").innerHTML =
-    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML = "Now Available";
-  }
-}, 1000);
-</script>
+        <h1 class="hero-title">A Gift From The Heart of History</h1>
+        <p class="hero-subtitle">Luxury collectible coins inspired by ancient Egypt.</p>
 
+        <p class="hero-tagline">
+          Kemet Gift transforms timeless Egyptian symbols into premium gift coins – curated for museums, boutique hotels,
+          and collectors who want to hold a piece of history in the palm of their hand.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="btn-join-waitlist">Join the launch waitlist</button>
+          <button class="btn btn-outline" data-scroll-to="partners">For museums &amp; hotels</button>
+        </div>
+
+        <p class="hero-meta">
+          Be among the first to access our six-coin launch collection and early partner editions.<br />
+          <strong>No spam. Only meaningful launches and stories.</strong>
+        </p>
+      </div>
+
+      <aside class="hero-right" id="waitlist">
+        <div class="hero-right-title">Launch countdown</div>
+        <div class="countdown" id="countdown"></div>
+        <p class="hero-right-sub">
+          Leave your details to receive the official launch announcement, early previews, and partner opportunities.
+        </p>
+
+        <!-- Simple waitlist form (sends email using mailto – يمكنك تغيير الـ action بعدين لأي خدمة فورم) -->
+        <form class="waitlist-form" method="post" action="mailto:info@kemetgift.com" enctype="text/plain">
+          <div class="field-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="Name" type="text" placeholder="Optional" />
+            </div>
+            <div class="field">
+              <label for="email">Email *</label>
+              <input id="email" name="Email" type="email" required placeholder="you@example.com" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="country">Country</label>
+            <input id="country" name="Country" type="text" placeholder="Where are you based?" />
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:8px;">
+            Join the waitlist
+          </button>
+
+          <p class="waitlist-note">
+            By joining, you agree to be contacted about Kemet Gift launches, partner programs, and special editions.
+          </p>
+        </form>
+      </aside>
+    </section>
+
+    <!-- COINS SECTION -->
+    <section class="section" id="coins">
+      <div class="section-header">
+        <div class="section-kicker">Launch collection</div>
+        <h2 class="section-title">The Six Timeless Coins</h2>
+        <p class="section-subtitle">
+          Each coin is a curated symbol from ancient Egypt – designed as a complete gift unit, from the minted piece to
+          the packaging and story it carries.
+        </p>
+      </div>
+
+      <div class="coins-grid">
+        <article class="coin-card">
+          <img src="E1.jpg" alt="E1 – Essential Scarab Coin" class="coin-image" />
+          <div class="coin-tier">
+            <span>E1 • Essential</span>
+            <span class="coin-badge">Entry tier</span>
+          </div>
+          <h3 class="coin-name">Scarab of Rebirth</h3>
+          <p class="coin-symbol">A daily token for luck, renewal, and new journeys.</p>
+          <p class="coin-price">9.9 USD</p>
+        </article>
+
+        <article class="coin-card">
+          <img src="C1.jpg" alt="C1 – Classic Eye of Horus Coin" class="coin-image" />
+          <div class="coin-tier">
+            <span>C1 • Classic</span>
+            <span class="coin-badge">Gift standard</span>
+          </div>
+          <h3 class="coin-name">Eye of Horus</h3>
+          <p class="coin-symbol">The ancient sign of protection and watchful guidance.</p>
+          <p class="coin-price">19.9 USD</p>
+        </article>
+
+        <article class="coin-card">
+          <img src="P1.jpg" alt="P1 – Premium Pyramid Coin" class="coin-image" />
+          <div class="coin-tier">
+            <span>P1 • Premium</span>
+            <span class="coin-badge">Signature gift</span>
+          </div>
+          <h3 class="coin-name">Great Pyramid</h3>
+          <p class="coin-symbol">A tribute to human ambition, precision, and timeless legacy.</p>
+          <p class="coin-price">39.9 USD</p>
+        </article>
+
+        <article class="coin-card">
+          <img src="S1.jpg" alt="S1 – Silver Tutankhamun Coin" class="coin-image" />
+          <div class="coin-tier">
+            <span>S1 • Silver</span>
+            <span class="coin-badge">Collector tier</span>
+          </div>
+          <h3 class="coin-name">Tutankhamun Mask</h3>
+          <p class="coin-symbol">A silver-framed icon of mystery, youth, and royal splendor.</p>
+          <p class="coin-price">59.9 USD</p>
+        </article>
+
+        <article class="coin-card">
+          <img src="G1.jpg" alt="G1 – Gold Aten Coin" class="coin-image" />
+          <div class="coin-tier">
+            <span>G1 • Gold</span>
+            <span class="coin-badge">Premium gold</span>
+          </div>
+          <h3 class="coin-name">Aten Sun</h3>
+          <p class="coin-symbol">The radiant disk that illuminated the Amarna revolution.</p>
+          <p class="coin-price">89.9 USD</p>
+        </article>
+
+        <article class="coin-card">
+          <img src="L1.jpg" alt="L1 – Limited Ramses II Coin" class="coin-image" />
+          <div class="coin-tier">
+            <span>L1 • Limited</span>
+            <span class="coin-badge">Numbered edition</span>
+          </div>
+          <h3 class="coin-name">Ramses II Legacy</h3>
+          <p class="coin-symbol">A limited-edition tribute to one of Egypt’s greatest pharaohs.</p>
+          <p class="coin-price">125 USD</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHAT IS KEMET GIFT -->
+    <section class="section" id="about">
+      <div class="section-header">
+        <div class="section-kicker">About the brand</div>
+        <h2 class="section-title">What is Kemet Gift?</h2>
+        <p class="section-subtitle">
+          Kemet Gift is a curated system of luxury gift coins, built on deep research, governance, and manufacturing
+          standards – not just a single souvenir line.
+        </p>
+      </div>
+
+      <div class="pill-row">
+        <div class="pill-sm">Heritage-first</div>
+        <div class="pill-sm">Design-led</div>
+        <div class="pill-sm">Investor-ready IP</div>
+      </div>
+
+      <div class="three-columns">
+        <div class="column-card">
+          <h3 class="column-title">Cultural depth</h3>
+          <p class="column-text">
+            Each symbol is chosen from a specific dynasty and narrative, supported by a wider content system that turns
+            every coin into an entry point to ancient Egyptian knowledge.
+          </p>
+        </div>
+
+        <div class="column-card">
+          <h3 class="column-title">Luxury manufacturing</h3>
+          <p class="column-text">
+            Behind the scenes, Kemet Gift runs on detailed specifications for minting, finishing, packaging, and quality
+            control – designed to meet collectors’ expectations, not casual souvenir standards.
+          </p>
+        </div>
+
+        <div class="column-card">
+          <h3 class="column-title">Complete gifting experience</h3>
+          <p class="column-text">
+            Every unit is conceived as a full experience: the coin, the box, the certificate, and the story – ready to
+            sit on a museum shelf, a hotel reception, or a personal collection.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="section" id="partners">
+      <div class="section-header">
+        <div class="section-kicker">For institutions &amp; partners</div>
+        <h2 class="section-title">For museums, hotels &amp; destinations</h2>
+        <p class="section-subtitle">
+          Kemet Gift is designed from day one to integrate with cultural and hospitality ecosystems – with clear tiers,
+          governance, and co-branded opportunities.
+        </p>
+      </div>
+
+      <div class="partners-layout">
+        <div>
+          <p class="partners-text">
+            Whether you are a museum gift shop, a boutique hotel, or a developer of cultural destinations, Kemet Gift
+            offers a ready-made system of premium souvenirs that carry your location’s story in a refined, compact form.
+          </p>
+          <p class="partners-highlight">
+            From entry-level coins for high-volume visitors to limited, numbered editions for VIP guests, the collection
+            can be configured to match your audience, pricing, and brand positioning.
+          </p>
+
+          <div class="hero-actions" style="margin-top:14px;">
+            <a href="partners.html" class="btn btn-outline">Explore partner details</a>
+            <a href="mailto:info@kemetgift.com?subject=Kemet%20Gift%20Partnership%20Inquiry" class="btn btn-primary">
+              Request partnership deck
+            </a>
+          </div>
+        </div>
+
+        <div class="partners-card">
+          <div class="partners-badge">Partner snapshot</div>
+          <p>
+            • Ready-to-deploy coin tiers (E1–L1) with clear price bands.<br />
+            • Governance and operational policies already documented.<br />
+            • Alignment potential with national cultural &amp; tourism strategies.<br />
+            • Space for co-branded sleeves, inserts, or special editions.
+          </p>
+          <p style="margin-top:8px;">
+            Partner with Kemet Gift to turn heritage into a consistent, premium revenue stream – not an afterthought at
+            the exit of your venue.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        Follow us:
+        <a href="https://www.instagram.com/kemetgift" target="_blank" rel="noopener noreferrer">Instagram</a> |
+        <a href="https://www.youtube.com/@kemetgift" target="_blank" rel="noopener noreferrer">YouTube</a> |
+        <a href="mailto:info@kemetgift.com">info@kemetgift.com</a>
+      </div>
+      <div class="footer-meta">© 2025 Kemet Gift. All rights reserved.</div>
+      <div class="footer-small">
+        From Egypt to the world – crafted as a bridge between ancient dynasties and today’s global guests.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for nav links and buttons with data-scroll-to
+    document.querySelectorAll("[data-scroll-to]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        var targetId = el.getAttribute("data-scroll-to");
+        var target = document.getElementById(targetId);
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 70,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+
+    // Waitlist button scroll
+    var joinBtn = document.getElementById("btn-join-waitlist");
+    if (joinBtn) {
+      joinBtn.addEventListener("click", function () {
+        var target = document.getElementById("waitlist");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      });
+    }
+
+    // Countdown Timer (same date, يمكن تغييره وقت ما تحب)
+    var countDownDate = new Date("Jan 1, 2027 00:00:00").getTime();
+    var countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      if (!countdownEl) return;
+
+      if (distance <= 0) {
+        countdownEl.textContent = "Now Available";
+        clearInterval(timer);
+        return;
+      }
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.textContent =
+        days +
+        "d " +
+        hours.toString().padStart(2, "0") +
+        "h " +
+        minutes.toString().padStart(2, "0") +
+        "m " +
+        seconds.toString().padStart(2, "0") +
+        "s";
+    }
+
+    var timer = setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
 </body>
 </html>
