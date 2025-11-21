@@ -2,26 +2,15 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Kemet Gift – من قلب التاريخ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kemet Gift – قطع تذكارية معدنية فاخرة مستوحاة من الحضارة المصرية، مصمّمة بعناية لمتاجر المتاحف، والفنادق البوتيكية، وهدايا الشركات." />
 
-  <!-- Meta description -->
-  <meta name="description" content="قطع هدايا تذكارية معدنية فاخرة مستوحاة من رموز الحضارة المصرية، مصمَّمة لتليق بمتاجر المتاحف والفنادق البوتيكية ومحبي الاقتناء الجادّين." />
-
-  <!-- Open Graph -->
+  <!-- Open Graph بسيط -->
   <meta property="og:title" content="Kemet Gift – من قلب التاريخ" />
-  <meta property="og:description" content="خط هدايا تذكارية متحفية هادئ من قلب مصر، صُمّم للمتاحف والفنادق البوتيكية والشركاء الثقافيين." />
+  <meta property="og:description" content="Luxury heritage keepsakes inspired by ancient Egypt, crafted for museums, boutique hotels, and institutional gifting." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.kemetgift.com/" />
-  <!-- حط هنا لينك صورة اللوجو لما تجهّز -->
-  <meta property="og:image" content="https://www.kemetgift.com/assets/kemet-share.jpg" />
-
-  <!-- Favicon (عدّل المسار حسب مجلد الأصول عندك) -->
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-
-  <!-- ملف الـ CSS الرئيسي -->
-  <link rel="stylesheet" href="styles.css" />
 
   <!-- Google Analytics 4 -->
   <!-- Google tag (gtag.js) -->
@@ -32,10 +21,12 @@
     gtag('js', new Date());
     gtag('config', 'G-RZJPV5EM4J');
   </script>
+
+  <!-- CSS الرئيسي -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body class="kg-body">
-
   <!-- HEADER / NAV -->
   <header class="site-header">
     <div class="header-inner">
@@ -55,163 +46,133 @@
       </nav>
 
       <div class="lang-switch">
-        <!-- دلوقتي الزرين ديزاين بس، هنفعّل السويتش في خطوة تانية -->
-        <button class="lang-btn is-active" type="button">AR</button>
-        <button class="lang-btn" type="button">EN</button>
+        <button class="lang-btn is-active" data-lang="ar">AR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
       </div>
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
-
-    <!-- HERO SECTION -->
-    <section id="hero" class="hero">
+    <!-- HERO + FORM -->
+    <section class="hero" id="top">
       <div class="hero-inner">
-
         <!-- النص -->
         <div class="hero-copy">
-          <p class="top-label">إطلاق قريبًا · إصدار عالمي محدود</p>
+          <p class="hero-kicker" data-i18n="hero.kicker">
+            إطلاق قريبًا — إصدار عالمي محدود
+          </p>
 
-          <h1 class="hero-title">من قلب التاريخ</h1>
+          <h1 class="hero-title" data-i18n="hero.title">
+            من قلب التاريخ
+          </h1>
 
-          <h2 class="hero-subtitle">
-            قطع هدايا تذكارية معدنية فاخرة مستوحاة من رموز الحضارة المصرية، صُمِّمت لتليق بمتاجر المتاحف، والفنادق البوتيكية، ومحبي الاقتناء الجادّين.
-          </h2>
+          <p class="hero-sub" data-i18n="hero.subtitle">
+            قطع تذكارية فاخرة مستوحاة من الحضارة المصرية.
+          </p>
 
-          <p class="hero-body">
-            تحوِّل Kemet Gift الرموز المصرية الخالدة إلى قطع تذكارية معدنية فاخرة، مُصمَّمة بعناية للمتاحف، والفنادق البوتيكية، ومحبي الاقتناء الذين يرغبون في الاحتفاظ بقطعة من التاريخ بين أيديهم. كل تفصيلة تحترم السياق التاريخي، وتخاطب جمهورًا يقدّر القيمة الثقافية قبل البريق اللحظي.
+          <p class="hero-body" data-i18n="hero.body">
+            تحوّل Kemet Gift الرموز المصرية الخالدة إلى قطع تذكارية معدنية فاخرة، مصمّمة بعناية لمتاجر المتاحف، والفنادق البوتيكية، ومحبي الاقتناء الذين يرغبون في الاحتفاظ بقطعة من التاريخ بين أيديهم.
           </p>
 
           <div class="hero-ctas">
-            <a href="#launch-form" class="btn btn-primary">انضمّ إلى قائمة الإطلاق</a>
-            <div class="btn-hint">كن من أوّل من يتلقّى أخبار الإطلاق والمعاينات المبكرة. لا رسائل دعائية مزعجة، فقط إصدارات وقصص ذات قيمة.</div>
+            <a href="#waitlist" class="btn primary" data-i18n="hero.ctaPrimary">
+              انضم إلى قائمة الإطلاق
+            </a>
+            <div class="hero-micro" data-i18n="hero.ctaPrimaryNote">
+              كن من أوّل من يتلقّى أخبار الإطلاق والفرص الخاصة بالشركاء.
+            </div>
 
-            <a href="b2b-corporate.html" class="btn btn-secondary">للمتاحف والفنادق</a>
-            <div class="btn-hint">
+            <a href="ministry-partnership.html" class="btn ghost" data-i18n="hero.ctaSecondary">
+              للمتاحف والفنادق
+            </a>
+            <div class="hero-micro" data-i18n="hero.ctaSecondaryNote">
               حلول هدايا تذكارية فاخرة لمتاجر المتاحف، الفنادق البوتيكية، والوجهات الثقافية.
             </div>
           </div>
         </div>
 
-        <!-- الفورم (Zoho) -->
-        <div id="launch-form" class="hero-form">
-          <h3 class="form-title">تحديثات الإطلاق وفرص الشراكة</h3>
-          <p class="form-copy">
-            اكتب بياناتك لتصلك دعوة رسمية عند الإطلاق، ومعاينات مبكرة لأولى المجموعات.
+        <!-- بلوك Zoho Form -->
+        <div class="hero-form" id="waitlist">
+          <h2 class="form-title" data-i18n="form.title">
+            تحديثات الإطلاق وفرص الشراكة
+          </h2>
+          <p class="form-sub" data-i18n="form.subtitle">
+            اكتب بياناتك لتصلك دعوة رسمية عند الإطلاق، ومعاينات مبكرة لأولى المجموعات المختارة.
           </p>
 
-          <!-- Zoho Form iframe -->
-          <iframe
-            aria-label="Kemet Gift – Launch Waitlist"
-            frameborder="0"
-            style="height:500px;width:100%;border:none;"
-            src="https://forms.zohopublic.com/motalatkeme1/form/KemetGiftLaunchWaitlistHomepageHero/formperma/OBxXzZ5YyBsYYh0hsOqAjTwZGCUJy7l7c06LppZK65c">
-          </iframe>
+          <!-- Zoho – Launch Waitlist -->
+          <div class="form-frame">
+            <iframe aria-label="Kemet Gift – Launch Waitlist"
+                    frameborder="0"
+                    style="height:500px;width:99%;border:none;"
+                    src="https://forms.zohopublic.com/motalatkeme1/form/KemetGiftLaunchWaitlistHomepageHero/formperma/OBxXzZ5YyBsYYh0hsOqAjTwZGCUJy7l7c06LppZK65c">
+            </iframe>
+          </div>
 
-          <p class="form-consent">
-            بالتسجيل، توافق على تلقّي رسائل محدودة عن إصدارات Kemet Gift، وبرامج الشركاء، والإصدارات الخاصة. لا رسائل دعائية مزعجة.
+          <p class="form-consent" data-i18n="form.consent">
+            بالتسجيل، توافق على تلقّي رسائل منتقاة حول إصدارات Kemet Gift، وبرامج الشركاء، والإصدارات الخاصة. لا رسائل دعائية مزعجة.
           </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- VALUE PILLARS -->
-    <section class="section value-pillars">
-      <div class="section-inner">
-        <h2 class="section-title">لماذا Kemet Gift؟</h2>
-
-        <div class="pillars-grid">
-          <article class="pillar">
-            <h3 class="pillar-title">فخامة هادئة من قلب مصر</h3>
-            <p class="pillar-body">
-              قطع تذكارية معدنية بملمس راقٍ وتدرّجات معدنية دافئة وتشطيبات ناعمة، صُمِّمت لتنسجم مع متاجر المتاحف وردهات الفنادق البوتيكية.
-            </p>
-          </article>
-
-          <article class="pillar">
-            <h3 class="pillar-title">احترام ثقافي… لا تقليد حرفي</h3>
-            <p class="pillar-body">
-              كل رمز يمرّ بمراجعة بحثية وثقافية واضحة، لتجنّب أي استخدام ديني أو سياسي، ويحافظ على روح التراث المصري باحترام كامل.
-            </p>
-          </article>
-
-          <article class="pillar">
-            <h3 class="pillar-title">مُصمَّمة للاقـتناء… لا للاستهلاك</h3>
-            <p class="pillar-body">
-              إحساس معدني متين، وطباعة بمعايير أرشيفية، وإصدارات محدودة — لتُهدى وتُعرَض وتبقى لسنوات، لا أن تُرمى بعد استخدامها.
-            </p>
-          </article>
         </div>
       </div>
     </section>
 
-    <!-- CULTURAL VENUES BLOCK -->
-    <section class="section cultural-venues">
+    <!-- WHY KEMET GIFT (مختصر الآن) -->
+    <section class="why">
       <div class="section-inner">
-        <p class="section-label">للمتاحف، والفنادق، والوجهات الثقافية</p>
-        <h2 class="section-title">
-          مُصمَّمة لتعيش في متاجر المتاحف… لا على أرفف الهدايا العشوائية
+        <h2 class="section-title" data-i18n="why.title">
+          لماذا Kemet Gift؟
         </h2>
-        <p class="section-body">
-          تُطوَّر قطع Kemet Gift كجزء من تجربة المتحف والضيافة البوتيكية، لا كهدايا عشوائية تُباع بالجملة. من التسمية والبطاقات التعريفية، إلى التغليف والتحقّق، تُصمَّم التفاصيل لتنسجم مع الكتب القيّمة، وكتالوجات المعارض، وقطع التصميم المنتقاة بعناية.
-        </p>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <h3 data-i18n="why.card1.title">فخامة هادئة من قلب مصر</h3>
+            <p data-i18n="why.card1.body">
+              قطع تذكارية معدنية بلمس راقٍ وتشطيبات مدروسة، صُمّمت لتنسجم مع متاجر المتاحف والفنادق البوتيكية.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <h3 data-i18n="why.card2.title">احترام ثقافي… لا تقليد حرفي</h3>
+            <p data-i18n="why.card2.body">
+              كل رمز يمرّ بمراجعة بحثية وثقافية لتجنّب أي استخدام ديني أو سياسي، مع الحفاظ على روح التراث المصري باحترام كامل.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <h3 data-i18n="why.card3.title">مُصمَّمة للاقتناء… لا للاستهلاك</h3>
+            <p data-i18n="why.card3.body">
+              إحساس معدني متين، وطباعة بمعايير أرشيفية، وإصدارات محدودة تُقتنى وتُعرض وتبقى لسنوات؛ لا أن تُرمى بعد استخدامها.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
-
-    <!-- VERIFY & COA TEASER -->
-    <section class="section verify-teaser">
-      <div class="section-inner">
-        <p class="section-label">الأصالة والتحقّق</p>
-        <h2 class="section-title">
-          كل قطعة تحمل حكاية… يمكن التحقّق منها
-        </h2>
-        <p class="section-body">
-          تُخطَّط كل قطعة من Kemet Gift أن تُرفَق بشهادة أصالة مُرقّمة، ومسار تحقّق رقمي واضح. الهدف بسيط: أن يتمكّن الضيف أو المقتني أو الشريك من التأكّد بسهولة أن ما بين يديه تصميم أصلي من Kemet Gift، لا نسخة مقلَّدة.
-        </p>
-        <a href="verify-coa.html" class="link-arrow">
-          تعرّف أكثر على نظام التحقّق وشهادة الأصالة →
-        </a>
-      </div>
-    </section>
-
-    <!-- FINAL CTA STRIP -->
-    <section class="section cta-strip">
-      <div class="section-inner">
-        <h2 class="section-title">
-          كن حاضرًا عند إطلاق المجموعة الأولى
-        </h2>
-        <p class="section-body">
-          نحن نبني خطّ هدايا تذكارية متحفية بعناية، لا إطلاقًا متسرّعًا. انضمّ إلى القائمة ليصلك إشعار عند جاهزية أول مجموعة من Kemet Gift لاستقبال الضيوف والمقتنين.
-        </p>
-        <a href="#launch-form" class="btn btn-primary">
-          انضم إلى قائمة الإطلاق
-        </a>
-      </div>
-    </section>
-
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer>
     <div class="footer-inner">
       <div class="footer-links">
-        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-        <span> | </span>
-        <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
-        <span> | </span>
+        <span data-i18n="footer.follow">تابعنا:</span>
+        <a href="https://www.instagram.com/kemetgift" target="_blank" rel="noopener noreferrer">Instagram</a> |
+        <a href="https://www.youtube.com/@kemetgift" target="_blank" rel="noopener noreferrer">YouTube</a> |
         <a href="mailto:info@kemetgift.com">info@kemetgift.com</a>
       </div>
 
       <div class="footer-meta">
-        <p>Kemet Gift™. All rights reserved 2025 ©</p>
-        <p>هدية من قلب التاريخ — From the Heart of History</p>
-        <p class="footer-legal">
-          قطع Kemet Gift منتجات تذكارية ثقافية، وليست عملة قانونية أو أداة استثمار أو منتجًا ماليًا.
-        </p>
+        © 2025 Kemet Gift™. All rights reserved.
+      </div>
+      <div class="footer-small">
+        هدية من قلب التاريخ — From the Heart of History
+      </div>
+      <div class="footer-small">
+        قطع Kemet Gift منتجات تذكارية ثقافية، وليست عملة قانونية أو أداة استثمار.
       </div>
     </div>
   </footer>
 
+  <!-- سكريبت بسيط للّغة (هنستكمله لاحقًا) -->
+  <script src="script.js"></script>
 </body>
 </html>
