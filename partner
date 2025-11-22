@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kemet Gift Partners – Museums, Hotels & Destinations</title>
+  <meta name="description" content="Partner with Kemet Gift to offer luxury Egyptian heritage gift coins in museums, hotels, and cultural destinations." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:title" content="Kemet Gift Partners – Museums, Hotels & Destinations" />
+  <meta property="og:description" content="Partner with Kemet Gift to offer luxury Egyptian heritage gift coins in museums, hotels, and cultural destinations." />
+  <meta property="og:url" content="https://www.kemetgift.com/partners.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.kemetgift.com/YOUR_BOX_IMAGE.jpg" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kemet Gift Partners – Museums, Hotels & Destinations" />
+  <meta name="twitter:description" content="Partner with Kemet Gift to offer luxury Egyptian heritage gift coins in museums, hotels, and cultural destinations." />
+  <meta name="twitter:image" content="https://www.kemetgift.com/YOUR_BOX_IMAGE.jpg" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-main: #050505;
+      --bg-alt: #111111;
+      --gold: #d4af37;
+      --gold-soft: #f1dca7;
+      --gold-muted: #c0a36e;
+      --text-light: #f5f5f5;
+      --border-soft: rgba(212, 175, 55, 0.4);
+      --radius-lg: 16px;
+      --transition-fast: 0.25s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cinzel', serif;
+      background: radial-gradient(circle at top, #222 0%, #000 55%, #050505 100%);
+      color: var(--text-light);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    a:hover {
+      color: var(--gold-soft);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      object-fit: cover;
+      background: #000;
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.1;
+    }
+
+    .nav-brand span:first-child {
+      font-size: 18px;
+      letter-spacing: 4px;
+      color: var(--gold);
+    }
+
+    .nav-brand span:last-child {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--gold-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      align-items: center;
+    }
+
+    .nav-link {
+      cursor: pointer;
+      opacity: 0.85;
+    }
+
+    .nav-link:hover {
+      opacity: 1;
+    }
+
+    .lang-toggle {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      overflow: hidden;
+      font-size: 11px;
+    }
+
+    .lang-btn {
+      padding: 4px 10px;
+      border: none;
+      background: transparent;
+      color: var(--gold-soft);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      min-width: 52px;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, #b88a2b, #e0c36f);
+      color: #111;
+    }
+
+    /* PAGE LAYOUT */
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 32px;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+
+    .hero-pill {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      background: rgba(0, 0, 0, 0.6);
+      margin-bottom: 10px;
+    }
+
+    .hero-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #35c759;
+      box-shadow: 0 0 8px #35c759;
+    }
+
+    .hero-title {
+      font-size: 32px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      margin: 0 0 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--gold-muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-text {
+      font-size: 14px;
+      color: #e0e0e0;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .hero-bullets {
+      font-size: 13px;
+      color: #ccc;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .hero-bullets span {
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 10px 20px;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--gold-soft);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #b88a2b, #e0c36f);
+      color: #111;
+      border-color: transparent;
+      box-shadow: 0 0 16px rgba(212, 175, 55, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 24px rgba(212, 175, 55, 0.7);
+    }
+
+    .btn-outline:hover {
+      background: rgba(212, 175, 55, 0.12);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      font-size: 11px;
+      color: #999;
+      margin-top: 8px;
+    }
+
+    .hero-right {
+      background: radial-gradient(circle at top, #333 0%, #000 65%);
+      border-radius: var(--radius-lg);
+      padding: 20px 18px 18px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+      font-size: 13px;
+      color: #ddd;
+      line-height: 1.7;
+    }
+
+    .hero-right-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-soft);
+      margin-bottom: 8px;
+    }
+
+    .hero-right-badge {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-muted);
+      margin-bottom: 4px;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(212, 175, 55, 0.12);
+    }
+
+    .section-header {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-muted);
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      margin: 0;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: #ccc;
+      margin-top: 6px;
+      max-width: 580px;
+    }
+
+    /* USE CASES */
+    .usecases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .usecase-card {
+      background: radial-gradient(circle at top, #272727 0%, #050505 70%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 14px 14px 16px;
+      font-size: 13px;
+      color: #ddd;
+      line-height: 1.7;
+    }
+
+    .usecase-title {
+      font-size: 14px;
+      color: var(--gold-soft);
+      margin: 0 0 6px;
+    }
+
+    .usecase-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-muted);
+      margin-bottom: 6px;
+    }
+
+    /* MODELS */
+    .models-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.7fr);
+      gap: 24px;
+      margin-top: 10px;
+    }
+
+    .models-text {
+      font-size: 13px;
+      color: #ddd;
+      line-height: 1.8;
+    }
+
+    .models-list {
+      font-size: 13px;
+      color: #ccc;
+      line-height: 1.7;
+      margin-top: 6px;
+    }
+
+    .models-card {
+      background: radial-gradient(circle at top, #2b2b2b 0%, #040404 70%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 14px 14px 16px;
+      font-size: 12px;
+      color: #ddd;
+      line-height: 1.8;
+    }
+
+    .models-pill {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-muted);
+      margin-bottom: 6px;
+    }
+
+    /* FORM */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+      gap: 24px;
+      margin-top: 10px;
+      align-items: flex-start;
+    }
+
+    .contact-text {
+      font-size: 13px;
+      color: #ddd;
+      line-height: 1.8;
+    }
+
+    .contact-note {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 8px;
+    }
+
+    .contact-form {
+      background: radial-gradient(circle at top, #262626 0%, #050505 70%);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      padding: 16px 16px 18px;
+      font-size: 13px;
+    }
+
+    .field-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .field {
+      flex: 1;
+      min-width: 140px;
+      margin-bottom: 12px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      color: var(--gold-muted);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      background: rgba(0, 0, 0, 0.85);
+      color: #f5f5f5;
+      font-size: 12px;
+      outline: none;
+    }
+
+    .field textarea {
+      border-radius: 12px;
+      min-height: 90px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #777;
+    }
+
+    .contact-cta {
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 6px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: url('YOUR_BOX_IMAGE.jpg') center/cover no-repeat;
+      padding: 80px 20px 24px;
+      color: var(--gold);
+      background-blend-mode: multiply;
+      background-color: rgba(0, 0, 0, 0.9);
+      margin-top: 40px;
+      text-align: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .footer-links {
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .footer-links a {
+      margin: 0 6px;
+    }
+
+    .footer-meta {
+      font-size: 11px;
+      color: #e0d3ac;
+    }
+
+    .footer-small {
+      font-size: 10px;
+      color: #b3a36e;
+      margin-top: 4px;
+    }
+
+    /* RTL MODE */
+    .rtl {
+      direction: rtl;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .rtl .section-header {
+      text-align: right;
+    }
+
+    .rtl .hero {
+      direction: rtl;
+    }
+
+    .rtl .nav-inner {
+      flex-direction: row-reverse;
+    }
+
+    .rtl .nav-left {
+      flex-direction: row-reverse;
+    }
+
+    .rtl .nav-brand {
+      align-items: flex-end;
+    }
+
+    .rtl .nav-links {
+      flex-direction: row-reverse;
+    }
+
+    .rtl .hero-text,
+    .rtl .hero-subtitle,
+    .rtl .hero-meta,
+    .rtl .hero-bullets {
+      text-align: right;
+    }
+
+    .rtl .usecases-grid,
+    .rtl .models-layout,
+    .rtl .contact-grid {
+      direction: rtl;
+    }
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-right {
+        margin-top: 10px;
+      }
+
+      .models-layout,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.9s ease forwards;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <img src="YOUR_LOGO_IMAGE.png" alt="Kemet Gift Logo" class="nav-logo" />
+        <div class="nav-brand">
+          <span>KEMET GIFT</span>
+          <span data-i18n="nav.subtitle">Luxury Heritage Gifts</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html#coins" class="nav-link" data-i18n="nav.coins">Coins</a>
+        <a href="index.html#about" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="partners.html" class="nav-link" data-i18n="nav.partners">Partners</a>
+        <a class="nav-link" href="mailto:info@kemetgift.com" data-i18n="nav.contact">Contact</a>
+
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="ar">عربي</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="page">
+    <!-- HERO PARTNERS -->
+    <section class="hero fade-in">
+      <div>
+        <div class="hero-pill">
+          <span class="hero-pill-dot"></span>
+          <span data-i18n="hero.pill">Strategic cultural partnerships</span>
+        </div>
+
+        <h1 class="hero-title" data-i18n="hero.title">
+          Turn heritage into a premium revenue stream
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
+          A ready-made system of luxury gift coins for museums, hotels, and cultural destinations.
+        </p>
+
+        <p class="hero-text" data-i18n="hero.text">
+          Kemet Gift is built for institutions that want more than casual souvenirs. Our coins are designed as
+          curated, high-margin units that respect the depth of Egyptian heritage while delivering a refined guest
+          experience – from entry-level visitors to VIP collectors.
+        </p>
+
+        <p class="hero-bullets" data-i18n="hero.bullets">
+          <span>• Flexible models: wholesale, revenue share, or co-branded editions.</span>
+          <span>• Clear tiers from E1 to L1 to match different visitor segments.</span>
+          <span>• Governance, manufacturing, and storytelling already documented.</span>
+        </p>
+
+        <div class="hero-actions">
+          <a href="mailto:partners@kemetgift.com?subject=Kemet%20Gift%20Partnership%20Deck" class="btn btn-primary" data-i18n="hero.btn_deck">
+            Request the partnership deck
+          </a>
+          <a href="#contact" class="btn btn-outline" data-i18n="hero.btn_contact">
+            Share your project with us
+          </a>
+        </div>
+
+        <p class="hero-meta" data-i18n="hero.meta">
+          Ideal for museums, boutique hotels, cultural districts, and destination developers who want a ready
+          framework, not a trial-and-error souvenir experiment.
+        </p>
+      </div>
+
+      <aside class="hero-right">
+        <div class="hero-right-badge" data-i18n="hero.box_badge">Why Kemet Gift</div>
+        <div class="hero-right-title" data-i18n="hero.box_title">A partner, not just a product line</div>
+        <p data-i18n="hero.box_text1">
+          Behind each coin stands a documented system of identity, governance, operations, and manufacturing
+          standards. This reduces execution risk and accelerates integration into your existing retail or guest
+          experience.
+        </p>
+        <p data-i18n="hero.box_text2">
+          Our content is rooted in Egyptian dynasties and narratives, allowing your venue to offer gifts that
+          carry meaning – not just symbols printed on objects.
+        </p>
+      </aside>
+    </section>
+
+    <!-- USE CASES -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="use.kicker">Use cases</div>
+        <h2 class="section-title" data-i18n="use.title">Where Kemet Gift fits</h2>
+        <p class="section-subtitle" data-i18n="use.subtitle">
+          The launch collection is designed to plug into different types of venues while keeping the tiering and
+          storytelling consistent across experiences.
+        </p>
+      </div>
+
+      <div class="usecases-grid">
+        <article class="usecase-card">
+          <div class="usecase-tag" data-i18n="use.museum.tag">Museums & heritage sites</div>
+          <h3 class="usecase-title" data-i18n="use.museum.title">Museum gift shops</h3>
+          <p data-i18n="use.museum.text">
+            Offer visitors a compact, premium token of their visit – with each coin tied to a dynasty, symbol,
+            or storyline already present in your galleries. Ideal for national museums, specialized collections,
+            and archaeological sites.
+          </p>
+        </article>
+
+        <article class="usecase-card">
+          <div class="usecase-tag" data-i18n="use.hotel.tag">Hotels & hospitality</div>
+          <h3 class="usecase-title" data-i18n="use.hotel.title">Boutique & luxury hotels</h3>
+          <p data-i18n="use.hotel.text">
+            Place Kemet Gift coins at reception, concept stores, or as part of VIP turndown amenities. Create
+            co-branded sleeves or inserts that connect the coin to your property’s story and location.
+          </p>
+        </article>
+
+        <article class="usecase-card">
+          <div class="usecase-tag" data-i18n="use.dest.tag">Destinations & developers</div>
+          <h3 class="usecase-title" data-i18n="use.dest.title">Cultural districts & destinations</h3>
+          <p data-i18n="use.dest.text">
+            Integrate coins into larger cultural or mixed-use developments as part of visitor centers, branded
+            experiences, or VIP welcome packs – with potential for location-specific editions.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MODELS & TIERS -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="models.kicker">Models & tiers</div>
+        <h2 class="section-title" data-i18n="models.title">How collaboration works</h2>
+        <p class="section-subtitle" data-i18n="models.subtitle">
+          We keep the framework simple, while allowing enough flexibility to fit your operational and financial model.
+        </p>
+      </div>
+
+      <div class="models-layout">
+        <div>
+          <p class="models-text" data-i18n="models.text1">
+            At the core of Kemet Gift lies a tiered structure – from E1 to L1 – allowing you to serve different visitor
+            segments without diluting your brand. You can deploy the full ladder or focus on a subset that fits your
+            audience.
+          </p>
+          <p class="models-list" data-i18n="models.text2">
+            • E1–C1: accessible price points, optimized for volume and entry tickets.<br />
+            • P1–S1: elevated gifts, ideal for core retail and special bundles.<br />
+            • G1–L1: premium and numbered pieces for VIP programs and limited drops.
+          </p>
+          <p class="models-text" data-i18n="models.text3">
+            Financially, you can opt for classic wholesale, shared-margin retail, or fully co-branded editions with
+            agreed volumes and exclusivity windows.
+          </p>
+        </div>
+
+        <div class="models-card">
+          <div class="models-pill" data-i18n="models.card_badge">Example structures</div>
+          <p data-i18n="models.card_text1">
+            • National museum: full ladder E1–L1, mixing high-volume visitors with curated collector releases.<br />
+            • Boutique hotel: focus on P1–S1 as lobby retail and VIP gifting, with a co-branded note inside the box.<br />
+            • Cultural district: rotating G1/L1 editions tied to events, festivals, or seasonal campaigns.
+          </p>
+          <p style="margin-top:8px;" data-i18n="models.card_text2">
+            All configurations sit on top of documented governance and quality standards, so the experience stays
+            consistent across venues and phases of growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / FORM -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <div class="section-kicker" data-i18n="contact.kicker">Start the conversation</div>
+        <h2 class="section-title" data-i18n="contact.title">Share your venue & vision</h2>
+        <p class="section-subtitle" data-i18n="contact.subtitle">
+          Tell us a little about your institution, audience, and objectives. We’ll respond with a tailored proposal
+          and, where relevant, a draft tier configuration and timeline.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <p class="contact-text" data-i18n="contact.text1">
+            Kemet Gift is not a mass-market souvenir line. It is a curated framework that works best when aligned with
+            your narrative, visitor flow, and pricing strategy. The more context you share, the more focused our
+            proposal can be.
+          </p>
+          <p class="contact-note" data-i18n="contact.text2">
+            We currently prioritize institutions and projects with a clear cultural or heritage anchor, whether in
+            Egypt or abroad.
+          </p>
+        </div>
+
+        <!-- مؤقتًا mailto لحد ما نربط Zoho/Email Service -->
+        <form class="contact-form" method="post" action="mailto:partners@kemetgift.com" enctype="text/plain">
+          <div class="field-row">
+            <div class="field">
+              <label for="org" data-i18n="form.org_label">Institution / project name</label>
+              <input id="org" name="Organization" type="text" placeholder="Museum, hotel, district..." data-i18n-placeholder="form.org_ph" />
+            </div>
+            <div class="field">
+              <label for="country" data-i18n="form.country_label">Country</label>
+              <input id="country" name="Country" type="text" placeholder="Where are you based?" data-i18n-placeholder="form.country_ph" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="contact_name" data-i18n="form.name_label">Contact person</label>
+              <input id="contact_name" name="ContactName" type="text" placeholder="Your name" data-i18n-placeholder="form.name_ph" />
+            </div>
+            <div class="field">
+              <label for="email" data-i18n="form.email_label">Email *</label>
+              <input id="email" name="Email" type="email" required placeholder="you@example.com" data-i18n-placeholder="form.email_ph" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="type" data-i18n="form.type_label">Type of venue</label>
+            <select id="type" name="VenueType">
+              <option value="" data-i18n="form.type_opt0">Select…</option>
+              <option value="museum" data-i18n="form.type_opt1">Museum / heritage site</option>
+              <option value="hotel" data-i18n="form.type_opt2">Hotel / resort</option>
+              <option value="district" data-i18n="form.type_opt3">Cultural district / destination</option>
+              <option value="other" data-i18n="form.type_opt4">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message" data-i18n="form.msg_label">Tell us about your audience & goals</label>
+            <textarea id="message" name="Message" placeholder="Key visitor segments, current souvenir setup, what you would like to achieve with Kemet Gift." data-i18n-placeholder="form.msg_ph"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; margin-top:4px;" data-i18n="form.btn_submit">
+            Send partnership inquiry
+          </button>
+          <p class="contact-cta" data-i18n="form.note">
+            Your message will be received directly by the Kemet Gift team. We aim to respond with next steps and
+            clarifying questions rather than generic replies.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <span data-i18n="footer.follow">Follow us:</span>
+        <a href="https://www.instagram.com/kemetgift" target="_blank" rel="noopener noreferrer">Instagram</a> |
+        <a href="https://www.youtube.com/@kemetgift" target="_blank" rel="noopener noreferrer">YouTube</a> |
+        <a href="mailto:info@kemetgift.com">info@kemetgift.com</a>
+      </div>
+      <div class="footer-meta" data-i18n="footer.copy">© 2025 Kemet Gift. All rights reserved.</div>
+      <div class="footer-small" data-i18n="footer.tagline">
+        From Egypt to the world – crafted as a bridge between ancient dynasties and today’s global guests.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Translations + Language Logic -->
+  <script>
+    const translations = {
+      en: {
+        "nav.subtitle": "Luxury Heritage Gifts",
+        "nav.coins": "Coins",
+        "nav.about": "About",
+        "nav.partners": "Partners",
+        "nav.contact": "Contact",
+
+        "hero.pill": "Strategic cultural partnerships",
+        "hero.title": "Turn heritage into a premium revenue stream",
+        "hero.subtitle": "A ready-made system of luxury gift coins for museums, hotels, and cultural destinations.",
+        "hero.text":
+          "Kemet Gift is built for institutions that want more than casual souvenirs. Our coins are designed as curated, high-margin units that respect the depth of Egyptian heritage while delivering a refined guest experience – from entry-level visitors to VIP collectors.",
+        "hero.bullets":
+          "<span>• Flexible models: wholesale, revenue share, or co-branded editions.</span><span>• Clear tiers from E1 to L1 to match different visitor segments.</span><span>• Governance, manufacturing, and storytelling already documented.</span>",
+        "hero.btn_deck": "Request the partnership deck",
+        "hero.btn_contact": "Share your project with us",
+        "hero.meta":
+          "Ideal for museums, boutique hotels, cultural districts, and destination developers who want a ready framework, not a trial-and-error souvenir experiment.",
+        "hero.box_badge": "Why Kemet Gift",
+        "hero.box_title": "A partner, not just a product line",
+        "hero.box_text1":
+          "Behind each coin stands a documented system of identity, governance, operations, and manufacturing standards. This reduces execution risk and accelerates integration into your existing retail or guest experience.",
+        "hero.box_text2":
+          "Our content is rooted in Egyptian dynasties and narratives, allowing your venue to offer gifts that carry meaning – not just symbols printed on objects.",
+
+        "use.kicker": "Use cases",
+        "use.title": "Where Kemet Gift fits",
+        "use.subtitle":
+          "The launch collection is designed to plug into different types of venues while keeping the tiering and storytelling consistent across experiences.",
+        "use.museum.tag": "Museums & heritage sites",
+        "use.museum.title": "Museum gift shops",
+        "use.museum.text":
+          "Offer visitors a compact, premium token of their visit – with each coin tied to a dynasty, symbol, or storyline already present in your galleries. Ideal for national museums, specialized collections, and archaeological sites.",
+        "use.hotel.tag": "Hotels & hospitality",
+        "use.hotel.title": "Boutique & luxury hotels",
+        "use.hotel.text":
+          "Place Kemet Gift coins at reception, concept stores, or as part of VIP turndown amenities. Create co-branded sleeves or inserts that connect the coin to your property’s story and location.",
+        "use.dest.tag": "Destinations & developers",
+        "use.dest.title": "Cultural districts & destinations",
+        "use.dest.text":
+          "Integrate coins into larger cultural or mixed-use developments as part of visitor centers, branded experiences, or VIP welcome packs – with potential for location-specific editions.",
+
+        "models.kicker": "Models & tiers",
+        "models.title": "How collaboration works",
+        "models.subtitle":
+          "We keep the framework simple, while allowing enough flexibility to fit your operational and financial model.",
+        "models.text1":
+          "At the core of Kemet Gift lies a tiered structure – from E1 to L1 – allowing you to serve different visitor segments without diluting your brand. You can deploy the full ladder or focus on a subset that fits your audience.",
+        "models.text2":
+          "• E1–C1: accessible price points, optimized for volume and entry tickets.<br />• P1–S1: elevated gifts, ideal for core retail and special bundles.<br />• G1–L1: premium and numbered pieces for VIP programs and limited drops.",
+        "models.text3":
+          "Financially, you can opt for classic wholesale, shared-margin retail, or fully co-branded editions with agreed volumes and exclusivity windows.",
+        "models.card_badge": "Example structures",
+        "models.card_text1":
+          "• National museum: full ladder E1–L1, mixing high-volume visitors with curated collector releases.<br />• Boutique hotel: focus on P1–S1 as lobby retail and VIP gifting, with a co-branded note inside the box.<br />• Cultural district: rotating G1/L1 editions tied to events, festivals, or seasonal campaigns.",
+        "models.card_text2":
+          "All configurations sit on top of documented governance and quality standards, so the experience stays consistent across venues and phases of growth.",
+
+        "contact.kicker": "Start the conversation",
+        "contact.title": "Share your venue & vision",
+        "contact.subtitle":
+          "Tell us a little about your institution, audience, and objectives. We’ll respond with a tailored proposal and, where relevant, a draft tier configuration and timeline.",
+        "contact.text1":
+          "Kemet Gift is not a mass-market souvenir line. It is a curated framework that works best when aligned with your narrative, visitor flow, and pricing strategy. The more context you share, the more focused our proposal can be.",
+        "contact.text2":
+          "We currently prioritize institutions and projects with a clear cultural or heritage anchor, whether in Egypt or abroad.",
+
+        "form.org_label": "Institution / project name",
+        "form.org_ph": "Museum, hotel, district...",
+        "form.country_label": "Country",
+        "form.country_ph": "Where are you based?",
+        "form.name_label": "Contact person",
+        "form.name_ph": "Your name",
+        "form.email_label": "Email *",
+        "form.email_ph": "you@example.com",
+        "form.type_label": "Type of venue",
+        "form.type_opt0": "Select…",
+        "form.type_opt1": "Museum / heritage site",
+        "form.type_opt2": "Hotel / resort",
+        "form.type_opt3": "Cultural district / destination",
+        "form.type_opt4": "Other",
+        "form.msg_label": "Tell us about your audience & goals",
+        "form.msg_ph":
+          "Key visitor segments, current souvenir setup, what you would like to achieve with Kemet Gift.",
+        "form.btn_submit": "Send partnership inquiry",
+        "form.note":
+          "Your message will be received directly by the Kemet Gift team. We aim to respond with next steps and clarifying questions rather than generic replies.",
+
+        "footer.follow": "Follow us:",
+        "footer.copy": "© 2025 Kemet Gift. All rights reserved.",
+        "footer.tagline":
+          "From Egypt to the world – crafted as a bridge between ancient dynasties and today’s global guests."
+      },
+
+      ar: {
+        "nav.subtitle": "هدايا فاخرة مستوحاة من التراث المصري",
+        "nav.coins": "العملات",
+        "nav.about": "عن كيميت جفت",
+        "nav.partners": "للشركاء",
+        "nav.contact": "تواصل معنا",
+
+        "hero.pill": "شراكات ثقافية إستراتيجية",
+        "hero.title": "حوّل التراث إلى مصدر دخل فاخر",
+        "hero.subtitle": "منظومة جاهزة من عملات الهدايا الفاخرة للمتاحف والفنادق والوجهات الثقافية.",
+        "hero.text":
+          "تم تصميم كيميت جفت للمؤسسات التي تبحث عن ما هو أبعد من التذكارات التقليدية. عملاتنا وحدات منتقاة بهوامش ربح عالية تحترم عمق التراث المصري، وتقدّم في الوقت نفسه تجربة راقية للضيوف – من الزائر العادي إلى المقتني الـ VIP.",
+        "hero.bullets":
+          "<span>• نماذج تعاون مرنة: بيع جملة، مشاركة أرباح، أو إصدارات مشتركة بعلامتكم.</span><span>• سلم واضح من E1 إلى L1 لتغطية شرائح الزوار المختلفة.</span><span>• حوكمة وتشغيل وصناعة وقصص موثقة مسبقًا.</span>",
+        "hero.btn_deck": "اطلب عرض الشراكة",
+        "hero.btn_contact": "شاركنا مشروعك ورؤيتك",
+        "hero.meta":
+          "مثالي للمتاحف، والفنادق البوتيكية، والمناطق الثقافية، ومطوري الوجهات الذين يريدون إطارًا جاهزًا لا تجربة تجارب عشوائية في التذكارات.",
+        "hero.box_badge": "لماذا كيميت جفت؟",
+        "hero.box_title": "شريك متكامل وليس مجرد خط منتجات",
+        "hero.box_text1":
+          "خلف كل عملة منظومة موثقة من الهوية والحوكمة والتشغيل ومعايير التصنيع. هذا يقلل مخاطر التنفيذ ويسرّع دمج المنتج في منظومة البيع أو تجربة الضيوف الحالية لديكم.",
+        "hero.box_text2":
+          "المحتوى مستند إلى الأسر والحقب المصرية وقصصها، ما يسمح لوجهتكم بتقديم هدايا تحمل معنى حقيقيًا – لا مجرد رموز مطبوعة على منتجات.",
+
+        "use.kicker": "حالات الاستخدام",
+        "use.title": "أين تناسب كيميت جفت؟",
+        "use.subtitle":
+          "تم تصميم مجموعة الإطلاق لتندمج مع أنواع مختلفة من الوجهات مع الحفاظ على تدرّج الفئات ورواية القصص بشكل متسق عبر التجارب.",
+        "use.museum.tag": "المتاحف والمواقع الأثرية",
+        "use.museum.title": "متاجر هدايا المتاحف",
+        "use.museum.text":
+          "قدّم للزائر هدية صغيرة فاخرة تجسد زيارته – مع ربط كل عملة بسلالة أو رمز أو قصة موجودة بالفعل داخل قاعات العرض. مثالية للمتاحف الوطنية والمتخصصة والمواقع الأثرية.",
+        "use.hotel.tag": "الفنادق والضيافة",
+        "use.hotel.title": "الفنادق البوتيكية والفاخرة",
+        "use.hotel.text":
+          "اعرض عملات كيميت جفت في الاستقبال أو متاجر المفهوم أو ضمن هدايا الـ VIP في الغرف. يمكن إضافة أكمام أو إدخالات مشتركة تربط العملة بقصة الفندق وموقعه.",
+        "use.dest.tag": "الوجهات والمطورون",
+        "use.dest.title": "المناطق والوجهات الثقافية",
+        "use.dest.text":
+          "ادمج العملات في مشاريع أكبر كمراكز زوار، أو تجارب علامة، أو حقائب ترحيب لكبار الزوار – مع إمكانية تصميم إصدارات مرتبطة بالموقع أو الفعاليات.",
+
+        "models.kicker": "النماذج والفئات",
+        "models.title": "كيف تعمل الشراكة؟",
+        "models.subtitle":
+          "نحافظ على بساطة الإطار مع إتاحة المرونة الكافية ليتناسب مع نموذج التشغيل والمالية لديكم.",
+        "models.text1":
+          "في قلب كيميت جفت يوجد سلم فئات من E1 إلى L1 يتيح لكم خدمة شرائح زوار مختلفة دون إضعاف قوة العلامة. يمكن تطبيق السلم كاملًا أو اختيار فئات محددة تناسب جمهوركم.",
+        "models.text2":
+          "• E1–C1: نقاط سعرية في المتناول، مثالية للحركة العالية وتذاكر الدخول.<br />• P1–S1: هدايا أعلى قيمة لمركز البيع الرئيسي والحزم الخاصة.<br />• G1–L1: قطع فاخرة ومُرقّمة لبرامج الـ VIP والإصدارات المحدودة.",
+        "models.text3":
+          "من الناحية المالية يمكنكم الاختيار بين نموذج بيع الجملة التقليدي، أو مشاركة هوامش الربح، أو إصدارات مشتركة بالكامل بعلامتكم مع كميات واتفاقيات حصرية محددة.",
+        "models.card_badge": "أمثلة تطبيقية",
+        "models.card_text1":
+          "• متحف قومي: تطبيق السلم كاملًا من E1 إلى L1 مع مزيج بين الزوار اليوميين والمقتنين عبر الإصدارات المميزة.<br />• فندق بوتيكي: التركيز على P1–S1 للبيع في بهو الفندق وهدايا الـ VIP مع ورقة تعريف مشتركة داخل العلبة.<br />• منطقة ثقافية: تدوير إصدارات G1/L1 مرتبطة بالفعاليات والمهرجانات والحملات الموسمية.",
+        "models.card_text2":
+          "كل التكوينات تعتمد على معايير حوكمة وجودة موحدة، ما يحافظ على تجربة متسقة عبر الوجهات ومراحل النمو المختلفة.",
+
+        "contact.kicker": "ابدأ المحادثة",
+        "contact.title": "شاركنا وجهتك ورؤيتك",
+        "contact.subtitle":
+          "احكِ لنا عن مؤسستك وجمهورك وأهدافك. سنرد عليك باقتراح مبدئي وتكوين فئات وزمن تنفيذي مناسب حيثما كان ذلك ممكنًا.",
+        "contact.text1":
+          "كيميت جفت ليست خط تذكارات جماهيري. إنها إطار منسق يعمل بأفضل صورة عندما يكون منسجمًا مع قصتكم ومسار الزوار واستراتيجية التسعير لديكم. كلما شاركتنا تفاصيل أكثر، كان الاقتراح أكثر دقة.",
+        "contact.text2":
+          "في هذه المرحلة نعطي أولوية للمؤسسات والمشاريع ذات الجذر الثقافي أو التراثي الواضح، سواء داخل مصر أو خارجها.",
+
+        "form.org_label": "اسم المؤسسة / المشروع",
+        "form.org_ph": "متحف، فندق، منطقة ثقافية...",
+        "form.country_label": "الدولة",
+        "form.country_ph": "أين تقع الوجهة؟",
+        "form.name_label": "مسؤول التواصل",
+        "form.name_ph": "اسمك",
+        "form.email_label": "البريد الإلكتروني *",
+        "form.email_ph": "you@example.com",
+        "form.type_label": "نوع الوجهة",
+        "form.type_opt0": "اختر...",
+        "form.type_opt1": "متحف / موقع أثري",
+        "form.type_opt2": "فندق / منتجع",
+        "form.type_opt3": "منطقة / وجهة ثقافية",
+        "form.type_opt4": "أخرى",
+        "form.msg_label": "احكِ لنا عن جمهورك وأهدافك",
+        "form.msg_ph":
+          "شرائح الزوار الرئيسية، وضع التذكارات الحالي، وما الذي تود تحقيقه من خلال كيميت جفت.",
+        "form.btn_submit": "إرسال طلب الشراكة",
+       "form.note":
+          "يصل طلبك مباشرة إلى فريق كيميت جفت. هدفنا الرد بخطوات تالية وأسئلة توضيحية، لا برسائل عامة.",
+
+        "footer.follow": "تابعنا على:",
+        "footer.copy": "© 2025 كيميت جفت. جميع الحقوق محفوظة.",
+        "footer.tagline":
+          "من مصر إلى العالم – جسر بين أسر الماضي وضيوف اليوم حول العالم."
+      }
+    };
+
+    function setLanguage(lang) {
+      const root = document.documentElement;
+      const body = document.body;
+      root.setAttribute("lang", lang === "ar" ? "ar" : "en");
+
+      if (lang === "ar") {
+        body.classList.add("rtl");
+      } else {
+        body.classList.remove("rtl");
+      }
+
+      const dict = translations[lang];
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (!dict[key]) return;
+        if (dict[key].includes("<br") || dict[key].includes("<span")) {
+          el.innerHTML = dict[key];
+        } else {
+          el.textContent = dict[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (!dict[key]) return;
+        el.setAttribute("placeholder", dict[key]);
+      });
+
+      document.querySelectorAll("select option[data-i18n]").forEach((opt) => {
+        const key = opt.getAttribute("data-i18n");
+        if (!dict[key]) return;
+        opt.textContent = dict[key];
+      });
+
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+      });
+    }
+
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        setLanguage(lang);
+      });
+    });
+
+    // Default language
+    setLanguage("en");
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZJPV5EM4J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RZJPV5EM4J');
+</script>
+</body>
+</html>
+
+ 
