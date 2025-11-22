@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kemet Gift – من قلب التاريخ | قطع هدايا تذكارية متحفية</title>
 
-  <!-- CSS الرئيسي (هنبنيه بعد ما نكمّل كل الصفحات) -->
-  <link rel="stylesheet" href="/styles.css" />
+  <!-- CSS الرئيسي (واحد لكل الموقع) -->
+  <link rel="stylesheet" href="styles.css" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZJPV5EM4J"></script>
@@ -18,28 +18,34 @@
   </script>
 </head>
 
-<body class="kg-body kg-body-ar">
+<body class="lang-ar">
   <!-- HEADER -->
   <header class="kg-header">
     <div class="kg-container">
       <div class="kg-header-inner">
-        <a href="index.html" class="kg-logo">Kemet Gift ✺</a>
+        <a href="index.html" class="kg-logo">
+          <span class="brand-mark">✺</span>
+          <span class="brand-text">Kemet Gift</span>
+        </a>
 
         <nav class="kg-main-nav">
           <ul>
-            <li><a href="index.html" class="is-active">الرئيسية</a></li>
-            <li><a href="collections.html">المجموعات</a></li>
-            <li><a href="our-story.html">قصتنا</a></li>
-            <li><a href="authenticity.html">الأصالة والتحقّق</a></li>
-            <li><a href="national-partnership.html">الشراكة الوطنية</a></li>
-            <li><a href="b2b-corporate-gifting.html">هدايا الشركات</a></li>
-            <li><a href="contact.html">تواصل معنا</a></li>
+            <li><a href="index.html" class="nav-link is-active">الرئيسية</a></li>
+            <li><a href="collections.html" class="nav-link">المجموعات</a></li>
+            <li><a href="our-story.html" class="nav-link">قصتنا</a></li>
+            <!-- اسم صفحة الأصالة الموحد في باقي الصفحات: verify-coa.html -->
+            <li><a href="verify-coa.html" class="nav-link">الأصالة والتحقّق</a></li>
+            <!-- اسم صفحة الشراكة الوطنية الموحد: national-partnership.html -->
+            <li><a href="national-partnership.html" class="nav-link">الشراكة الوطنية</a></li>
+            <!-- اسم ملف B2B حسب ما معتمد عندك: b2b-corporate-gifting.html -->
+            <li><a href="b2b-corporate-gifting.html" class="nav-link">هدايا الشركات</a></li>
+            <li><a href="contact.html" class="nav-link">تواصل معنا</a></li>
           </ul>
         </nav>
 
+        <!-- لسه الصفحة دي عربي بس، فمخلّي السويتش شكل فقط لحد ما نبني نسخة EN -->
         <div class="kg-lang-switch">
           <span class="kg-lang is-active">AR</span>
-          <!-- هنضيف نسخة EN لاحقًا كـ index-en.html مثلاً -->
           <span class="kg-lang ghost">EN</span>
         </div>
       </div>
@@ -177,7 +183,7 @@
           لا نسخة مقلَّدة.
         </p>
         <p class="kg-cta-link">
-          <a href="authenticity.html" class="kg-link">
+          <a href="verify-coa.html" class="kg-link">
             تعرّف أكثر على نظام الأصالة والتحقّق
           </a>
         </p>
