@@ -2,17 +2,12 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>Kemet Gift – من قلب التاريخ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Kemet Gift – قطع تذكارية معدنية فاخرة مستوحاة من الحضارة المصرية، مصمّمة بعناية لمتاجر المتاحف، والفنادق البوتيكية، وهدايا الشركات." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kemet Gift – من قلب التاريخ | قطع هدايا تذكارية متحفية</title>
 
-  <!-- Open Graph بسيط -->
-  <meta property="og:title" content="Kemet Gift – من قلب التاريخ" />
-  <meta property="og:description" content="Luxury heritage keepsakes inspired by ancient Egypt, crafted for museums, boutique hotels, and institutional gifting." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.kemetgift.com/" />
+  <!-- CSS الرئيسي (هنبنيه بعد ما نكمّل كل الصفحات) -->
+  <link rel="stylesheet" href="/styles.css" />
 
-  <!-- Google Analytics 4 -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZJPV5EM4J"></script>
   <script>
@@ -21,158 +16,213 @@
     gtag('js', new Date());
     gtag('config', 'G-RZJPV5EM4J');
   </script>
-
-  <!-- CSS الرئيسي -->
-  <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="kg-body">
-  <!-- HEADER / NAV -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand">
-        <span class="brand-mark">✺</span>
-        <span class="brand-text">Kemet Gift</span>
-      </a>
+<body class="kg-body kg-body-ar">
+  <!-- HEADER -->
+  <header class="kg-header">
+    <div class="kg-container">
+      <div class="kg-header-inner">
+        <a href="index.html" class="kg-logo">Kemet Gift ✺</a>
 
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link is-active">الرئيسية</a>
-        <a href="collections.html" class="nav-link">المجموعات</a>
-        <a href="our-story.html" class="nav-link">قصتنا</a>
-        <a href="verify-coa.html" class="nav-link">الأصالة والتحقّق</a>
-        <a href="ministry-partnership.html" class="nav-link">الشراكة الوطنية</a>
-        <a href="b2b-corporate.html" class="nav-link">هدايا الشركات</a>
-        <a href="contact.html" class="nav-link">تواصل معنا</a>
-      </nav>
+        <nav class="kg-main-nav">
+          <ul>
+            <li><a href="index.html" class="is-active">الرئيسية</a></li>
+            <li><a href="collections.html">المجموعات</a></li>
+            <li><a href="our-story.html">قصتنا</a></li>
+            <li><a href="authenticity.html">الأصالة والتحقّق</a></li>
+            <li><a href="national-partnership.html">الشراكة الوطنية</a></li>
+            <li><a href="b2b-corporate-gifting.html">هدايا الشركات</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </nav>
 
-      <div class="lang-switch">
-        <button class="lang-btn is-active" data-lang="ar">AR</button>
-        <button class="lang-btn" data-lang="en">EN</button>
+        <div class="kg-lang-switch">
+          <span class="kg-lang is-active">AR</span>
+          <!-- هنضيف نسخة EN لاحقًا كـ index-en.html مثلاً -->
+          <span class="kg-lang ghost">EN</span>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- HERO SECTION -->
   <main>
-    <!-- HERO + FORM -->
-    <section class="hero" id="top">
-      <div class="hero-inner">
+    <section class="kg-hero">
+      <div class="kg-container kg-hero-grid">
         <!-- النص -->
-        <div class="hero-copy">
-          <p class="hero-kicker" data-i18n="hero.kicker">
-            إطلاق قريبًا — إصدار عالمي محدود
+        <div class="kg-hero-left">
+          <p class="kg-eyebrow">
+            إطلاق قريبًا · إصدار عالمي محدود
           </p>
 
-          <h1 class="hero-title" data-i18n="hero.title">
+          <h1 class="kg-hero-title">
             من قلب التاريخ
           </h1>
 
-          <p class="hero-sub" data-i18n="hero.subtitle">
-            قطع تذكارية فاخرة مستوحاة من الحضارة المصرية.
+          <p class="kg-hero-sub">
+            قطع هدايا تذكارية معدنية فاخرة مستوحاة من رموز مصر القديمة، صُمِّمت لتليق بمتاجر المتاحف، والفنادق البوتيكية، ومحبي الاقتناء الجادّين.
           </p>
 
-          <p class="hero-body" data-i18n="hero.body">
-            تحوّل Kemet Gift الرموز المصرية الخالدة إلى قطع تذكارية معدنية فاخرة، مصمّمة بعناية لمتاجر المتاحف، والفنادق البوتيكية، ومحبي الاقتناء الذين يرغبون في الاحتفاظ بقطعة من التاريخ بين أيديهم.
+          <p class="kg-hero-body">
+            تقدّم <strong>Kemet Gift</strong> قطعًا تذكارية معدنية فاخرة تحمل رموزًا مصرية خالدة، مُصمَّمة كهدايا ثقافية راقية يمكن اقتناؤها أو تقديمها لضيوف المتاحف والفنادق البوتيكية. كل قطعة تُطوَّر بعناية، وتحترم السياق التاريخي، وتخاطب جمهورًا يقدّر القيمة الثقافية قبل البريق اللحظي.
           </p>
 
-          <div class="hero-ctas">
-            <a href="#waitlist" class="btn primary" data-i18n="hero.ctaPrimary">
-              انضم إلى قائمة الإطلاق
-            </a>
-            <div class="hero-micro" data-i18n="hero.ctaPrimaryNote">
-              كن من أوّل من يتلقّى أخبار الإطلاق والفرص الخاصة بالشركاء.
+          <div class="kg-hero-ctas">
+            <div class="kg-hero-cta-primary">
+              <a href="#kg-launch-waitlist" class="kg-btn kg-btn-primary">
+                انضم إلى قائمة الإطلاق
+              </a>
+              <p class="kg-cta-micro">
+                كن من أوّل من يتلقّى أخبار الإطلاق والمعاينات المبكرة. لا رسائل دعائية مزعجة، فقط إصدارات وقصص ذات قيمة.
+              </p>
             </div>
 
-            <a href="ministry-partnership.html" class="btn ghost" data-i18n="hero.ctaSecondary">
-              للمتاحف والفنادق
-            </a>
-            <div class="hero-micro" data-i18n="hero.ctaSecondaryNote">
-              حلول هدايا تذكارية فاخرة لمتاجر المتاحف، الفنادق البوتيكية، والوجهات الثقافية.
+            <div class="kg-hero-cta-secondary">
+              <a href="#kg-hero-institutions" class="kg-btn kg-btn-secondary">
+                للمتاحف والفنادق
+              </a>
+              <p class="kg-cta-micro">
+                حلول هدايا تذكارية فاخرة لمتاجر المتاحف، الفنادق البوتيكية، والوجهات الثقافية.
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- بلوك Zoho Form -->
-        <div class="hero-form" id="waitlist">
-          <h2 class="form-title" data-i18n="form.title">
-            تحديثات الإطلاق وفرص الشراكة
-          </h2>
-          <p class="form-sub" data-i18n="form.subtitle">
-            اكتب بياناتك لتصلك دعوة رسمية عند الإطلاق، ومعاينات مبكرة لأولى المجموعات المختارة.
-          </p>
+        <!-- الفورم (Zoho Launch Waitlist) -->
+        <div class="kg-hero-right" id="kg-launch-waitlist">
+          <div class="kg-hero-form-card">
+            <h2 class="kg-form-title">
+              تحديثات الإطلاق وفرص الشراكة
+            </h2>
+            <p class="kg-form-sub">
+              اكتب بياناتك لتصلك دعوة رسمية عند الإطلاق، ومعاينات مبكرة لأولى المجموعات.
+            </p>
 
-          <!-- Zoho – Launch Waitlist -->
-          <div class="form-frame">
-            <iframe aria-label="Kemet Gift – Launch Waitlist"
-                    frameborder="0"
-                    style="height:500px;width:99%;border:none;"
-                    src="https://forms.zohopublic.com/motalatkeme1/form/KemetGiftLaunchWaitlistHomepageHero/formperma/OBxXzZ5YyBsYYh0hsOqAjTwZGCUJy7l7c06LppZK65c">
-            </iframe>
+            <!-- Zoho Launch Waitlist iframe -->
+            <div class="kg-form-embed">
+              <iframe
+                aria-label="Kemet Gift – Launch Waitlist"
+                frameborder="0"
+                style="height:500px;width:100%;border:none;"
+                src="https://forms.zohopublic.com/motalatkeme1/form/KemetGiftLaunchWaitlistHomepageHero/formperma/OBxXzZ5YyBsYYh0hsOqAjTwZGCUJy7l7c06LppZK65c">
+              </iframe>
+            </div>
+
+            <p class="kg-form-consent">
+              بالتسجيل، توافق على تلقّي رسائل محدودة عن إصدارات Kemet Gift، وبرامج الشركاء، والإصدارات الخاصة. لا رسائل دعائية مزعجة.
+            </p>
           </div>
-
-          <p class="form-consent" data-i18n="form.consent">
-            بالتسجيل، توافق على تلقّي رسائل منتقاة حول إصدارات Kemet Gift، وبرامج الشركاء، والإصدارات الخاصة. لا رسائل دعائية مزعجة.
-          </p>
         </div>
       </div>
     </section>
 
-    <!-- WHY KEMET GIFT (مختصر الآن) -->
-    <section class="why">
-      <div class="section-inner">
-        <h2 class="section-title" data-i18n="why.title">
-          لماذا Kemet Gift؟
-        </h2>
+    <!-- VALUE PILLARS -->
+    <section class="kg-section kg-value-pillars">
+      <div class="kg-container">
+        <h2 class="kg-section-title">لماذا Kemet Gift؟</h2>
 
-        <div class="why-grid">
-          <div class="why-card">
-            <h3 data-i18n="why.card1.title">فخامة هادئة من قلب مصر</h3>
-            <p data-i18n="why.card1.body">
-              قطع تذكارية معدنية بلمس راقٍ وتشطيبات مدروسة، صُمّمت لتنسجم مع متاجر المتاحف والفنادق البوتيكية.
+        <div class="kg-pillars-grid">
+          <article class="kg-pillar">
+            <h3 class="kg-pillar-title">فخامة هادئة من قلب مصر</h3>
+            <p class="kg-pillar-body">
+              قطع تذكارية معدنية بملمس راقٍ وتدرّجات معدنية دافئة وتشطيبات ناعمة، صُمِّمت لتنسجم مع متاجر المتاحف وردهات الفنادق البوتيكية.
             </p>
-          </div>
+          </article>
 
-          <div class="why-card">
-            <h3 data-i18n="why.card2.title">احترام ثقافي… لا تقليد حرفي</h3>
-            <p data-i18n="why.card2.body">
-              كل رمز يمرّ بمراجعة بحثية وثقافية لتجنّب أي استخدام ديني أو سياسي، مع الحفاظ على روح التراث المصري باحترام كامل.
+          <article class="kg-pillar">
+            <h3 class="kg-pillar-title">احترام ثقافي… لا تقليد حرفي</h3>
+            <p class="kg-pillar-body">
+              كل رمز يمرّ بمراجعة بحثية وثقافية واضحة، لتجنّب أي استخدام ديني أو سياسي، ويحافظ على روح التراث المصري باحترام كامل.
             </p>
-          </div>
+          </article>
 
-          <div class="why-card">
-            <h3 data-i18n="why.card3.title">مُصمَّمة للاقتناء… لا للاستهلاك</h3>
-            <p data-i18n="why.card3.body">
-              إحساس معدني متين، وطباعة بمعايير أرشيفية، وإصدارات محدودة تُقتنى وتُعرض وتبقى لسنوات؛ لا أن تُرمى بعد استخدامها.
+          <article class="kg-pillar">
+            <h3 class="kg-pillar-title">مُصمَّمة للاقـتناء… لا للاستهلاك</h3>
+            <p class="kg-pillar-body">
+              إحساس معدني متين، وطباعة بمعايير أرشيفية، وإصدارات محدودة—لتُهدى وتُعرَض وتبقى لسنوات، لا أن تُرمى بعد استخدامها.
             </p>
-          </div>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <!-- CULTURAL VENUES BLOCK -->
+    <section class="kg-section kg-cultural-block" id="kg-hero-institutions">
+      <div class="kg-container">
+        <p class="kg-eyebrow">
+          للمتاحف، والفنادق، والوجهات الثقافية
+        </p>
+        <h2 class="kg-section-title">
+          مُصمَّمة لتعيش في متاجر المتاحف… لا على أرفف الهدايا العشوائية
+        </h2>
+        <p class="kg-section-body">
+          تُطوَّر قطع <strong>Kemet Gift</strong> كجزء من تجربة المتحف والضيافة البوتيكية، لا كهدايا عشوائية تُباع بالجملة.
+          من التسمية والبطاقات التعريفية، إلى التغليف والتحقّق، تُصمَّم التفاصيل لتنسجم مع الكتب القيّمة، وكتالوجات المعارض،
+          وقطع التصميم المنتقاة بعناية.
+        </p>
+      </div>
+    </section>
+
+    <!-- VERIFY & COA TEASER -->
+    <section class="kg-section kg-verify-teaser">
+      <div class="kg-container">
+        <p class="kg-eyebrow">الأصالة والتحقّق</p>
+        <h2 class="kg-section-title">
+          كل قطعة تحمل حكاية… يمكن التحقّق منها
+        </h2>
+        <p class="kg-section-body">
+          تُخطَّط كل قطعة من <strong>Kemet Gift</strong> أن تُرفَق بشهادة أصالة مُرقّمة، ومسار تحقّق رقمي واضح.
+          الهدف بسيط: أن يتمكّن الضيف أو المقتني أو الشريك من التأكّد بسهولة أن ما بين يديه تصميم أصلي من Kemet Gift،
+          لا نسخة مقلَّدة.
+        </p>
+        <p class="kg-cta-link">
+          <a href="authenticity.html" class="kg-link">
+            تعرّف أكثر على نظام الأصالة والتحقّق
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section class="kg-section kg-cta-strip">
+      <div class="kg-container">
+        <h2 class="kg-cta-strip-title">
+          كن حاضرًا عند إطلاق المجموعة الأولى
+        </h2>
+        <p class="kg-cta-strip-body">
+          نحن نبني خطّ هدايا تذكارية متحفية بعناية، لا إطلاقًا متسرّعًا.
+          انضمّ إلى القائمة ليصلك إشعار عند جاهزية أول مجموعة من <strong>Kemet Gift</strong> لاستقبال الضيوف والمقتنين.
+        </p>
+        <a href="#kg-launch-waitlist" class="kg-btn kg-btn-primary">
+          انضم إلى قائمة الإطلاق
+        </a>
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-links">
-        <span data-i18n="footer.follow">تابعنا:</span>
+  <footer class="kg-footer">
+    <div class="kg-container">
+      <p class="kg-footer-follow">
+        تابعنا:
         <a href="https://www.instagram.com/kemetgift" target="_blank" rel="noopener noreferrer">Instagram</a> |
         <a href="https://www.youtube.com/@kemetgift" target="_blank" rel="noopener noreferrer">YouTube</a> |
         <a href="mailto:info@kemetgift.com">info@kemetgift.com</a>
-      </div>
+      </p>
 
-      <div class="footer-meta">
-        © 2025 Kemet Gift™. All rights reserved.
-      </div>
-      <div class="footer-small">
-        هدية من قلب التاريخ — From the Heart of History
-      </div>
-      <div class="footer-small">
-        قطع Kemet Gift منتجات تذكارية ثقافية، وليست عملة قانونية أو أداة استثمار.
-      </div>
+      <p class="kg-footer-meta">
+        © 2025 Kemet Gift™. جميع الحقوق محفوظة.
+      </p>
+
+      <p class="kg-footer-tagline">
+        From the Heart of History — هدية من قلب التاريخ.
+      </p>
+
+      <p class="kg-footer-legal">
+        تُقدَّم قطع Kemet Gift كمنتجات تذكارية ثقافية، وليست عملة قانونية أو أداة استثمار أو منتجًا ماليًا.
+      </p>
     </div>
   </footer>
-
-  <!-- سكريبت بسيط للّغة (هنستكمله لاحقًا) -->
-  <script src="script.js"></script>
 </body>
 </html>
