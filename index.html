@@ -7,7 +7,27 @@
   <meta name="description"
         content="Kemet Gift is a premium heritage gifting brand built around ancient Egypt – limited edition collectible medallions, museum-grade packaging, and a full IP ecosystem. Launching 1 Jan 2027." />
 
-  <!-- Basic styles -->
+  <!-- Google tag (gtag.js) – GA4 -->
+  <!-- مو: سيب الكود دا زى ما هو بس، متغيّرش الـ id -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZJPV5EM4J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RZJPV5EM4J');
+  </script>
+
+  <!--
+    IMPORTANT: ضع الصور في مجلد /images على السيرفر بالأسماء التالية:
+    /images/kg-packaging-black-gold-hero.jpg        ← (أول صورة: شنطة + علبة سوداء ذهب)
+    /images/kg-packaging-beige-set.jpg             ← (التانيه: شنطة + علبة بيج)
+    /images/kg-packaging-black-box-beige-pouch.jpg ← (التالتة: بوكس أسود + كيس قماش بيج)
+    /images/kg-packaging-black-box-black-pouch.jpg ← (الرابعة: بوكس أسود + كيس أسود)
+    /images/kg-packaging-black-spotlight.jpg       ← (الخامسة: البوكس والشنطة تحت سبوت)
+    /images/kg-packaging-blue-set.jpg              ← (الزرقاء)
+    /images/kg-logo-gold-tagline.jpg               ← (لوجو ذهبي على أبيض)
+  -->
+
   <style>
     :root {
       --deep-black: #050505;
@@ -52,7 +72,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(5, 5, 5, 0.95);
+      background: rgba(5, 5, 5, 0.97);
       border-bottom: 1px solid rgba(212, 175, 55, 0.15);
       backdrop-filter: blur(8px);
     }
@@ -62,6 +82,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0.85rem 0;
+      gap: 1rem;
     }
 
     .nav-left {
@@ -70,22 +91,35 @@
       gap: 0.6rem;
     }
 
-    .logo-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
+    .logo-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      overflow: hidden;
       border: 1px solid var(--kemet-gold);
+      background: #111;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.8rem;
-      color: var(--kemet-gold);
+    }
+
+    .logo-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .brand-name {
       font-size: 0.95rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-left: auto;
     }
 
     .nav-links {
@@ -102,6 +136,30 @@
       color: var(--kemet-gold);
     }
 
+    .lang-switch {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      overflow: hidden;
+      font-size: 0.78rem;
+    }
+
+    .lang-btn {
+      padding: 0.25rem 0.7rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-muted);
+      border: none;
+      outline: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .lang-btn.active {
+      background: var(--kemet-gold);
+      color: var(--deep-black);
+    }
+
     @media (min-width: 768px) {
       .nav-links {
         display: flex;
@@ -112,7 +170,18 @@
       padding-bottom: 4rem;
     }
 
-    /* Hero */
+    /* Language visibility */
+    .lang-block {
+      display: none;
+    }
+    body.lang-en .lang-en {
+      display: block;
+    }
+    body.lang-ar .lang-ar {
+      display: block;
+    }
+
+    /* HERO */
     .hero {
       padding: 3.5rem 0 3rem;
       background: radial-gradient(circle at top, #20160a 0, #050505 55%);
@@ -156,17 +225,17 @@
       }
     }
 
-    .hero-subtitle {
+    .hero-sub {
       color: var(--text-muted);
       font-size: 0.98rem;
       max-width: 32rem;
       margin-bottom: 1.5rem;
     }
 
-    .hero-subtitle-ar {
-      font-size: 0.9rem;
+    .hero-sub-ar {
+      font-size: 0.95rem;
       color: var(--text-muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.3rem;
     }
 
     .hero-cta {
@@ -220,80 +289,6 @@
       color: var(--text-muted);
     }
 
-    .hero-media {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-    .hero-card {
-      background: linear-gradient(145deg, #14100c, #050505);
-      border-radius: 1.5rem;
-      padding: 1.6rem;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
-      max-width: 380px;
-      width: 100%;
-    }
-
-    .hero-card-top {
-      background: radial-gradient(circle at top, #3b2c14, #050505);
-      border-radius: 1.2rem;
-      padding: 1.4rem;
-      position: relative;
-      margin-bottom: 1.2rem;
-      overflow: hidden;
-    }
-
-    .hero-coin {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin: 0 auto 0.8rem;
-      background: radial-gradient(circle at 30% 20%, #f8e6b0, #d4af37 45%, #836012 75%, #2b1e0d 100%);
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.7);
-      position: relative;
-    }
-
-    .hero-coin::before {
-      content: "";
-      position: absolute;
-      inset: 12%;
-      border-radius: 50%;
-      border: 1px solid rgba(5, 5, 5, 0.6);
-      box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.7);
-    }
-
-    .hero-coin::after {
-      content: "";
-      position: absolute;
-      inset: 30%;
-      border-radius: 50%;
-      border: 1px dashed rgba(5, 5, 5, 0.4);
-    }
-
-    .hero-box {
-      width: 100%;
-      height: 64px;
-      border-radius: 1rem;
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      background: linear-gradient(135deg, #050505, #14110d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--kemet-gold);
-    }
-
-    .hero-card-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -311,14 +306,31 @@
       background: #25d366;
     }
 
+    .hero-media {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-media-inner {
+      max-width: 420px;
+      width: 100%;
+      border-radius: 1.4rem;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+    }
+
+    .hero-media-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     section {
       padding: 3.5rem 0 3rem;
       border-bottom: 1px solid rgba(212, 175, 55, 0.12);
-    }
-
-    .section-heading {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
     }
 
     .section-eyebrow {
@@ -327,6 +339,11 @@
       letter-spacing: 0.2em;
       color: var(--kemet-gold);
       margin-bottom: 0.4rem;
+    }
+
+    .section-heading {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
     }
 
     .section-body {
@@ -411,6 +428,24 @@
 
     .roadmap-card li {
       margin-bottom: 0.25rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1.3rem;
+    }
+
+    @media (min-width: 800px) {
+      .gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .gallery img {
+      border-radius: 1rem;
+      border: 1px solid rgba(232, 221, 199, 0.16);
     }
 
     /* Forms */
@@ -518,28 +553,36 @@
       color: var(--kemet-gold);
     }
 
-    /* Smooth scroll */
     html {
       scroll-behavior: smooth;
     }
   </style>
 </head>
 
-<body>
+<body class="lang-en">
   <header>
     <div class="container">
       <nav class="nav">
         <div class="nav-left">
-          <div class="logo-mark">KG</div>
+          <div class="logo-img">
+            <img src="images/kg-logo-gold-tagline.jpg" alt="Kemet Gift logo" />
+          </div>
           <div class="brand-name">KEMET GIFT</div>
         </div>
-        <div class="nav-links">
-          <a href="#about">Story</a>
-          <a href="#collection">Collection</a>
-          <a href="#ip">IP Backbone</a>
-          <a href="#roadmap">Roadmap</a>
-          <a href="#partners">Partners</a>
-          <a href="#waitlist">Join</a>
+
+        <div class="nav-right">
+          <div class="nav-links">
+            <a href="#about">Story</a>
+            <a href="#collection">Collection</a>
+            <a href="#ip">IP Backbone</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#partners">Partners</a>
+            <a href="#waitlist">Join</a>
+          </div>
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ar">AR</button>
+          </div>
         </div>
       </nav>
     </div>
@@ -550,40 +593,62 @@
     <section class="hero" id="top">
       <div class="container hero-grid">
         <div class="hero-text">
-          <div class="hero-kicker">Heritage Gifting • Egypt</div>
-          <h1 class="hero-title">From the Heart of Ancient Egypt, a New Language of Gifting.</h1>
-          <p class="hero-subtitle">
-            Kemet Gift is a premium heritage brand built around limited-edition collectible medallions, museum-grade
-            packaging, and a deep storytelling universe – designed for museums, duty-free, and cultural gift buyers
-            worldwide.
-          </p>
-          <p class="hero-subtitle-ar" dir="rtl">
-            Kemet Gift علامة هدايا تراثية فاخرة تعيد تقديم رموز مصر القديمة في نسخ معدنية محدودة وعلب بمستوى المتاحف،
-            مدعومة بمنظومة كتب وتشغيل كاملة.
-          </p>
+          <!-- EN -->
+          <div class="lang-block lang-en">
+            <div class="hero-kicker">Heritage Gifting • Egypt</div>
+            <h1 class="hero-title">
+              From the Heart of Ancient Egypt, a New Language of Gifting.
+            </h1>
+            <p class="hero-sub">
+              Kemet Gift is a premium heritage brand built around limited-edition
+              collectible medallions, museum-grade packaging, and a deep
+              storytelling universe – designed for museums, duty-free, and
+              cultural gift buyers worldwide.
+            </p>
 
-          <div class="hero-cta">
-            <a href="#waitlist" class="btn btn-primary">Join the Founding Circle</a>
-            <a href="#partners" class="btn btn-outline">Partner / Invest</a>
+            <div class="hero-cta">
+              <a href="#waitlist" class="btn btn-primary">Join the Founding Circle</a>
+              <a href="#partners" class="btn btn-outline">Partner / Invest</a>
+            </div>
+            <div class="hero-launch-note">
+              Target launch: <strong>1 January 2027</strong> • Preparing first
+              collection and partnerships now.
+            </div>
+            <div class="hero-badge">
+              <span></span> Built in Egypt • IP-first heritage brand
+            </div>
           </div>
-          <div class="hero-launch-note">
-            Target launch: <strong>1 January 2027</strong> • Preparing first collection and partnerships now.
-          </div>
-          <div class="hero-badge">
-            <span></span> Built in Egypt • IP-first heritage brand
+
+          <!-- AR -->
+          <div class="lang-block lang-ar" dir="rtl">
+            <div class="hero-kicker">هدايا تراثية • مصر</div>
+            <h1 class="hero-title">
+              من قلب التاريخ المصري القديم… لغة جديدة للهدايا.
+            </h1>
+            <p class="hero-sub-ar">
+              Kemet Gift علامة هدايا تراثية فاخرة مبنية على نسخ معدنية
+              تذكارية محدودة، وعلب بمستوى المتاحف، ومنظومة حكي كاملة تقدّم
+              رموز مصر القديمة لعشّاق الهدايا الثقافية في العالم.
+            </p>
+
+            <div class="hero-cta">
+              <a href="#waitlist" class="btn btn-primary">انضم لدائرة المؤسسين</a>
+              <a href="#partners" class="btn btn-outline">شراكة / استثمار</a>
+            </div>
+            <div class="hero-launch-note">
+              موعد الإطلاق المستهدف: <strong>1 يناير 2027</strong> – نجهّز الآن
+              لأول مجموعة وشراكات مختارة.
+            </div>
+            <div class="hero-badge">
+              <span></span> صُمّم في مصر • مشروع تراثي قائم على الملكية الفكرية
+            </div>
           </div>
         </div>
 
         <div class="hero-media">
-          <div class="hero-card">
-            <div class="hero-card-top">
-              <div class="hero-coin"></div>
-              <div class="hero-box">First Collection • 6 Editions</div>
-            </div>
-            <div class="hero-card-meta">
-              <div>Concept mockup</div>
-              <div>For investors &amp; partners</div>
-            </div>
+          <div class="hero-media-inner">
+            <img src="images/kg-packaging-black-gold-hero.jpg"
+                 alt="Kemet Gift black gift bag and box with gold lotus logo" />
           </div>
         </div>
       </div>
@@ -592,29 +657,67 @@
     <!-- WHAT IS KEMET GIFT -->
     <section id="about">
       <div class="container">
-        <div class="section-eyebrow">About</div>
-        <h2 class="section-heading">What is Kemet Gift?</h2>
-        <div class="two-column">
-          <div>
-            <p class="section-body">
-              Kemet Gift is a heritage gifting ecosystem, not just a single product. We start with six core collectible
-              medallions inspired by iconic Egyptian symbols – the lotus, scarab, Eye of Horus and more – each
-              presented in a luxury gift box, with a story booklet that turns every gift into a piece of living
-              history.
-            </p>
-            <p class="section-body" style="margin-top:0.8rem;">
-              Around these products, we’ve already built a complete backbone of IP: brand identity, catalogues,
-              manufacturing and quality manuals, operating playbooks, and a growing educational series on key dynasties.
-              Kemet Gift is designed from day one to scale as a brand, not just as a souvenir.
-            </p>
+        <!-- EN -->
+        <div class="lang-block lang-en">
+          <div class="section-eyebrow">About</div>
+          <h2 class="section-heading">What is Kemet Gift?</h2>
+          <div class="two-column">
+            <div>
+              <p class="section-body">
+                Kemet Gift is a heritage gifting ecosystem, not just a single
+                product. We start with six core collectible medallions inspired by
+                iconic Egyptian symbols – the lotus, scarab, Eye of Horus and more
+                – each presented in a luxury gift box, with a story booklet that
+                turns every gift into a piece of living history.
+              </p>
+              <p class="section-body" style="margin-top:0.8rem;">
+                Around these products, we’ve already built a complete backbone of
+                IP: brand identity, catalogues, manufacturing and quality manuals,
+                operating playbooks, and a growing educational series on key
+                dynasties. Kemet Gift is designed from day one to scale as a
+                brand, not just as a souvenir.
+              </p>
+            </div>
+            <div>
+              <div class="highlight-box">
+                <strong>Already in place:</strong><br />
+                • 10+ full books (100+ pages each)<br />
+                • 4 operating documents for Year One<br />
+                • Manufacturing &amp; packaging specs<br />
+                • Educational dynasty series (18th, 19th, 4th)<br />
+              </div>
+            </div>
           </div>
-          <div>
-            <div class="highlight-box">
-              <strong>Already in place:</strong><br />
-              • 10+ full books (100+ pages each)<br />
-              • 4 operating documents for Year One<br />
-              • Detailed manufacturing &amp; packaging specs<br />
-              • Education series on the 18th, 19th &amp; 4th dynasties<br />
+        </div>
+
+        <!-- AR -->
+        <div class="lang-block lang-ar" dir="rtl">
+          <div class="section-eyebrow">عن المشروع</div>
+          <h2 class="section-heading">ما هي Kemet Gift؟</h2>
+          <div class="two-column">
+            <div>
+              <p class="section-body">
+                Kemet Gift ليست «قطعة تذكارية» واحدة، بل منظومة هدايا تراثية
+                متكاملة. نبدأ بست نسخ معدنية تذكارية مستوحاة من رموز مصرية
+                أيقونية مثل زهرة اللوتس والجعران وعين حورس، تُقدَّم داخل علبة
+                فاخرة مع كتيّب قصير يحوّل كل هدية إلى حكاية حية من قلب التاريخ.
+              </p>
+              <p class="section-body" style="margin-top:0.8rem;">
+                حول هذه المنتجات بُني عمود فقري كامل من النصوص والوثائق: كتاب
+                هوية بصرية، كتالوج تسويقي، مواصفات تصنيع وجودة، أدلة تشغيل
+                وحوكمة، وسلسلة معرفية عن الأسرات المصرية. من اليوم الأول،
+                Kemet Gift مصممة لتكون علامة تجارية قابلة للتوسع، لا تذكارًا
+                عابرًا.
+              </p>
+            </div>
+            <div>
+              <div class="highlight-box">
+                <strong>جاهز بالفعل:</strong><br />
+                • أكثر من ١٠ كتب كاملة (١٠٠+ صفحة لكل كتاب)<br />
+                • ٤ وثائق تشغيل لسنة الإطلاق الأولى<br />
+                • مواصفات تصنيع وتغليف تفصيلية<br />
+                • سلسلة معرفية عن الأسرة ١٨ و١٩ والرابعة<br />
+              </div>
             </div>
           </div>
         </div>
@@ -624,13 +727,29 @@
     <!-- COLLECTION -->
     <section id="collection">
       <div class="container">
-        <div class="section-eyebrow">The First Collection</div>
-        <h2 class="section-heading">Six Editions, One Story World</h2>
-        <p class="section-body">
-          Our launch roadmap focuses on six core editions – each one a complete gift experience: a finely crafted
-          medallion, a premium box with the Kemet Gift lotus mark, and a short booklet telling the story behind each
-          symbol.
-        </p>
+        <!-- EN -->
+        <div class="lang-block lang-en">
+          <div class="section-eyebrow">The First Collection</div>
+          <h2 class="section-heading">Six Editions, One Story World</h2>
+          <p class="section-body">
+            Our launch roadmap focuses on six core editions – each one a complete
+            gift experience: a finely crafted medallion, a premium box with the
+            Kemet Gift lotus mark, and a short booklet telling the story behind
+            each symbol.
+          </p>
+        </div>
+
+        <!-- AR -->
+        <div class="lang-block lang-ar" dir="rtl">
+          <div class="section-eyebrow">مجموعة الإطلاق</div>
+          <h2 class="section-heading">ست نسخ… عالم حكي واحد</h2>
+          <p class="section-body">
+            خطة الإطلاق مبنية على ست نسخ أساسية، كل نسخة تجربة هدية متكاملة:
+            قطعة معدنية مصمَّمة بعناية، علبة فاخرة تحمل علامة اللوتس، وكتيّب
+            قصير يحكي قصة الرمز ومعناه في الحضارة المصرية.
+          </p>
+        </div>
+
         <div class="pill-list">
           <span class="pill">E1 – Eye of protection</span>
           <span class="pill">C1 – Scarab of renewal</span>
@@ -639,33 +758,79 @@
           <span class="pill">G1 – Gold of Kemet</span>
           <span class="pill">L1 – Lotus of rebirth</span>
         </div>
+
+        <div class="gallery">
+          <img src="images/kg-packaging-beige-set.jpg"
+               alt="Kemet Gift beige packaging set" />
+          <img src="images/kg-packaging-black-box-beige-pouch.jpg"
+               alt="Kemet Gift black box with beige pouch" />
+          <img src="images/kg-packaging-black-box-black-pouch.jpg"
+               alt="Kemet Gift black box with black pouch" />
+          <img src="images/kg-packaging-black-spotlight.jpg"
+               alt="Kemet Gift black gift bag and box in spotlight" />
+          <img src="images/kg-packaging-blue-set.jpg"
+               alt="Kemet Gift blue packaging set" />
+        </div>
       </div>
     </section>
 
     <!-- IP BACKBONE -->
     <section id="ip">
       <div class="container">
-        <div class="section-eyebrow">IP &amp; System</div>
-        <h2 class="section-heading">Built on a Serious IP Backbone</h2>
-        <div class="two-column">
-          <div>
-            <p class="section-body">
-              Behind Kemet Gift there is a written, structured operating system – not just a moodboard. Over the last
-              years, we’ve developed:
-            </p>
-            <ul class="section-body" style="margin-top:0.8rem; list-style:disc; padding-left:1.2rem;">
-              <li>Brand Identity Book (visual system, logo, colors, photography)</li>
-              <li>Marketing Catalogue for retail &amp; B2B channels</li>
-              <li>Manufacturing &amp; packaging specifications (coins, boxes, inserts)</li>
-              <li>Marketing &amp; communications playbook</li>
-              <li>Operating &amp; governance manuals for Year One</li>
-              <li>Financial models &amp; future expansion plans</li>
-            </ul>
+        <!-- EN -->
+        <div class="lang-block lang-en">
+          <div class="section-eyebrow">IP &amp; System</div>
+          <h2 class="section-heading">Built on a Serious IP Backbone</h2>
+          <div class="two-column">
+            <div>
+              <p class="section-body">
+                Behind Kemet Gift there is a written, structured operating system –
+                not just a moodboard. Over the last years, we’ve developed:
+              </p>
+              <ul class="section-body" style="margin-top:0.8rem; list-style:disc; padding-left:1.2rem;">
+                <li>Brand Identity Book (visual system, logo, colors, photography)</li>
+                <li>Marketing Catalogue for retail &amp; B2B channels</li>
+                <li>Manufacturing &amp; packaging specifications</li>
+                <li>Marketing &amp; communications playbook</li>
+                <li>Operating &amp; governance manuals for Year One</li>
+                <li>Financial models &amp; future expansion plans</li>
+              </ul>
+            </div>
+            <div>
+              <div class="highlight-box">
+                This backbone means that once funding is secured for design and
+                manufacturing, Kemet Gift can move from paper to production
+                quickly, with clarity on quality, pricing, and growth.
+              </div>
+            </div>
           </div>
-          <div>
-            <div class="highlight-box">
-              This backbone means that once funding is secured for design and manufacturing, Kemet Gift can move from
-              paper to production quickly, with clarity on quality, pricing, and growth.
+        </div>
+
+        <!-- AR -->
+        <div class="lang-block lang-ar" dir="rtl">
+          <div class="section-eyebrow">الملكية الفكرية والنظام</div>
+          <h2 class="section-heading">عمود فقري حقيقي من النصوص والوثائق</h2>
+          <div class="two-column">
+            <div>
+              <p class="section-body">
+                خلف Kemet Gift نظام مكتوب ومنظَّم، ليس مجرد صور مرجعية. خلال
+                السنوات الماضية تم إعداد:
+              </p>
+              <ul class="section-body" style="margin-top:0.8rem; list-style:disc; padding-right:1.2rem;">
+                <li>كتاب هوية بصرية كامل (شعار، ألوان، نظام بصري، تصوير)</li>
+                <li>كتالوج تسويقي لقنوات التجزئة وقطاع الأعمال</li>
+                <li>مواصفات تصنيع وتغليف للنسخ والعلب والبطاقات</li>
+                <li>دليل تسويق واتصال للعلامة</li>
+                <li>أدلة تشغيل وحوكمة لسنة الإطلاق الأولى</li>
+                <li>نماذج مالية وخطط توسع مستقبلية</li>
+              </ul>
+            </div>
+            <div>
+              <div class="highlight-box">
+                هذا العمود الفقري يسمح بتحويل المشروع من نصوص إلى إنتاج فعلي
+                سريعًا بمجرد توفير تمويل التصميم والتصنيع، مع وضوح في الجودة
+                والتسعير ومسار النمو.
+              </div>
             </div>
           </div>
         </div>
@@ -675,12 +840,26 @@
     <!-- ROADMAP -->
     <section id="roadmap">
       <div class="container">
-        <div class="section-eyebrow">Roadmap</div>
-        <h2 class="section-heading">From Manuscripts to Market</h2>
-        <p class="section-body">
-          We are working towards a focused launch on 1 January 2027. The path is clear – design, prototypes,
-          partnerships, and a first limited production run.
-        </p>
+        <!-- EN -->
+        <div class="lang-block lang-en">
+          <div class="section-eyebrow">Roadmap</div>
+          <h2 class="section-heading">From Manuscripts to Market</h2>
+          <p class="section-body">
+            We are working towards a focused launch on 1 January 2027. The path is
+            clear – design, prototypes, partnerships, and a first limited
+            production run.
+          </p>
+        </div>
+
+        <!-- AR -->
+        <div class="lang-block lang-ar" dir="rtl">
+          <div class="section-eyebrow">خارطة الطريق</div>
+          <h2 class="section-heading">من الكتب إلى السوق</h2>
+          <p class="section-body">
+            نعمل حاليًا على إطلاق مركّز في ١ يناير ٢٠٢٧. الطريق واضح: تصميم
+            الهوية، النماذج الأولية، الشراكات، ثم أول دفعة إنتاج محدودة.
+          </p>
+        </div>
 
         <div class="roadmap">
           <div class="roadmap-card">
@@ -698,7 +877,7 @@
               <li>Commission final logo &amp; visual identity</li>
               <li>Complete InDesign production for key books</li>
               <li>Develop and test first physical prototypes</li>
-              <li>Secure core manufacturing &amp; packaging partners</li>
+              <li>Secure manufacturing &amp; packaging partners</li>
             </ul>
           </div>
           <div class="roadmap-card">
@@ -706,7 +885,7 @@
             <ul>
               <li>Release first Kemet Gift collection (limited run)</li>
               <li>Pilot with museums &amp; duty-free partners</li>
-              <li>Start building collector community worldwide</li>
+              <li>Start building global collector community</li>
             </ul>
           </div>
         </div>
@@ -716,49 +895,87 @@
     <!-- PARTNERS & WAITLIST FORMS -->
     <section id="partners">
       <div class="container">
-        <div class="section-eyebrow">Partners &amp; Investors</div>
-        <h2 class="section-heading">Who We’re Looking For</h2>
-        <p class="section-body">
-          We’re now opening conversations with angel investors, cultural institutions, and retail partners who believe
-          Egypt deserves a world-class heritage gifting brand.
-        </p>
+        <!-- EN -->
+        <div class="lang-block lang-en">
+          <div class="section-eyebrow">Partners &amp; Investors</div>
+          <h2 class="section-heading">Who We’re Looking For</h2>
+          <p class="section-body">
+            We’re now opening conversations with angel investors, cultural
+            institutions, and retail partners who believe Egypt deserves a
+            world-class heritage gifting brand.
+          </p>
+        </div>
+
+        <!-- AR -->
+        <div class="lang-block lang-ar" dir="rtl">
+          <div class="section-eyebrow">الشركاء والمستثمرون</div>
+          <h2 class="section-heading">من نبحث عنه الآن</h2>
+          <p class="section-body">
+            نفتح حاليًا باب الحوار مع مستثمرين أفراد، ومؤسسات ثقافية، وشركاء
+            تجزئة يؤمنون أن مصر تستحق علامة هدايا تراثية عالمية المستوى.
+          </p>
+        </div>
 
         <div class="form-section">
-          <!-- PARTNERS / INVESTORS FORM -->
+          <!-- PARTNER FORM -->
           <div>
-            <h3 style="font-size:1rem; margin-bottom:0.5rem;">Partner / Investor Form</h3>
-            <p class="section-body" style="margin-bottom:0.6rem;">
-              If you’re interested in investing, co-developing a collection, or stocking Kemet Gift in your museum,
-              gallery or retail space, please share a few details and we’ll get in touch.
-            </p>
+            <div class="lang-block lang-en">
+              <h3 style="font-size:1rem; margin-bottom:0.5rem;">Partner / Investor Form</h3>
+              <p class="section-body" style="margin-bottom:0.6rem;">
+                If you’re interested in investing, co-developing a collection, or
+                stocking Kemet Gift in your museum, gallery or retail space,
+                please share a few details and we’ll get in touch.
+              </p>
+            </div>
+            <div class="lang-block lang-ar" dir="rtl">
+              <h3 style="font-size:1rem; margin-bottom:0.5rem;">نموذج الشركاء والمستثمرين</h3>
+              <p class="section-body" style="margin-bottom:0.6rem;">
+                إذا كنت مهتمًا بالاستثمار، أو تطوير مجموعة خاصة، أو طرح Kemet Gift
+                في متحفك أو معرضك أو متجرك، برجاء ملء البيانات التالية وسنتواصل
+                معك.
+              </p>
+            </div>
+
             <div class="form-embed">
-              <!-- TODO: ضع رابط فورم Zoho للشركاء هنا -->
-              <iframe
-                src="https://YOUR_ZOHO_PARTNER_FORM_URL_HERE"
-                title="Kemet Gift – Partner Form">
+              <!-- Zoho Partners Application -->
+              <iframe aria-label='Kemet Gift – Partners Application' frameborder="0"
+                      style="height:500px;width:99%;border:none;"
+                      src='https://forms.zohopublic.com/motalatkeme1/form/KemetGiftPartnersApplication/formperma/3dQX6o29vGyHVGyL3XPn7QzebAQZln3oF9P26IW-OTg'>
               </iframe>
             </div>
             <div class="form-note">
-              Replace <code>YOUR_ZOHO_PARTNER_FORM_URL_HERE</code> with the actual Zoho form URL.
+              This form is powered by Zoho Forms.
             </div>
           </div>
 
           <!-- WAITLIST FORM -->
           <div id="waitlist">
-            <h3 style="font-size:1rem; margin-bottom:0.5rem;">Collectors &amp; Early Access Waitlist</h3>
-            <p class="section-body" style="margin-bottom:0.6rem;">
-              Join the founding circle to receive our short overview deck, updates on prototype progress, and early
-              access opportunities once we open our first production run.
-            </p>
+            <div class="lang-block lang-en">
+              <h3 style="font-size:1rem; margin-bottom:0.5rem;">Collectors &amp; Early Access Waitlist</h3>
+              <p class="section-body" style="margin-bottom:0.6rem;">
+                Join the founding circle to receive our short overview deck,
+                updates on prototype progress, and early access opportunities once
+                we open our first production run.
+              </p>
+            </div>
+            <div class="lang-block lang-ar" dir="rtl">
+              <h3 style="font-size:1rem; margin-bottom:0.5rem;">قائمة الانتظار للإطلاق الأوّل</h3>
+              <p class="section-body" style="margin-bottom:0.6rem;">
+                انضم إلى دائرة المؤسسين لتحصل على عرض تعريفي مختصر بالمشروع،
+                وتحديثات حول النماذج الأولية، وفرص الوصول المبكر عند فتح الدفعة
+                الأولى للإنتاج.
+              </p>
+            </div>
+
             <div class="form-embed">
-              <!-- TODO: ضع رابط فورم Zoho للـ Waitlist هنا -->
-              <iframe
-                src="https://YOUR_ZOHO_WAITLIST_FORM_URL_HERE"
-                title="Kemet Gift – Waitlist Form">
+              <!-- Zoho Launch Waitlist -->
+              <iframe aria-label='Kemet Gift – Launch Waitlist ' frameborder="0"
+                      style="height:500px;width:99%;border:none;"
+                      src='https://forms.zohopublic.com/motalatkeme1/form/KemetGiftLaunchWaitlistHomepageHero/formperma/OBxXzZ5YyBsYYh0hsOqAjTwZGCUJy7l7c06LppZK65c'>
               </iframe>
             </div>
             <div class="form-note">
-              Replace <code>YOUR_ZOHO_WAITLIST_FORM_URL_HERE</code> with the actual Zoho form URL.
+              This form is powered by Zoho Forms.
             </div>
           </div>
         </div>
@@ -768,27 +985,59 @@
     <!-- FOUNDER NOTE -->
     <section id="founder">
       <div class="container">
-        <div class="section-eyebrow">Founder’s Note</div>
-        <h2 class="section-heading">Why Kemet Gift Exists</h2>
-        <div class="founder-note">
-          <p>
-            Kemet Gift was born from a simple question:
-            <strong>“Why isn’t there a single Egyptian gift brand that feels as precious as our history?”</strong>
-          </p>
-          <p style="margin-top:0.7rem;">
-            Over the last years, I’ve written and organized hundreds of pages – brand books, manufacturing specs,
-            operating manuals, and historical content – to make sure Kemet Gift can launch as a serious, scalable brand
-            from day one.
-          </p>
-          <p style="margin-top:0.7rem;">
-            What we need now is the right partners to bring this work from pages and prototypes to real products in
-            people’s hands. If you believe Egypt deserves a world-class heritage gifting brand, I’d be honored to
-            connect.
-          </p>
+        <!-- EN -->
+        <div class="lang-block lang-en">
+          <div class="section-eyebrow">Founder’s Note</div>
+          <h2 class="section-heading">Why Kemet Gift Exists</h2>
+          <div class="founder-note">
+            <p>
+              Kemet Gift was born from a simple question:
+              <strong>“Why isn’t there a single Egyptian gift brand that feels as precious as our history?”</strong>
+            </p>
+            <p style="margin-top:0.7rem;">
+              Over the last years, I’ve written and organized hundreds of pages –
+              brand books, manufacturing specs, operating manuals, and historical
+              content – to make sure Kemet Gift can launch as a serious, scalable
+              brand from day one.
+            </p>
+            <p style="margin-top:0.7rem;">
+              What we need now is the right partners to bring this work from
+              pages and prototypes to real products in people’s hands. If you
+              believe Egypt deserves a world-class heritage gifting brand, I’d be
+              honored to connect.
+            </p>
 
-          <div class="founder-sign">
-            <strong>Mo Talat</strong>
-            Founder, Kemet Gift
+            <div class="founder-sign">
+              <strong>Mo Talat</strong>
+              Founder, Kemet Gift
+            </div>
+          </div>
+        </div>
+
+        <!-- AR -->
+        <div class="lang-block lang-ar" dir="rtl">
+          <div class="section-eyebrow">كلمة المؤسس</div>
+          <h2 class="section-heading">لماذا وُلدت Kemet Gift؟</h2>
+          <div class="founder-note">
+            <p>
+              بدأت Kemet Gift من سؤال بسيط:
+              <strong>«لماذا لا توجد علامة هدايا مصرية واحدة تليق بقيمة تاريخنا؟»</strong>
+            </p>
+            <p style="margin-top:0.7rem;">
+              خلال السنوات الماضية كتبت ونظّمت مئات الصفحات: كتب هوية بصرية،
+              مواصفات تصنيع، أدلة تشغيل، ومحتوى تاريخي، حتى تنطلق Kemet Gift
+              كعلامة جادة قابلة للتوسع من اليوم الأول.
+            </p>
+            <p style="margin-top:0.7rem;">
+              ما نحتاجه الآن هو الشركاء المناسبون لتحويل هذه النصوص
+              والنماذج إلى منتجات حقيقية في أيدي الناس. إذا كنت تؤمن أن مصر
+              تستحق علامة هدايا تراثية عالمية، فسأكون سعيدًا بالتواصل معك.
+            </p>
+
+            <div class="founder-sign">
+              <strong>مو طلعت</strong>
+              مؤسس Kemet Gift
+            </div>
           </div>
         </div>
       </div>
@@ -805,18 +1054,52 @@
         <span>Contact: <a href="mailto:info@kemetgift.com">info@kemetgift.com</a></span>
       </div>
       <div class="social-icons">
-        <!-- حدّث الروابط دي بحساباتك الفعلية -->
-        <a class="social-icon" href="https://www.facebook.com/" target="_blank" rel="noopener">f</a>
-        <a class="social-icon" href="https://www.instagram.com/" target="_blank" rel="noopener">IG</a>
-        <a class="social-icon" href="https://www.tiktok.com/" target="_blank" rel="noopener">TT</a>
-        <a class="social-icon" href="https://www.youtube.com/" target="_blank" rel="noopener">YT</a>
-        <a class="social-icon" href="https://twitter.com/" target="_blank" rel="noopener">X</a>
-        <a class="social-icon" href="https://www.linkedin.com/" target="_blank" rel="noopener">in</a>
+        <!-- حدّث الروابط دي لما تكمل الحسابات -->
+        <a class="social-icon"
+           href="https://www.facebook.com/share/1EiZ9jNLfL/"
+           target="_blank" rel="noopener">f</a>
+        <a class="social-icon"
+           href="https://www.instagram.com/kemetgift?igsh=MXNlYWY1NDRwcXkxNw=="
+           target="_blank" rel="noopener">IG</a>
+        <a class="social-icon"
+           href="https://www.tiktok.com/"
+           target="_blank" rel="noopener">TT</a>
+        <a class="social-icon"
+           href="https://www.youtube.com/"
+           target="_blank" rel="noopener">YT</a>
+        <a class="social-icon"
+           href="https://twitter.com/"
+           target="_blank" rel="noopener">X</a>
+        <a class="social-icon"
+           href="https://www.linkedin.com/"
+           target="_blank" rel="noopener">in</a>
       </div>
     </div>
+
     <script>
-      // inject current year
+      // current year
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // language switch
+      const body = document.body;
+      const langButtons = document.querySelectorAll('.lang-btn');
+
+      function setLang(lang) {
+        body.classList.remove('lang-en', 'lang-ar');
+        body.classList.add('lang-' + lang);
+        langButtons.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+      }
+
+      langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          setLang(btn.dataset.lang);
+        });
+      });
+
+      // default language = EN
+      setLang('en');
     </script>
   </footer>
 </body>
