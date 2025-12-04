@@ -1,0 +1,235 @@
+/* =========================================
+   Kemet Gift - Core Stylesheet v0.1
+   Theme: Royal Black & Gold (Museum Luxury)
+   ========================================= */
+
+/* --- CSS Variables (The Brand Palette) --- */
+:root {
+    --color-black-deep: #0a0a0a;    /* الرمادي الداكن جداً للخلفيات الرئيسية */
+    --color-black-soft: #141414;    /* لون أفتح قليلاً للأقسام الثانوية */
+    --color-gold-rich: #D4AF37;     /* اللون الذهبي المعدني الأساسي */
+    --color-gold-light: #F1D78A;    /* ذهبي فاتح للتفاعل (Hover) */
+    --color-text-light: #F4F4F4;    /* أبيض مائل للرمادي للنصوص */
+    --color-text-muted: #AAAAAA;    /* رمادي للنصوص الثانوية */
+
+    --font-primary: sans-serif; /* مؤقتاً حتى نختار خط جوجل مناسب */
+
+    --container-width: 1200px;
+    --section-padding: 80px 0;
+}
+
+/* --- Global Resets --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-black-deep);
+    color: var(--color-text-light);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.section-pad {
+    padding: var(--section-padding);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-dark-alt {
+    background-color: var(--color-black-soft);
+}
+
+/* --- Typography & Titles --- */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3rem; }
+h2.section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-gold-rich);
+    text-transform: uppercase;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.btn-gold {
+    background-color: var(--color-gold-rich);
+    color: var(--color-black-deep);
+}
+
+.btn-gold:hover {
+    background-color: var(--color-gold-light);
+    transform: translateY(-2px);
+}
+
+/* --- Header Navigation --- */
+.site-header {
+    background-color: rgba(10, 10, 10, 0.9); /* شبه شفاف */
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2); /* خط ذهبي خفيف */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--color-gold-rich);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-light);
+}
+
+.nav-link:hover, .lang-switcher a:hover, .lang-switcher a.active {
+    color: var(--color-gold-rich);
+}
+
+.utility-nav {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    height: 80vh;
+    min-height: 500px;
+    /* تدرج لوني مؤقت بدلاً من الصورة */
+    background: linear-gradient(45deg, var(--color-black-deep), var(--color-black-soft));
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    color: var(--color-gold-rich);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    color: var(--color-text-muted);
+}
+
+/* --- Placeholders --- */
+.product-grid-placeholder {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.product-card-stub {
+    width: 300px;
+    height: 400px;
+    background-color: #222;
+    border: 1px solid var(--color-gold-rich);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold-rich);
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--color-black-deep);
+    padding: 5rem 0 2rem 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.footer-col h3 { color: var(--color-gold-rich); }
+.footer-col h4 {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-col ul li a {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-col ul li a:hover {
+    color: var(--color-gold-rich);
+}
+
+.copyright {
+    border-top: 1px solid #222;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+}
+
+.social-links a {
+    margin-left: 1rem;
+    color: var(--color-text-muted);
+}
+
+.social-links a:hover { color: var(--color-gold-rich); }
