@@ -329,3 +329,41 @@ h2.section-title {
         height: 250px;
     }
 }
+/* =========================================
+   RTL Support (للنسخة العربية)
+   ========================================= */
+
+/* عندما يكون اتجاه الصفحة من اليمين لليسار */
+[dir="rtl"] {
+    text-align: right;
+    direction: rtl;
+}
+
+/* عكس اتجاهات القوائم والهوامش */
+[dir="rtl"] .main-nav ul {
+    flex-direction: row-reverse; /* عكس ترتيب عناصر القائمة */
+}
+
+[dir="rtl"] .utility-nav {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social-links a {
+    margin-left: 0;
+    margin-right: 1rem; /* عكس هامش أيقونات السوشيال */
+}
+
+[dir="rtl"] .story-text ul li {
+    margin-left: 0;
+    margin-right: 1.5rem; /* عكس هامش نقاط القائمة في صفحة القصة */
+}
+
+/* تعديل اتجاه الأسهم أو الأيقونات إذا وجدت مستقبلاً */
+[dir="rtl"] .btn-gold {
+    /* مثال: لو فيه سهم، نعكس اتجاهه هنا */
+}
+
+/* ضمان ظهور الخطوط العربية بشكل جيد (مؤقت) */
+[dir="rtl"] body {
+    font-family: 'Tahoma', 'Arial', sans-serif; /* خطوط تدعم العربية مؤقتاً */
+}
