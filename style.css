@@ -1,4 +1,42 @@
 /* =========================================
+   Language Switcher Styles
+   ========================================= */
+
+/* الوضع الافتراضي: الصفحة إنجليزية */
+html:not([dir="rtl"]) .lang-ar {
+    display: none !important;
+}
+
+/* وضع اللغة العربية: الصفحة عربية */
+html[dir="rtl"] .lang-en {
+    display: none !important;
+}
+
+/* تنسيق لزرار اللغة النشط */
+.lang-switcher a.active {
+    font-weight: bold;
+    color: var(--color-gold-rich);
+    pointer-events: none; /* منع الضغط عليه وهو نشط */
+}
+
+.lang-switcher a {
+    cursor: pointer; /* عشان يبان إنه زرار */
+}
+
+/* =========================================
+   RTL Support (تأكيد على اللي فات)
+   ========================================= */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .main-nav ul,
+[dir="rtl"] .utility-nav {
+    flex-direction: row-reverse;
+}
+/* ... وباقي تعديلات الـ RTL اللي ضفناها قبل كده ... */
+
+/* =========================================
    Kemet Gift - Core Stylesheet v0.1
    Theme: Royal Black & Gold (Museum Luxury)
    ========================================= */
