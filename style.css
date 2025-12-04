@@ -233,3 +233,99 @@ h2.section-title {
 }
 
 .social-links a:hover { color: var(--color-gold-rich); }
+/* =========================================
+   Additions for Interior Pages (About, etc.)
+   ========================================= */
+
+/* --- Page Hero (بانر الصفحات الداخلية) --- */
+.page-hero {
+    height: 40vh; /* أقصر من بانر الصفحة الرئيسية */
+    min-height: 300px;
+    background: linear-gradient(45deg, var(--color-black-soft), var(--color-black-deep));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.page-hero h1 {
+    color: var(--color-gold-rich);
+    font-size: 2.5rem;
+}
+
+.page-subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Story Sections (تنسيق أقسام النصوص والصور) --- */
+.story-section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* لعكس اتجاه الصورة والنص في بعض الأقسام */
+.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+.story-text {
+    flex: 1; /* يأخذ مساحة متساوية */
+}
+
+.story-text p {
+    margin-bottom: 1.5rem;
+    color: var(--color-text-light);
+}
+
+.story-text ul li {
+    margin-bottom: 0.8rem;
+    list-style: disc; /* إضافة نقاط للقائمة */
+    margin-left: 1.5rem;
+}
+
+.story-text strong {
+    color: var(--color-gold-rich);
+}
+
+/* --- Placeholders for Interior Images --- */
+.story-image-stub {
+    flex: 1;
+    height: 400px;
+    background-color: #222;
+    border: 1px solid var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+}
+
+/* --- Helpers --- */
+.text-left { text-align: left; }
+.narrow-text { max-width: 700px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* --- Active Link State --- */
+.nav-link.active {
+    color: var(--color-gold-rich) !important;
+    border-bottom: 2px solid var(--color-gold-rich);
+}
+
+/* --- Responsive Tweak (للشاشات الصغيرة) --- */
+@media (max-width: 768px) {
+    .story-section {
+        flex-direction: column; /* النصوص تحت الصور في الموبايل */
+        gap: 2rem;
+    }
+    .reverse-layout {
+        flex-direction: column;
+    }
+    .story-image-stub {
+        width: 100%;
+        height: 250px;
+    }
+}
