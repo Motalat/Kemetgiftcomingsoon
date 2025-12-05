@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"> <head>
+<html lang="en" dir="ltr">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kemet Gift - Museum-grade Egyptian collectibles. | كيميت جيفت - مقتنيات مصرية بجودة متحفية.">
-    <title class="lang-en">Kemet Gift | Museum-Grade Egyptian Collectibles</title>
-    <title class="lang-ar">كيميت جيفت | مقتنيات مصرية بجودة متحفية</title>
+    <title>Our Story & Philosophy | Kemet Gift</title>
+    <meta name="description" content="Learn about the philosophy, craftsmanship, and solid brass materiality behind Kemet Gift's museum-grade Egyptian collectibles.">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KKB55R510K"></script>
     <script>
@@ -13,8 +13,13 @@
       gtag('js', new Date());
       gtag('config', 'G-KKB55R510K');
     </script>
-
     <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero { height: 50vh; min-height: 400px; background: linear-gradient(45deg, var(--color-black-soft), var(--color-black-deep)); }
+        .content-block { margin-bottom: 4rem; }
+        .content-block h2 { color: var(--color-text-light); font-size: 1.8rem; }
+        .content-block p { margin-bottom: 1.5rem; color: var(--color-text-muted); }
+    </style>
 </head>
 <body>
 
@@ -23,147 +28,109 @@
             <a href="index.html" class="logo">KEMET GIFT™</a>
             <nav class="main-nav">
                 <ul>
-                    <li>
-                        <a href="about.html" class="nav-link lang-en">The Story</a>
-                        <a href="about.html" class="nav-link lang-ar">القصة</a>
-                    </li>
-                    <li>
-                        <a href="collection.html" class="nav-link lang-en">The Collection</a>
-                        <a href="collection.html" class="nav-link lang-ar">المجموعة</a>
-                    </li>
-                    <li>
-                        <a href="support.html" class="nav-link lang-en">Support</a>
-                        <a href="support.html" class="nav-link lang-ar">الدعم</a>
-                    </li>
+                    <li><a href="about.html" class="nav-link active">The Story</a></li> <li><a href="collection.html" class="nav-link">The Collection</a></li>
+                    <li><a href="support.html" class="nav-link">Support</a></li>
                 </ul>
             </nav>
             <div class="utility-nav">
-                <a href="cart.html" class="nav-link cart-icon lang-en">Cart (0)</a>
-                <a href="cart.html" class="nav-link cart-icon lang-ar">السلة (0)</a>
-                
+                <a href="cart.html" class="nav-link">Cart (0)</a>
                 <span class="lang-switcher">
-                    <a id="lang-en-btn" class="active">EN</a> | <a id="lang-ar-btn">AR</a>
-                </span>
+                    <a href="about.html" class="active">EN</a> | <a href="about-ar.html">AR</a> </span>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero-section">
-            <div class="container hero-content">
-                <h1 class="lang-en">Own a Piece of Kemet</h1>
-                <h1 class="lang-ar">امتلك قطعة من كيميت</h1>
-                
-                <p class="hero-subtitle lang-en">Museum-grade commemorative medals. Crafted from history, forged in solid brass.</p>
-                <p class="hero-subtitle lang-ar">ميداليات تذكارية بجودة المتاحف. سُكت من التاريخ، وصُنعت من النحاس المصمت.</p>
-
-                <a href="collection.html" class="btn btn-gold lang-en">Explore The Editions</a>
-                <a href="collection.html" class="btn btn-gold lang-ar">اكتشف الإصدارات</a>
-            </div>
-        </section>
-
-        <section class="container section-pad">
-            <h2 class="section-title lang-en">The Golden Legacy</h2>
-            <h2 class="section-title lang-ar">الإرث الذهبي</h2>
-            
-            <p class="text-center lang-en">[A brief introduction to the brand philosophy will go here.]</p>
-            <p class="text-center lang-ar">[نص تعريفي مختصر عن فلسفة البراند هنا.]</p>
-        </section>
-
-        <section class="bg-dark-alt section-pad">
+        <section class="hero-section page-hero">
             <div class="container">
-                <h2 class="section-title lang-en">Featured Editions</h2>
-                <h2 class="section-title lang-ar">إصدارات مميزة</h2>
-                
-                <div class="product-grid-placeholder">
-                    <div class="product-card-stub lang-en">E1 - Essential Scarab</div>
-                    <div class="product-card-stub lang-ar">E1 - الجعران الأساسي</div>
-                    
-                    <div class="product-card-stub lang-en">C1 - Classic Eye</div>
-                    <div class="product-card-stub lang-ar">C1 - عين حورس الكلاسيكية</div>
-                    
-                    <div class="product-card-stub lang-en">P1 - Premium Pyramid</div>
-                    <div class="product-card-stub lang-ar">P1 - الهرم البريميوم</div>
-                </div>
+                <h1>More Than Metal. A Story.</h1>
+                <p class="lead">The philosophy behind bridging ancient grandeur with modern craftsmanship. Every piece ascends the staircase of history.</p>
             </div>
         </section>
+
+        <section class="section-pad container">
+            <div class="content-block text-center">
+                <h2 class="section-title">The Philosophy: "The Weight of History"</h2>
+                <p class="lead mx-auto">At Kemet Gift, we believe history shouldn't just be read; it should be held. We don't make souvenirs that fade; we forge connections that last.</p>
+            </div>
+
+            <div class="content-block">
+                 <h2>1. Material Integrity (Solid Brass)</h2>
+                 <p>We rejected common alloys like zinc and aluminum. History is heavy, and so are our pieces. Each medal is crafted from <strong>solid, high-density brass (C360) or bronze</strong>, providing a substantial weight (~37.5g) and a authentic metallic resonance that cheap replicas cannot mimic.</p>
+            </div>
+
+            <div class="content-block">
+                 <h2>2. The Minting Process (Forged, Not Poured)</h2>
+                 <p>Our pieces are not cast in molds; they are struck with immense hydraulic pressure. Using hardened steel dies and <strong>double or triple striking techniques</strong>, we achieve museum-grade relief depth and razor-sharp details that honor the complexity of ancient Egyptian art.</p>
+            </div>
+
+             <div class="content-block">
+                 <h2>3. The Ritual of Unboxing</h2>
+                 <p>The box is not just a wrapper; it is the first chapter of the story. From rigid kraft boxes to premium soft-touch casing, the packaging is engineered to build anticipation and respect for the artifact inside.</p>
+            </div>
+
+        </section>
+
+        <section class="bg-dark-alt section-pad text-center">
+            <div class="container">
+                <h3 class="mb-2">Ready to hold a piece of Kemet?</h3>
+                <a href="collection.html" class="btn btn-gold">Explore The Collection</a>
+            </div>
+        </section>
+
     </main>
 
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-col">
                 <h3>Kemet Gift™</h3>
-                <p class="lang-en">Museum-grade collectibles inspired by ancient Egyptian heritage.</p>
-                <p class="lang-ar">مقتنيات فاخرة مستوحاة من التراث المصري القديم بجودة متحفية.</p>
+                <p>Solid brass, museum-quality collectibles inspired by ancient Egyptian heritage.</p>
             </div>
             <div class="footer-col">
-                <h4 class="lang-en">Quick Links</h4>
-                <h4 class="lang-ar">روابط سريعة</h4>
+                <h4>Quick Links</h4>
                 <ul>
-                    <li>
-                        <a href="about.html" class="lang-en">Our Story</a>
-                        <a href="about.html" class="lang-ar">قصتنا</a>
-                    </li>
-                    <li>
-                        <a href="collection.html" class="lang-en">All Editions</a>
-                        <a href="collection.html" class="lang-ar">كل الإصدارات</a>
-                    </li>
-                    </ul>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="collection.html">The Collection</a></li>
+                </ul>
             </div>
             <div class="footer-col">
-                <h4 class="lang-en">Support</h4><h4 class="lang-ar">الدعم</h4>
-                <ul><li><a href="#" class="lang-en">Contact</a><a href="#" class="lang-ar">اتصل بنا</a></li></ul>
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="shipping.html">Shipping & Returns</a></li>
+                </ul>
             </div>
-             <div class="footer-col">
-                <h4 class="lang-en">Legal</h4><h4 class="lang-ar">قانوني</h4>
-                <ul><li><a href="#" class="lang-en">Privacy</a><a href="#" class="lang-ar">الخصوصية</a></li></ul>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
             </div>
         </div>
         <div class="container copyright">
-            <p class="lang-en">&copy; 2025 Kemet Gift Holding. All rights reserved.</p>
-            <p class="lang-ar">&copy; 2025 Kemet Gift Holding. جميع الحقوق محفوظة.</p>
+            <p>&copy; 2025 Kemet Gift Holding. All rights reserved.</p>
             <div class="social-links">
                 <a href="#">FB</a> | <a href="#">IG</a> | <a href="#">X</a>
             </div>
         </div>
     </footer>
 
-    <script>
-        // 1. الإمساك بعناصر التحكم
-        const langEnBtn = document.getElementById('lang-en-btn');
-        const langArBtn = document.getElementById('lang-ar-btn');
-        const htmlTag = document.documentElement;
-
-        // 2. دالة لتغيير اللغة
-        function setLanguage(lang) {
-            if (lang === 'ar') {
-                htmlTag.setAttribute('lang', 'ar');
-                htmlTag.setAttribute('dir', 'rtl');
-                langArBtn.classList.add('active');
-                langEnBtn.classList.remove('active');
-            } else {
-                htmlTag.setAttribute('lang', 'en');
-                htmlTag.setAttribute('dir', 'ltr');
-                langEnBtn.classList.add('active');
-                langArBtn.classList.remove('active');
-            }
-            // حفظ اختيار المستخدم في المتصفح
-            localStorage.setItem('preferredLang', lang);
-        }
-
-        // 3. تفعيل الأزرار عند الضغط
-        langEnBtn.addEventListener('click', () => setLanguage('en'));
-        langArBtn.addEventListener('click', () => setLanguage('ar'));
-
-        // 4. التحقق من اللغة المحفوظة عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferredLang');
-            // لو المستخدم اختار عربي قبل كده، نفعل العربي. غير كده نسيبه إنجليزي (الافتراضي).
-            if (savedLang === 'ar') {
-                setLanguage('ar');
-            }
-        });
+    <script type="text/javascript" id="zsiqchat">
+        var $zoho=$zoho || {};
+        $zoho.salesiq = $zoho.salesiq || {
+            widgetcode: "siq6a56164389073871469144510631651695602005346405050160763170625418",
+            values: {},
+            ready: function() {}
+        };
+        var d=document;
+        s=d.createElement("script");
+        s.type="text/javascript";
+        s.id="zsiqscript";
+        s.defer=true;
+        s.src="https://salesiq.zohopublic.com/widget";
+        t=d.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(s,t);
     </script>
-
-</body>
+    </body>
 </html>
