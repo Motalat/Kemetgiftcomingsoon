@@ -130,8 +130,11 @@ h3 { font-size: 1.75rem; }
 /* Page Hero */
 .page-hero {
     height: 40vh; min-height: 350px; display: flex; align-items: center; justify-content: center; text-align: center;
-    background: linear-gradient(45deg, var(--color-black-soft), var(--color-black-deep));
-    border-bottom: var(--border-gold-subtle);
+        /* استخدام صورة الـ Texture مع طبقة سوداء شفافة فوقها لضمان قراءة النص */
+    background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), url('hero-texture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
 }
 .hero-collection { background: linear-gradient(to right, #0f0f0f, #1a1a1a); }
 
