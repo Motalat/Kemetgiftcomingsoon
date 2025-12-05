@@ -1,5 +1,5 @@
 /* =========================================
-   KEMET GIFT - OFFICIAL STYLESHEET v3.1 (Final Master)
+   KEMET GIFT - OFFICIAL STYLESHEET v4.0 (Final Master - Image Ready)
    Theme: Museum-Grade Luxury (Royal Black & Antique Gold)
    NOTE: This file controls ALL styling for both EN and AR versions.
    ========================================= */
@@ -8,26 +8,20 @@
 /* 1. CSS Variables (لوحة الألوان والهوية) */
 /* -------------------------------------------------- */
 :root {
-    /* الألوان الأساسية */
-    --color-black-deep: #0a0a0a;     /* أسود عميق للخلفية الرئيسية */
-    --color-black-soft: #141414;     /* أسود أفتح قليلاً للأقسام الفرعية */
-    --color-gold-rich: #D4AF37;      /* ذهبي غني كلاسيكي (للعناوين والأيقونات) */
-    --color-gold-light: #EAC976;     /* ذهبي فاتح (عند التفاعل Hover) */
-    --color-text-light: #F4F4F4;     /* أبيض مائل للرمادي للنصوص الأساسية */
-    --color-text-muted: #A0A0A0;     /* رمادي للنصوص الثانوية والوصف */
-    
-    /* حدود وفواصل */
+    --color-black-deep: #0a0a0a;
+    --color-black-soft: #141414;
+    --color-gold-rich: #D4AF37;
+    --color-gold-light: #EAC976;
+    --color-text-light: #F4F4F4;
+    --color-text-muted: #A0A0A0;
     --border-gold-subtle: 1px solid rgba(212, 175, 55, 0.2);
-
-    /* إعدادات عامة */
     --container-width: 1200px;
     --section-padding: 80px 0;
-    /* خطوط نظام نظيفة وسريعة */
     --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* -------------------------------------------------- */
-/* 2. Global Resets (تصفير الإعدادات) */
+/* 2. Global Resets */
 /* -------------------------------------------------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -40,15 +34,15 @@ body {
 }
 a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 ul { list-style: none; }
+/* تحديث هام للصور لضمان تجاوبها */
 img { max-width: 100%; height: auto; display: block; }
 
 /* -------------------------------------------------- */
-/* 3. Layout & Utilities (أدوات التخطيط) */
+/* 3. Layout & Utilities */
 /* -------------------------------------------------- */
 .container { width: 90%; max-width: var(--container-width); margin: 0 auto; }
 .section-pad { padding: var(--section-padding); }
 .bg-dark-alt { background-color: var(--color-black-soft); }
-
 .text-center { text-align: center; }
 .lead { font-size: 1.25rem; max-width: 700px; margin-bottom: 2rem; color: var(--color-text-muted); line-height: 1.5; }
 .mb-2 { margin-bottom: 2rem; }
@@ -56,7 +50,7 @@ img { max-width: 100%; height: auto; display: block; }
 .tagline { font-size: 0.9rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: bold; color: var(--color-gold-rich); margin-bottom: 1rem; display: block; }
 
 /* -------------------------------------------------- */
-/* 4. Typography (الخطوط والعناوين) */
+/* 4. Typography */
 /* -------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 { font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1rem; color: var(--color-text-light); }
 h1, h2.section-title, .footer-col h3 { color: var(--color-gold-rich); }
@@ -66,7 +60,7 @@ h3 { font-size: 1.75rem; }
 @media (max-width: 768px) { h1 { font-size: 2.5rem; } h2.section-title { font-size: 2rem; } }
 
 /* -------------------------------------------------- */
-/* 5. Components (المكونات: أزرار، فورم، صور) */
+/* 5. Components */
 /* -------------------------------------------------- */
 /* Buttons */
 .btn {
@@ -79,7 +73,7 @@ h3 { font-size: 1.75rem; }
 .btn.disabled { opacity: 0.5; cursor: not-allowed; background-color: transparent; border-color: var(--color-text-muted); color: var(--color-text-muted); }
 .btn.disabled:hover { transform: none; box-shadow: none; background-color: transparent; }
 
-/* Forms */
+/* Forms & iFrames (تحديث جديد لـ Zoho) */
 .form-group { margin-bottom: 1.5rem; text-align: left; }
 .form-label { display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--color-gold-rich); font-size: 0.9rem; letter-spacing: 0.05em;}
 .form-input, .form-textarea {
@@ -88,25 +82,46 @@ h3 { font-size: 1.75rem; }
     font-family: inherit; font-size: 1rem; transition: border-color 0.3s ease;
 }
 .form-input:focus, .form-textarea:focus { outline: none; border-color: var(--color-gold-rich); }
-
-/* Image Placeholders */
-.img-placeholder {
-    width: 100%; height: 400px; background-color: #121212;
-    border: 2px dashed rgba(212, 175, 55, 0.2); display: flex;
-    align-items: center; justify-content: center; color: var(--color-text-muted);
-    font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;
-    padding: 2rem; text-align: center; font-size: 0.9rem;
+/* تنسيق حاوية الـ iFrame */
+.zoho-form-container {
+    background: var(--color-black-soft);
+    padding: 2rem;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    margin-top: 3rem;
 }
+iframe { max-width: 100%; } /* ضمان تجاوب الـ iframe */
+
+/* Images Styles (جديد) */
+/* تنسيق اللوجو في الهيدر */
+.logo-img { height: 45px; width: auto; }
+/* تنسيق حاوية الصور في المحتوى لضبط الأبعاد */
+.img-container {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    overflow: hidden; /* لضمان عدم خروج الصورة عن الإطار */
+}
+.img-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+/* تأثير زووم خفيف عند الوقوف على الصور */
+.img-container:hover img { transform: scale(1.03); }
+/* تنسيق خاص لصور الكروت لتوحيد الارتفاع */
+.product-card .img-container { height: 280px; display: flex; align-items: center; justify-content: center; background: #0a0a0a; }
+.product-card .img-container img { max-height: 100%; width: auto; }
+
 
 /* -------------------------------------------------- */
 /* 6. Site Header & Navigation */
 /* -------------------------------------------------- */
 .site-header {
-    background-color: rgba(10, 10, 10, 0.95); padding: 1.2rem 0;
+    background-color: rgba(10, 10, 10, 0.95); padding: 1rem 0;
     position: sticky; top: 0; z-index: 1000;
-    border-bottom: var(--border-gold-subtle); backdrop-filter: blur(10px);}
+    border-bottom: var(--border-gold-subtle); backdrop-filter: blur(10px);
+}
 .header-content { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 1.5rem; font-weight: 900; letter-spacing: 0.15em; color: var(--color-gold-rich); }
+/* .logo removed, replaced by .logo-img style above */
 .main-nav ul { display: flex; gap: 2rem; }
 .nav-link {
     font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;
@@ -126,28 +141,26 @@ h3 { font-size: 1.75rem; }
 /* -------------------------------------------------- */
 /* 7. Page Specific Styles */
 /* -------------------------------------------------- */
-/* Page Hero */
+/* Page Hero (تحديث هام: استخدام خلفية الصورة) */
 .page-hero {
     height: 40vh; min-height: 350px; display: flex; align-items: center; justify-content: center; text-align: center;
-        /* استخدام صورة الـ Texture مع طبقة سوداء شفافة فوقها لضمان قراءة النص */
-    background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), url('hero-texture.jpg');
+    border-bottom: var(--border-gold-subtle);
+    /* الخلفية الجديدة: طبقة سوداء شفافة فوق صورة الملمس الحجري */
+    background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.85)), url('hero-bg.jpg');
     background-size: cover;
     background-position: center;
-    background-blend-mode: multiply;
 }
-.hero-collection { background: linear-gradient(to right, #0f0f0f, #1a1a1a); }
+/* تخصيصات للبانرات المختلفة إذا لزم الأمر */
+.hero-home { height: 85vh; min-height: 600px; }
 
 /* Collection Grid */
 .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
 .product-card {
-        /* استخدام صورة الـ Texture مع طبقة سوداء شفافة فوقها لضمان قراءة النص */
-    background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), url('hero-texture.jpg');
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
-
+    background-color: var(--color-black-soft); border: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 2.5rem 2rem; text-align: center; position: relative; transition: all 0.4s ease;
+}
 .product-card:hover { border-color: var(--color-gold-rich); transform: translateY(-7px); }
-.product-image-stub { height: 250px; margin-bottom: 2rem; background-color: #0a0a0a; border: none; }
+/* .product-image-stub removed, replaced by .img-container styles above */
 .edition-code { font-size: 0.8rem; color: var(--color-gold-rich); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.5rem; font-weight: bold;}
 .product-title { font-size: 1.4rem; margin-bottom: 1rem; color: var(--color-text-light); }
 .product-price { font-size: 1.1rem; color: var(--color-text-muted); margin-bottom: 2rem; }
@@ -171,7 +184,7 @@ h3 { font-size: 1.75rem; }
 .support-actions { display: flex; gap: 2rem; justify-content: center; margin-top: 4rem; flex-wrap: wrap; }
 
 /* -------------------------------------------------- */
-/* 8. Site Footer (الفوتر النهائي) */
+/* 8. Site Footer */
 /* -------------------------------------------------- */
 .site-footer { background-color: #050505; padding: 6rem 0 2rem 0; border-top: var(--border-gold-subtle); }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 5rem; }
@@ -194,8 +207,10 @@ h3 { font-size: 1.75rem; }
 /* -------------------------------------------------- */
 @media (max-width: 992px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; } }
 @media (max-width: 768px) {
-    .header-content { flex-direction: column; gap: 1rem; }
+    .header-content { flex-direction: column; gap: 1rem; padding: 1rem 0; }
+    .logo-img { height: 40px; } /* تصغير اللوجو في الموبايل */
     .main-nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .hero-home { height: 75vh; min-height: 500px; } /* بانر أقصر للموبايل */
     .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
     .footer-col p { margin: 0 auto; }
     .copyright { flex-direction: column; gap: 1.5rem; }
@@ -209,7 +224,7 @@ h3 { font-size: 1.75rem; }
 /* -------------------------------------------------- */
 [dir="rtl"] {
     direction: rtl; text-align: right;
-    font-family: 'Tajawal', 'Cairo', Tahoma, sans-serif; /* خطوط عربية */
+    font-family: 'Tajawal', 'Cairo', Tahoma, sans-serif;
 }
 [dir="rtl"] .main-nav ul, [dir="rtl"] .utility-nav, [dir="rtl"] .footer-grid { flex-direction: row-reverse; }
 [dir="rtl"] .nav-link::after { left: auto; right: 0; }
@@ -217,5 +232,5 @@ h3 { font-size: 1.75rem; }
 [dir="rtl"] .social-links a { margin-left: 0; margin-right: 1.5rem; }
 [dir="rtl"] .badge { right: auto; left: 15px; }
 [dir="rtl"] .form-group { text-align: right; }
-[dir="rtl"] .tagline { letter-spacing: 0.1em; } /* تقليل المسافات في العربي */
+[dir="rtl"] .tagline { letter-spacing: 0.1em; }
 @media (max-width: 768px) { [dir="rtl"] .social-links a { margin: 0 0.8rem; } }
