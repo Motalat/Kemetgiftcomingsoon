@@ -228,3 +228,73 @@ p.lead { font-size: 1.2rem; color: var(--color-text-muted); max-width: 700px; ma
     right: auto;
     left: 10px; /* في العربي الشارة تيجي شمال */
 }
+/* =========================================
+   New Additions: Forms & Image Placeholders
+   ========================================= */
+
+/* --- 1. Image Placeholders (مربعات انتظار الصور) --- */
+/* هذا الكلاس سنستخدمه مكان أي صورة لسه معملناهاش */
+.img-placeholder {
+    width: 100%;
+    height: 400px; /* ارتفاع افتراضي، يمكن تغييره حسب الحاجة */
+    background-color: #1a1a1a; /* لون خلفية داكن */
+    border: 2px dashed rgba(212, 175, 55, 0.3); /* إطار ذهبي متقطع */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2rem;
+    text-align: center;
+}
+/* تصغير الارتفاع قليلاً في الموبايل */
+@media (max-width: 768px) {
+    .img-placeholder { height: 300px; font-size: 0.9rem; }
+}
+
+/* --- 2. Forms Styling (تنسيق نماذج الإدخال) --- */
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--color-text-light);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--color-black-soft);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: var(--color-text-light);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-gold-rich);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+/* تنسيق خاص لصفحة التحقق لجعله في المنتصف */
+.verify-section {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.verify-form {
+    margin-top: 3rem;
+    text-align: left; /* محاذة عناصر الفورم لليسار في الإنجليزي */
+}
+[dir="rtl"] .verify-form {
+    text-align: right; /* محاذة لليمين في العربي */
+}
