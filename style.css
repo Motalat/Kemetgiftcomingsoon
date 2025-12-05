@@ -140,3 +140,91 @@ p.lead { font-size: 1.2rem; color: var(--color-text-muted); max-width: 700px; ma
     .footer-grid { grid-template-columns: 1fr; text-align: center; }
     .hero-section h1 { font-size: 2.5rem; }
 }
+/* =========================================
+   Collection Page Styles (شبكة المنتجات)
+   ========================================= */
+
+/* --- Product Grid Layout --- */
+.product-grid {
+    display: grid;
+    /* 3 أعمدة للشاشات الكبيرة، عمودين للمتوسطة، وعمود للموبايل */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem; /* مسافة بين الكروت */
+    margin-top: 3rem;
+}
+
+/* --- Product Card Styling --- */
+.product-card {
+    background-color: var(--color-black-soft);
+    border: 1px solid rgba(212, 175, 55, 0.1); /* حدود ذهبية خفيفة جداً */
+    padding: 2rem;
+    text-align: center;
+    position: relative; /* مهم عشان الشارة */
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    border-color: var(--color-gold-rich);
+    transform: translateY(-5px); /* حركة خفيفة عند الوقوف عليها */
+}
+
+/* placeholder للصورة مؤقتاً */
+.product-image-stub {
+    height: 250px;
+    background-color: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    border: 1px solid #222;
+}
+
+/* نصوص الكارت */
+.edition-code {
+    font-size: 0.8rem;
+    color: var(--color-gold-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.product-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-light);
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: var(--color-gold-rich);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* --- "Coming Soon" Badge Style --- */
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    z-index: 10;
+}
+
+/* ستايل خاص لبادج "قريباً" */
+.badge-future {
+    background-color: rgba(255, 255, 255, 0.1); /* خلفية شفافة خفيفة */
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-text-muted);
+}
+
+/* --- تعديل RTL للشارة --- */
+[dir="rtl"] .badge {
+    right: auto;
+    left: 10px; /* في العربي الشارة تيجي شمال */
+}
